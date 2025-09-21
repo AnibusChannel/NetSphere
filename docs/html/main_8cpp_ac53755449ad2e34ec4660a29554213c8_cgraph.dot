@@ -1,0 +1,13 @@
+digraph "demonstrateDataStorage"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="demonstrateDataStorage",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Демонстрационная функция для тестирования класса DataStorage."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="DataStorage::addTrustedUser",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_data_storage.html#af2b1093344e0c7ea21319a915d6db755",tooltip="Добавляет пользователя в список доверенных."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="DataStorage::printInfo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_data_storage.html#a4214c4c14f987a6c8866d437a59d3b1e",tooltip="Выводит информацию о хранилище в человекочитаемом формате."];
+}

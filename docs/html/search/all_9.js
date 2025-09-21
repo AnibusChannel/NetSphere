@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['test_0',['TEST',['../group__tests__module.html#ga8bc11a54c007696cc837214153600aa6',1,'TEST(DataStorageTest, ConstructorAndGetters):&#160;DataStorageTests.cpp'],['../group__tests__module.html#ga931068fb57cb3bdc2583670c0f0bedb8',1,'TEST(DataStorageTest, AdditionOperator):&#160;DataStorageTests.cpp'],['../group__tests__module.html#ga80a92fac73434462db0e133a98c2a37a',1,'TEST(DataStorageTest, SubtractionOperator):&#160;DataStorageTests.cpp'],['../group__tests__module.html#ga8ae0274bbee926f618960d1a954d1cca',1,'TEST(DataStorageTest, AssignmentOperator):&#160;DataStorageTests.cpp'],['../group__tests__module.html#gad31d3e03ee127be3e7905d6e3d242117',1,'TEST(DataStorageTest, ComparisonOperators):&#160;DataStorageTests.cpp'],['../group__tests__module.html#gac8e18d84c408397a1f0a29566129c091',1,'TEST(DataStorageTest, TrustedUsers):&#160;DataStorageTests.cpp'],['../group__tests__module.html#gaf86bae78b5ee658997a35b6019c43be8',1,'TEST(DataStorageTest, PrintInfoNoCrash):&#160;DataStorageTests.cpp']]],
+  ['totalsizemb_1',['totalSizeMB',['../class_data_storage.html#af888feda3ab312d1c9ad82f6e9e74f4a',1,'DataStorage']]],
+  ['trustedusers_2',['trustedUsers',['../class_data_storage.html#a7ac35d824b3472955780945bd2a8c755',1,'DataStorage']]]
+];

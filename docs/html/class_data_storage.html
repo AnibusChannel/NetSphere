@@ -1,0 +1,749 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NetSphere: Класс DataStorage</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">NetSphere<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Система управления корпоративной сетью компании</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_data_storage.html','','class_data_storage-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс DataStorage<div class="ingroups"><a class="el" href="group__storage__module.html">Модуль хранилищ данных</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс, представляющий хранилище данных в корпоративной сети компании NetSphere.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_data_storage_8h_source.html">DataStorage.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a4297941d93bfe90bb6be1fea50e55680" id="r_a4297941d93bfe90bb6be1fea50e55680"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4297941d93bfe90bb6be1fea50e55680">DataStorage</a> (const std::string &amp;<a class="el" href="#a6a0ff9729c541aa9234c8a68bbc23f0c">id</a>, const std::string &amp;mac, double totalSize)</td></tr>
+<tr class="memdesc:a4297941d93bfe90bb6be1fea50e55680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор класса <a class="el" href="class_data_storage.html" title="Класс, представляющий хранилище данных в корпоративной сети компании NetSphere.">DataStorage</a>.  <br /></td></tr>
+<tr class="memitem:a9773a3b578154d338150d017134e84a7" id="r_a9773a3b578154d338150d017134e84a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data_storage.html">DataStorage</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9773a3b578154d338150d017134e84a7">operator+=</a> (double additionalSize)</td></tr>
+<tr class="memdesc:a9773a3b578154d338150d017134e84a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор добавления данных к используемому объёму хранилища.  <br /></td></tr>
+<tr class="memitem:af56c38b31ba5528cbd94f73df6db57b3" id="r_af56c38b31ba5528cbd94f73df6db57b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data_storage.html">DataStorage</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af56c38b31ba5528cbd94f73df6db57b3">operator-=</a> (double sizeToFree)</td></tr>
+<tr class="memdesc:af56c38b31ba5528cbd94f73df6db57b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор освобождения пространства в хранилище.  <br /></td></tr>
+<tr class="memitem:a43ed7eb00599c77d3bff3baa7ad53bf7" id="r_a43ed7eb00599c77d3bff3baa7ad53bf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data_storage.html">DataStorage</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43ed7eb00599c77d3bff3baa7ad53bf7">operator=</a> (double newSize)</td></tr>
+<tr class="memdesc:a43ed7eb00599c77d3bff3baa7ad53bf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор установки нового значения используемого объёма.  <br /></td></tr>
+<tr class="memitem:abc374945e99452db1fe68265cf0de3f6" id="r_abc374945e99452db1fe68265cf0de3f6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc374945e99452db1fe68265cf0de3f6">operator&lt;</a> (const <a class="el" href="class_data_storage.html">DataStorage</a> &amp;other) const</td></tr>
+<tr class="memdesc:abc374945e99452db1fe68265cf0de3f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор "меньше" для сравнения хранилищ по идентификатору.  <br /></td></tr>
+<tr class="memitem:a7183d2e50888e1871c9e18df6de7257a" id="r_a7183d2e50888e1871c9e18df6de7257a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7183d2e50888e1871c9e18df6de7257a">operator==</a> (const <a class="el" href="class_data_storage.html">DataStorage</a> &amp;other) const</td></tr>
+<tr class="memdesc:a7183d2e50888e1871c9e18df6de7257a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор проверки на равенство.  <br /></td></tr>
+<tr class="memitem:a37b6a65ffdc9ca26c8991d28a0da39b4" id="r_a37b6a65ffdc9ca26c8991d28a0da39b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37b6a65ffdc9ca26c8991d28a0da39b4">operator!=</a> (const <a class="el" href="class_data_storage.html">DataStorage</a> &amp;other) const</td></tr>
+<tr class="memdesc:a37b6a65ffdc9ca26c8991d28a0da39b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор проверки на неравенство.  <br /></td></tr>
+<tr class="memitem:af2b1093344e0c7ea21319a915d6db755" id="r_af2b1093344e0c7ea21319a915d6db755"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2b1093344e0c7ea21319a915d6db755">addTrustedUser</a> (const std::string &amp;user)</td></tr>
+<tr class="memdesc:af2b1093344e0c7ea21319a915d6db755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет пользователя в список доверенных.  <br /></td></tr>
+<tr class="memitem:ae72cfd5ddbb8d83cc2ada5e45511fd6f" id="r_ae72cfd5ddbb8d83cc2ada5e45511fd6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae72cfd5ddbb8d83cc2ada5e45511fd6f">removeTrustedUser</a> (const std::string &amp;user)</td></tr>
+<tr class="memdesc:ae72cfd5ddbb8d83cc2ada5e45511fd6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаляет пользователя из списка доверенных.  <br /></td></tr>
+<tr class="memitem:a59e7b31d2d419980ab756f3884c5352b" id="r_a59e7b31d2d419980ab756f3884c5352b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59e7b31d2d419980ab756f3884c5352b">getId</a> () const</td></tr>
+<tr class="memdesc:a59e7b31d2d419980ab756f3884c5352b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает идентификатор хранилища.  <br /></td></tr>
+<tr class="memitem:a7bf6f55480766cb1564df4c75788b8d4" id="r_a7bf6f55480766cb1564df4c75788b8d4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bf6f55480766cb1564df4c75788b8d4">getMacAddress</a> () const</td></tr>
+<tr class="memdesc:a7bf6f55480766cb1564df4c75788b8d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает MAC-адрес хранилища.  <br /></td></tr>
+<tr class="memitem:a8643e5c1e71d717f249df3daae4b5e8f" id="r_a8643e5c1e71d717f249df3daae4b5e8f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8643e5c1e71d717f249df3daae4b5e8f">getTotalSize</a> () const</td></tr>
+<tr class="memdesc:a8643e5c1e71d717f249df3daae4b5e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает общий объём хранилища.  <br /></td></tr>
+<tr class="memitem:a9ac4695d108faaa5172b0fcc3d94eaf0" id="r_a9ac4695d108faaa5172b0fcc3d94eaf0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ac4695d108faaa5172b0fcc3d94eaf0">getUsedSize</a> () const</td></tr>
+<tr class="memdesc:a9ac4695d108faaa5172b0fcc3d94eaf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает используемый объём хранилища.  <br /></td></tr>
+<tr class="memitem:a3bb1f4ecf9a389d4f77dfe5bc325e7dd" id="r_a3bb1f4ecf9a389d4f77dfe5bc325e7dd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bb1f4ecf9a389d4f77dfe5bc325e7dd">getTrustedUsers</a> () const</td></tr>
+<tr class="memdesc:a3bb1f4ecf9a389d4f77dfe5bc325e7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает список доверенных пользователей.  <br /></td></tr>
+<tr class="memitem:a4214c4c14f987a6c8866d437a59d3b1e" id="r_a4214c4c14f987a6c8866d437a59d3b1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4214c4c14f987a6c8866d437a59d3b1e">printInfo</a> () const</td></tr>
+<tr class="memdesc:a4214c4c14f987a6c8866d437a59d3b1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит информацию о хранилище в человекочитаемом формате.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a6a0ff9729c541aa9234c8a68bbc23f0c" id="r_a6a0ff9729c541aa9234c8a68bbc23f0c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a0ff9729c541aa9234c8a68bbc23f0c">id</a></td></tr>
+<tr class="memdesc:a6a0ff9729c541aa9234c8a68bbc23f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Уникальный строковый идентификатор хранилища внутри домена  <br /></td></tr>
+<tr class="memitem:a3d372a2305fff0533572e6bbf256d98c" id="r_a3d372a2305fff0533572e6bbf256d98c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d372a2305fff0533572e6bbf256d98c">macAddress</a></td></tr>
+<tr class="memdesc:a3d372a2305fff0533572e6bbf256d98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">MAC-адрес устройства хранения данных  <br /></td></tr>
+<tr class="memitem:af888feda3ab312d1c9ad82f6e9e74f4a" id="r_af888feda3ab312d1c9ad82f6e9e74f4a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af888feda3ab312d1c9ad82f6e9e74f4a">totalSizeMB</a></td></tr>
+<tr class="memdesc:af888feda3ab312d1c9ad82f6e9e74f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Общий объём хранилища в мегабайтах  <br /></td></tr>
+<tr class="memitem:a4455291c2f752c3d2f19e472c22cdaba" id="r_a4455291c2f752c3d2f19e472c22cdaba"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4455291c2f752c3d2f19e472c22cdaba">usedSizeMB</a></td></tr>
+<tr class="memdesc:a4455291c2f752c3d2f19e472c22cdaba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Объём используемого пространства в мегабайтах  <br /></td></tr>
+<tr class="memitem:a7ac35d824b3472955780945bd2a8c755" id="r_a7ac35d824b3472955780945bd2a8c755"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ac35d824b3472955780945bd2a8c755">trustedUsers</a></td></tr>
+<tr class="memdesc:a7ac35d824b3472955780945bd2a8c755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Список доверенных пользователей с доступом к хранилищу  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс, представляющий хранилище данных в корпоративной сети компании NetSphere. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a4297941d93bfe90bb6be1fea50e55680" name="a4297941d93bfe90bb6be1fea50e55680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4297941d93bfe90bb6be1fea50e55680">&#9670;&#160;</a></span>DataStorage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataStorage::DataStorage </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>totalSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор класса <a class="el" href="class_data_storage.html" title="Класс, представляющий хранилище данных в корпоративной сети компании NetSphere.">DataStorage</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Уникальный строковый идентификатор хранилища. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>MAC-адрес устройства хранения данных. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">totalSize</td><td>Общий объём хранилища в мегабайтах. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_storage_a4297941d93bfe90bb6be1fea50e55680_icgraph.png" border="0" usemap="#aclass_data_storage_a4297941d93bfe90bb6be1fea50e55680_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="af2b1093344e0c7ea21319a915d6db755" name="af2b1093344e0c7ea21319a915d6db755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2b1093344e0c7ea21319a915d6db755">&#9670;&#160;</a></span>addTrustedUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataStorage::addTrustedUser </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>user</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавляет пользователя в список доверенных. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">user</td><td>Имя пользователя для добавления в список доверенных. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_storage_af2b1093344e0c7ea21319a915d6db755_icgraph.png" border="0" usemap="#aclass_data_storage_af2b1093344e0c7ea21319a915d6db755_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a59e7b31d2d419980ab756f3884c5352b" name="a59e7b31d2d419980ab756f3884c5352b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59e7b31d2d419980ab756f3884c5352b">&#9670;&#160;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string DataStorage::getId </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает идентификатор хранилища. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строковый идентификатор хранилища. </dd></dl>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_storage_a59e7b31d2d419980ab756f3884c5352b_icgraph.png" border="0" usemap="#aclass_data_storage_a59e7b31d2d419980ab756f3884c5352b_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a7bf6f55480766cb1564df4c75788b8d4" name="a7bf6f55480766cb1564df4c75788b8d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bf6f55480766cb1564df4c75788b8d4">&#9670;&#160;</a></span>getMacAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string DataStorage::getMacAddress </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает MAC-адрес хранилища. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>MAC-адрес устройства в строковом формате. </dd></dl>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_storage_a7bf6f55480766cb1564df4c75788b8d4_icgraph.png" border="0" usemap="#aclass_data_storage_a7bf6f55480766cb1564df4c75788b8d4_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a8643e5c1e71d717f249df3daae4b5e8f" name="a8643e5c1e71d717f249df3daae4b5e8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8643e5c1e71d717f249df3daae4b5e8f">&#9670;&#160;</a></span>getTotalSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DataStorage::getTotalSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает общий объём хранилища. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Общий объём хранилища в мегабайтах. </dd></dl>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_storage_a8643e5c1e71d717f249df3daae4b5e8f_icgraph.png" border="0" usemap="#aclass_data_storage_a8643e5c1e71d717f249df3daae4b5e8f_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a3bb1f4ecf9a389d4f77dfe5bc325e7dd" name="a3bb1f4ecf9a389d4f77dfe5bc325e7dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bb1f4ecf9a389d4f77dfe5bc325e7dd">&#9670;&#160;</a></span>getTrustedUsers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; DataStorage::getTrustedUsers </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает список доверенных пользователей. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Копия вектора с именами доверенных пользователей. </dd></dl>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_storage_a3bb1f4ecf9a389d4f77dfe5bc325e7dd_icgraph.png" border="0" usemap="#aclass_data_storage_a3bb1f4ecf9a389d4f77dfe5bc325e7dd_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a9ac4695d108faaa5172b0fcc3d94eaf0" name="a9ac4695d108faaa5172b0fcc3d94eaf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ac4695d108faaa5172b0fcc3d94eaf0">&#9670;&#160;</a></span>getUsedSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DataStorage::getUsedSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает используемый объём хранилища. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Используемый объём хранилища в мегабайтах. </dd></dl>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_storage_a9ac4695d108faaa5172b0fcc3d94eaf0_icgraph.png" border="0" usemap="#aclass_data_storage_a9ac4695d108faaa5172b0fcc3d94eaf0_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a37b6a65ffdc9ca26c8991d28a0da39b4" name="a37b6a65ffdc9ca26c8991d28a0da39b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37b6a65ffdc9ca26c8991d28a0da39b4">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DataStorage::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_data_storage.html">DataStorage</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Оператор проверки на неравенство. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>Ссылка на другой объект <a class="el" href="class_data_storage.html" title="Класс, представляющий хранилище данных в корпоративной сети компании NetSphere.">DataStorage</a> для сравнения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если идентификаторы хранилищ не равны, иначе false. </dd></dl>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_storage_a37b6a65ffdc9ca26c8991d28a0da39b4_cgraph.png" border="0" usemap="#aclass_data_storage_a37b6a65ffdc9ca26c8991d28a0da39b4_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a9773a3b578154d338150d017134e84a7" name="a9773a3b578154d338150d017134e84a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9773a3b578154d338150d017134e84a7">&#9670;&#160;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_data_storage.html">DataStorage</a> &amp; DataStorage::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>additionalSize</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Оператор добавления данных к используемому объёму хранилища. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">additionalSize</td><td>Дополнительный объём данных в мегабайтах. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Ссылка на текущий объект для поддержки цепочки вызовов. </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::overflow_error</td><td>Если добавление данных превысит общий объём хранилища. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_storage_a9773a3b578154d338150d017134e84a7_cgraph.png" border="0" usemap="#aclass_data_storage_a9773a3b578154d338150d017134e84a7_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="af56c38b31ba5528cbd94f73df6db57b3" name="af56c38b31ba5528cbd94f73df6db57b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af56c38b31ba5528cbd94f73df6db57b3">&#9670;&#160;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_data_storage.html">DataStorage</a> &amp; DataStorage::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>sizeToFree</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Оператор освобождения пространства в хранилище. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sizeToFree</td><td>Объём данных для освобождения в мегабайтах. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Ссылка на текущий объект для поддержки цепочки вызовов. </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::underflow_error</td><td>Если пытаемся освободить больше, чем используется. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_storage_af56c38b31ba5528cbd94f73df6db57b3_cgraph.png" border="0" usemap="#aclass_data_storage_af56c38b31ba5528cbd94f73df6db57b3_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="abc374945e99452db1fe68265cf0de3f6" name="abc374945e99452db1fe68265cf0de3f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc374945e99452db1fe68265cf0de3f6">&#9670;&#160;</a></span>operator&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DataStorage::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_data_storage.html">DataStorage</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Оператор "меньше" для сравнения хранилищ по идентификатору. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>Ссылка на другой объект <a class="el" href="class_data_storage.html" title="Класс, представляющий хранилище данных в корпоративной сети компании NetSphere.">DataStorage</a> для сравнения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если идентификатор текущего хранилища меньше идентификатора другого хранилища, иначе false. </dd></dl>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_storage_abc374945e99452db1fe68265cf0de3f6_cgraph.png" border="0" usemap="#aclass_data_storage_abc374945e99452db1fe68265cf0de3f6_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a43ed7eb00599c77d3bff3baa7ad53bf7" name="a43ed7eb00599c77d3bff3baa7ad53bf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43ed7eb00599c77d3bff3baa7ad53bf7">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_data_storage.html">DataStorage</a> &amp; DataStorage::operator= </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>newSize</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Оператор установки нового значения используемого объёма. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">newSize</td><td>Новое значение используемого объёма в мегабайтах. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Ссылка на текущий объект для поддержки цепочки вызовов. </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::overflow_error</td><td>Если новое значение превышает общий объём хранилища. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_storage_a43ed7eb00599c77d3bff3baa7ad53bf7_cgraph.png" border="0" usemap="#aclass_data_storage_a43ed7eb00599c77d3bff3baa7ad53bf7_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a7183d2e50888e1871c9e18df6de7257a" name="a7183d2e50888e1871c9e18df6de7257a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7183d2e50888e1871c9e18df6de7257a">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DataStorage::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_data_storage.html">DataStorage</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Оператор проверки на равенство. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>Ссылка на другой объект <a class="el" href="class_data_storage.html" title="Класс, представляющий хранилище данных в корпоративной сети компании NetSphere.">DataStorage</a> для сравнения. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если идентификаторы хранилищ равны, иначе false. </dd></dl>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_storage_a7183d2e50888e1871c9e18df6de7257a_cgraph.png" border="0" usemap="#aclass_data_storage_a7183d2e50888e1871c9e18df6de7257a_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a4214c4c14f987a6c8866d437a59d3b1e" name="a4214c4c14f987a6c8866d437a59d3b1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4214c4c14f987a6c8866d437a59d3b1e">&#9670;&#160;</a></span>printInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataStorage::printInfo </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выводит информацию о хранилище в человекочитаемом формате. </p>
+<p>Выводит идентификатор, MAC-адрес, информацию об объёмах и список доверенных пользователей. </p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_storage_a4214c4c14f987a6c8866d437a59d3b1e_icgraph.png" border="0" usemap="#aclass_data_storage_a4214c4c14f987a6c8866d437a59d3b1e_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ae72cfd5ddbb8d83cc2ada5e45511fd6f" name="ae72cfd5ddbb8d83cc2ada5e45511fd6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae72cfd5ddbb8d83cc2ada5e45511fd6f">&#9670;&#160;</a></span>removeTrustedUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataStorage::removeTrustedUser </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>user</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Удаляет пользователя из списка доверенных. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">user</td><td>Имя пользователя для удаления из списка доверенных. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_storage_ae72cfd5ddbb8d83cc2ada5e45511fd6f_icgraph.png" border="0" usemap="#aclass_data_storage_ae72cfd5ddbb8d83cc2ada5e45511fd6f_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a6a0ff9729c541aa9234c8a68bbc23f0c" name="a6a0ff9729c541aa9234c8a68bbc23f0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a0ff9729c541aa9234c8a68bbc23f0c">&#9670;&#160;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string DataStorage::id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Уникальный строковый идентификатор хранилища внутри домена </p>
+
+</div>
+</div>
+<a id="a3d372a2305fff0533572e6bbf256d98c" name="a3d372a2305fff0533572e6bbf256d98c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d372a2305fff0533572e6bbf256d98c">&#9670;&#160;</a></span>macAddress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string DataStorage::macAddress</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>MAC-адрес устройства хранения данных </p>
+
+</div>
+</div>
+<a id="af888feda3ab312d1c9ad82f6e9e74f4a" name="af888feda3ab312d1c9ad82f6e9e74f4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af888feda3ab312d1c9ad82f6e9e74f4a">&#9670;&#160;</a></span>totalSizeMB</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DataStorage::totalSizeMB</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Общий объём хранилища в мегабайтах </p>
+
+</div>
+</div>
+<a id="a7ac35d824b3472955780945bd2a8c755" name="a7ac35d824b3472955780945bd2a8c755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ac35d824b3472955780945bd2a8c755">&#9670;&#160;</a></span>trustedUsers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; DataStorage::trustedUsers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Список доверенных пользователей с доступом к хранилищу </p>
+
+</div>
+</div>
+<a id="a4455291c2f752c3d2f19e472c22cdaba" name="a4455291c2f752c3d2f19e472c22cdaba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4455291c2f752c3d2f19e472c22cdaba">&#9670;&#160;</a></span>usedSizeMB</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DataStorage::usedSizeMB</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Объём используемого пространства в мегабайтах </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>src/NetSphere/<a class="el" href="_data_storage_8h_source.html">DataStorage.h</a></li>
+<li>src/NetSphere/<a class="el" href="_data_storage_8cpp.html">DataStorage.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_data_storage.html">DataStorage</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

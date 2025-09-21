@@ -1,0 +1,82 @@
+# Временные файлы Visual Studio
+[Bb]in/
+[Oo]bj/
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.VC.opendb
+.vs/
+
+# Папки сборки
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+arm64/
+bld/
+[Bb]inaries/
+
+# Файлы пакетов NuGet
+packages/
+*.nupkg
+NuGet.exe
+
+# Файлы резервных копий
+*.backup
+*.tmp
+
+# Файлы операционной системы
+Thumbs.db
+.DS_Store
+
+# Исключения
+!*.sln
+!**/*.vcxproj
+!**/*.vcxproj.filters
+!**/*.h
+!**/*.cpp
+!**/*.hpp
+!*.md
+!*.txt
+!*.gitignore
+!Doxyfile
+!mainpage.h
+!README.md
+
+# Документация
+!docs/
+!docs/html/
+!docs/html/**
+!docs/latex/
+!docs/latex/**
+!docs/rtf/
+!docs/rtf/**
+!docs/xml/
+!docs/xml/**
+
+# Служебные файлы документации
+docs/*.tmp
+docs/*.log
+
+# Конфигурационные файлы NuGet
+!packages.config
+!**/packages.config

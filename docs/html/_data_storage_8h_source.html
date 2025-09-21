@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NetSphere: Исходный файл src/NetSphere/DataStorage.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">NetSphere<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Система управления корпоративной сетью компании</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_data_storage_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">DataStorage.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_data_storage_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;compare&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_data_storage.html">   24</a></span><span class="keyword">class </span><a class="code hl_function" href="class_data_storage.html#a4297941d93bfe90bb6be1fea50e55680">DataStorage</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_data_storage.html#a6a0ff9729c541aa9234c8a68bbc23f0c">   26</a></span>    std::string <a class="code hl_variable" href="class_data_storage.html#a6a0ff9729c541aa9234c8a68bbc23f0c">id</a>;                         </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_data_storage.html#a3d372a2305fff0533572e6bbf256d98c">   27</a></span>    std::string <a class="code hl_variable" href="class_data_storage.html#a3d372a2305fff0533572e6bbf256d98c">macAddress</a>;                 </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_data_storage.html#af888feda3ab312d1c9ad82f6e9e74f4a">   28</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_data_storage.html#af888feda3ab312d1c9ad82f6e9e74f4a">totalSizeMB</a>;                     </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_data_storage.html#a4455291c2f752c3d2f19e472c22cdaba">   29</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_data_storage.html#a4455291c2f752c3d2f19e472c22cdaba">usedSizeMB</a>;                      </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_data_storage.html#a7ac35d824b3472955780945bd2a8c755">   30</a></span>    std::vector&lt;std::string&gt; <a class="code hl_variable" href="class_data_storage.html#a7ac35d824b3472955780945bd2a8c755">trustedUsers</a>;  </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_function" href="class_data_storage.html#a4297941d93bfe90bb6be1fea50e55680">DataStorage</a>(<span class="keyword">const</span> std::string&amp; <span class="keywordtype">id</span>, <span class="keyword">const</span> std::string&amp; mac, <span class="keywordtype">double</span> totalSize);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="class_data_storage.html#a4297941d93bfe90bb6be1fea50e55680">DataStorage</a>&amp; <a class="code hl_function" href="class_data_storage.html#a9773a3b578154d338150d017134e84a7">operator+=</a>(<span class="keywordtype">double</span> additionalSize);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_function" href="class_data_storage.html#a4297941d93bfe90bb6be1fea50e55680">DataStorage</a>&amp; <a class="code hl_function" href="class_data_storage.html#af56c38b31ba5528cbd94f73df6db57b3">operator-=</a>(<span class="keywordtype">double</span> sizeToFree);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="class_data_storage.html#a4297941d93bfe90bb6be1fea50e55680">DataStorage</a>&amp; <a class="code hl_function" href="class_data_storage.html#a43ed7eb00599c77d3bff3baa7ad53bf7">operator=</a>(<span class="keywordtype">double</span> newSize);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_data_storage.html#abc374945e99452db1fe68265cf0de3f6">operator&lt;</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_data_storage.html#a4297941d93bfe90bb6be1fea50e55680">DataStorage</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_data_storage.html#a7183d2e50888e1871c9e18df6de7257a">operator==</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_data_storage.html#a4297941d93bfe90bb6be1fea50e55680">DataStorage</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_data_storage.html#a37b6a65ffdc9ca26c8991d28a0da39b4">operator!=</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_data_storage.html#a4297941d93bfe90bb6be1fea50e55680">DataStorage</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_data_storage.html#af2b1093344e0c7ea21319a915d6db755">addTrustedUser</a>(<span class="keyword">const</span> std::string&amp; user);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_data_storage.html#ae72cfd5ddbb8d83cc2ada5e45511fd6f">removeTrustedUser</a>(<span class="keyword">const</span> std::string&amp; user);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    std::string <a class="code hl_function" href="class_data_storage.html#a59e7b31d2d419980ab756f3884c5352b">getId</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::string <a class="code hl_function" href="class_data_storage.html#a7bf6f55480766cb1564df4c75788b8d4">getMacAddress</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_data_storage.html#a8643e5c1e71d717f249df3daae4b5e8f">getTotalSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_data_storage.html#a9ac4695d108faaa5172b0fcc3d94eaf0">getUsedSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::vector&lt;std::string&gt; <a class="code hl_function" href="class_data_storage.html#a3bb1f4ecf9a389d4f77dfe5bc325e7dd">getTrustedUsers</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_data_storage.html#a4214c4c14f987a6c8866d437a59d3b1e">printInfo</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> <span class="comment">// Конец группы storage_module</span></div>
+<div class="ttc" id="aclass_data_storage_html_a37b6a65ffdc9ca26c8991d28a0da39b4"><div class="ttname"><a href="class_data_storage.html#a37b6a65ffdc9ca26c8991d28a0da39b4">DataStorage::operator!=</a></div><div class="ttdeci">bool operator!=(const DataStorage &amp;other) const</div><div class="ttdoc">Оператор проверки на неравенство.</div><div class="ttdef"><b>Определения</b> DataStorage.cpp:84</div></div>
+<div class="ttc" id="aclass_data_storage_html_a3bb1f4ecf9a389d4f77dfe5bc325e7dd"><div class="ttname"><a href="class_data_storage.html#a3bb1f4ecf9a389d4f77dfe5bc325e7dd">DataStorage::getTrustedUsers</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getTrustedUsers() const</div><div class="ttdoc">Возвращает список доверенных пользователей.</div><div class="ttdef"><b>Определения</b> DataStorage.cpp:143</div></div>
+<div class="ttc" id="aclass_data_storage_html_a3d372a2305fff0533572e6bbf256d98c"><div class="ttname"><a href="class_data_storage.html#a3d372a2305fff0533572e6bbf256d98c">DataStorage::macAddress</a></div><div class="ttdeci">std::string macAddress</div><div class="ttdoc">MAC-адрес устройства хранения данных</div><div class="ttdef"><b>Определения</b> DataStorage.h:27</div></div>
+<div class="ttc" id="aclass_data_storage_html_a4214c4c14f987a6c8866d437a59d3b1e"><div class="ttname"><a href="class_data_storage.html#a4214c4c14f987a6c8866d437a59d3b1e">DataStorage::printInfo</a></div><div class="ttdeci">void printInfo() const</div><div class="ttdoc">Выводит информацию о хранилище в человекочитаемом формате.</div><div class="ttdef"><b>Определения</b> DataStorage.cpp:152</div></div>
+<div class="ttc" id="aclass_data_storage_html_a4297941d93bfe90bb6be1fea50e55680"><div class="ttname"><a href="class_data_storage.html#a4297941d93bfe90bb6be1fea50e55680">DataStorage::DataStorage</a></div><div class="ttdeci">DataStorage(const std::string &amp;id, const std::string &amp;mac, double totalSize)</div><div class="ttdoc">Конструктор класса DataStorage.</div><div class="ttdef"><b>Определения</b> DataStorage.cpp:15</div></div>
+<div class="ttc" id="aclass_data_storage_html_a43ed7eb00599c77d3bff3baa7ad53bf7"><div class="ttname"><a href="class_data_storage.html#a43ed7eb00599c77d3bff3baa7ad53bf7">DataStorage::operator=</a></div><div class="ttdeci">DataStorage &amp; operator=(double newSize)</div><div class="ttdoc">Оператор установки нового значения используемого объёма.</div><div class="ttdef"><b>Определения</b> DataStorage.cpp:53</div></div>
+<div class="ttc" id="aclass_data_storage_html_a4455291c2f752c3d2f19e472c22cdaba"><div class="ttname"><a href="class_data_storage.html#a4455291c2f752c3d2f19e472c22cdaba">DataStorage::usedSizeMB</a></div><div class="ttdeci">double usedSizeMB</div><div class="ttdoc">Объём используемого пространства в мегабайтах</div><div class="ttdef"><b>Определения</b> DataStorage.h:29</div></div>
+<div class="ttc" id="aclass_data_storage_html_a59e7b31d2d419980ab756f3884c5352b"><div class="ttname"><a href="class_data_storage.html#a59e7b31d2d419980ab756f3884c5352b">DataStorage::getId</a></div><div class="ttdeci">std::string getId() const</div><div class="ttdoc">Возвращает идентификатор хранилища.</div><div class="ttdef"><b>Определения</b> DataStorage.cpp:111</div></div>
+<div class="ttc" id="aclass_data_storage_html_a6a0ff9729c541aa9234c8a68bbc23f0c"><div class="ttname"><a href="class_data_storage.html#a6a0ff9729c541aa9234c8a68bbc23f0c">DataStorage::id</a></div><div class="ttdeci">std::string id</div><div class="ttdoc">Уникальный строковый идентификатор хранилища внутри домена</div><div class="ttdef"><b>Определения</b> DataStorage.h:26</div></div>
+<div class="ttc" id="aclass_data_storage_html_a7183d2e50888e1871c9e18df6de7257a"><div class="ttname"><a href="class_data_storage.html#a7183d2e50888e1871c9e18df6de7257a">DataStorage::operator==</a></div><div class="ttdeci">bool operator==(const DataStorage &amp;other) const</div><div class="ttdoc">Оператор проверки на равенство.</div><div class="ttdef"><b>Определения</b> DataStorage.cpp:75</div></div>
+<div class="ttc" id="aclass_data_storage_html_a7ac35d824b3472955780945bd2a8c755"><div class="ttname"><a href="class_data_storage.html#a7ac35d824b3472955780945bd2a8c755">DataStorage::trustedUsers</a></div><div class="ttdeci">std::vector&lt; std::string &gt; trustedUsers</div><div class="ttdoc">Список доверенных пользователей с доступом к хранилищу</div><div class="ttdef"><b>Определения</b> DataStorage.h:30</div></div>
+<div class="ttc" id="aclass_data_storage_html_a7bf6f55480766cb1564df4c75788b8d4"><div class="ttname"><a href="class_data_storage.html#a7bf6f55480766cb1564df4c75788b8d4">DataStorage::getMacAddress</a></div><div class="ttdeci">std::string getMacAddress() const</div><div class="ttdoc">Возвращает MAC-адрес хранилища.</div><div class="ttdef"><b>Определения</b> DataStorage.cpp:119</div></div>
+<div class="ttc" id="aclass_data_storage_html_a8643e5c1e71d717f249df3daae4b5e8f"><div class="ttname"><a href="class_data_storage.html#a8643e5c1e71d717f249df3daae4b5e8f">DataStorage::getTotalSize</a></div><div class="ttdeci">double getTotalSize() const</div><div class="ttdoc">Возвращает общий объём хранилища.</div><div class="ttdef"><b>Определения</b> DataStorage.cpp:127</div></div>
+<div class="ttc" id="aclass_data_storage_html_a9773a3b578154d338150d017134e84a7"><div class="ttname"><a href="class_data_storage.html#a9773a3b578154d338150d017134e84a7">DataStorage::operator+=</a></div><div class="ttdeci">DataStorage &amp; operator+=(double additionalSize)</div><div class="ttdoc">Оператор добавления данных к используемому объёму хранилища.</div><div class="ttdef"><b>Определения</b> DataStorage.cpp:25</div></div>
+<div class="ttc" id="aclass_data_storage_html_a9ac4695d108faaa5172b0fcc3d94eaf0"><div class="ttname"><a href="class_data_storage.html#a9ac4695d108faaa5172b0fcc3d94eaf0">DataStorage::getUsedSize</a></div><div class="ttdeci">double getUsedSize() const</div><div class="ttdoc">Возвращает используемый объём хранилища.</div><div class="ttdef"><b>Определения</b> DataStorage.cpp:135</div></div>
+<div class="ttc" id="aclass_data_storage_html_abc374945e99452db1fe68265cf0de3f6"><div class="ttname"><a href="class_data_storage.html#abc374945e99452db1fe68265cf0de3f6">DataStorage::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const DataStorage &amp;other) const</div><div class="ttdoc">Оператор &quot;меньше&quot; для сравнения хранилищ по идентификатору.</div><div class="ttdef"><b>Определения</b> DataStorage.cpp:66</div></div>
+<div class="ttc" id="aclass_data_storage_html_ae72cfd5ddbb8d83cc2ada5e45511fd6f"><div class="ttname"><a href="class_data_storage.html#ae72cfd5ddbb8d83cc2ada5e45511fd6f">DataStorage::removeTrustedUser</a></div><div class="ttdeci">void removeTrustedUser(const std::string &amp;user)</div><div class="ttdoc">Удаляет пользователя из списка доверенных.</div><div class="ttdef"><b>Определения</b> DataStorage.cpp:100</div></div>
+<div class="ttc" id="aclass_data_storage_html_af2b1093344e0c7ea21319a915d6db755"><div class="ttname"><a href="class_data_storage.html#af2b1093344e0c7ea21319a915d6db755">DataStorage::addTrustedUser</a></div><div class="ttdeci">void addTrustedUser(const std::string &amp;user)</div><div class="ttdoc">Добавляет пользователя в список доверенных.</div><div class="ttdef"><b>Определения</b> DataStorage.cpp:92</div></div>
+<div class="ttc" id="aclass_data_storage_html_af56c38b31ba5528cbd94f73df6db57b3"><div class="ttname"><a href="class_data_storage.html#af56c38b31ba5528cbd94f73df6db57b3">DataStorage::operator-=</a></div><div class="ttdeci">DataStorage &amp; operator-=(double sizeToFree)</div><div class="ttdoc">Оператор освобождения пространства в хранилище.</div><div class="ttdef"><b>Определения</b> DataStorage.cpp:39</div></div>
+<div class="ttc" id="aclass_data_storage_html_af888feda3ab312d1c9ad82f6e9e74f4a"><div class="ttname"><a href="class_data_storage.html#af888feda3ab312d1c9ad82f6e9e74f4a">DataStorage::totalSizeMB</a></div><div class="ttdeci">double totalSizeMB</div><div class="ttdoc">Общий объём хранилища в мегабайтах</div><div class="ttdef"><b>Определения</b> DataStorage.h:28</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_fa489250556ace7d99b2ab364cf809dd.html">NetSphere</a></li><li class="navelem"><a href="_data_storage_8h.html">DataStorage.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>
