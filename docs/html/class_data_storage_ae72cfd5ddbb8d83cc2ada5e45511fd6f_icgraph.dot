@@ -7,5 +7,7 @@ digraph "DataStorage::removeTrustedUser"
   rankdir="RL";
   Node1 [id="Node000001",label="DataStorage::removeTrustedUser",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Удаляет пользователя из списка доверенных."];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__tests__module.html#gac8e18d84c408397a1f0a29566129c091",tooltip=" "];
+  Node2 [id="Node000002",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__storage__error__tests.html#gafaf9c986883a283bb6a833811c2a4578",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__storage__tests.html#gac8e18d84c408397a1f0a29566129c091",tooltip=" "];
 }

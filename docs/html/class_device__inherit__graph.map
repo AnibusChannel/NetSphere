@@ -1,0 +1,11 @@
+<map id="Device" name="Device">
+<area shape="rect" id="Node000001" title="Абстрактный базовый класс для всех устройств корпоративной сети." alt="" coords="145,208,288,363"/>
+<area shape="rect" id="Node000003" href="$class_data_storage.html" title="Класс, представляющий хранилище данных в корпоративной сети компании NetSphere." alt="" coords="5,411,152,757"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="177,377,155,426,150,424,172,375"/>
+<area shape="rect" id="Node000004" href="$class_printer.html" title="Класс, представляющий сетевой принтер в корпоративной сети." alt="" coords="177,528,256,640"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="219,377,219,528,214,528,214,377"/>
+<area shape="rect" id="Node000005" href="$class_workstation.html" title="Класс, представляющий рабочую станцию пользователя в корпоративной сети." alt="" coords="280,475,438,693"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="262,375,309,474,305,476,257,377"/>
+<area shape="rect" id="Node000002" href="$class_network_entity.html" title="Абстрактный базовый класс для всех сущностей корпоративной сети." alt="" coords="155,5,278,160"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,175,219,208,214,208,214,175"/>
+</map>

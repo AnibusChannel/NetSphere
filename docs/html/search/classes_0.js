@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['datastorage_0',['DataStorage',['../class_data_storage.html',1,'']]]
+  ['accessdeniedexception_0',['AccessDeniedException',['../class_access_denied_exception.html',1,'']]]
 ];

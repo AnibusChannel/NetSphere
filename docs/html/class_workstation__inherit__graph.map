@@ -1,0 +1,7 @@
+<map id="Workstation" name="Workstation">
+<area shape="rect" id="Node000001" title="Класс, представляющий рабочую станцию пользователя в корпоративной сети." alt="" coords="5,411,163,629"/>
+<area shape="rect" id="Node000002" href="$class_device.html" title="Абстрактный базовый класс для всех устройств корпоративной сети." alt="" coords="13,208,156,363"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,378,87,411,82,411,82,378"/>
+<area shape="rect" id="Node000003" href="$class_network_entity.html" title="Абстрактный базовый класс для всех сущностей корпоративной сети." alt="" coords="23,5,146,160"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,175,87,208,82,208,82,175"/>
+</map>

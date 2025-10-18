@@ -11,7 +11,13 @@ digraph "DataStorage::addTrustedUser"
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4",tooltip="Главная функция приложения NetSphere."];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__tests__module.html#gaf86bae78b5ee658997a35b6019c43be8",tooltip=" "];
+  Node4 [id="Node000004",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__storage__error__tests.html#ga4284f04298e3bd3878be5bad0c350ca4",tooltip=" "];
   Node1 -> Node5 [id="edge4_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__tests__module.html#gac8e18d84c408397a1f0a29566129c091",tooltip=" "];
+  Node5 [id="Node000005",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__storage__error__tests.html#gab1815958d82fca95d53f670c55e899f5",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__storage__error__tests.html#gafaf9c986883a283bb6a833811c2a4578",tooltip=" "];
+  Node1 -> Node7 [id="edge6_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__storage__tests.html#gaf86bae78b5ee658997a35b6019c43be8",tooltip=" "];
+  Node1 -> Node8 [id="edge7_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__storage__tests.html#gac8e18d84c408397a1f0a29566129c091",tooltip=" "];
 }

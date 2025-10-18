@@ -1,0 +1,19 @@
+<map id="src/NetSphere/Workstation.h" name="src/NetSphere/Workstation.h">
+<area shape="rect" id="Node000001" title="Заголовочный файл класса Workstation &#45; рабочей станции пользователя." alt="" coords="755,5,944,32"/>
+<area shape="rect" id="Node000002" href="$_workstation_8cpp.html" title="Реализация класса Workstation &#45; рабочей станции пользователя." alt="" coords="5,88,209,115"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="739,31,501,51,221,83,174,90,173,85,220,77,500,46,739,25"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="Главная функция приложения NetSphere." alt="" coords="232,88,395,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="740,35,582,56,407,83,370,90,369,85,407,77,581,50,739,30"/>
+<area shape="rect" id="Node000004" href="$_corporate_network_error_tests_8cpp.html" title="Тесты для обработки ошибок в классе CorporateNetwork." alt="" coords="419,80,635,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="785,39,611,82,609,77,784,34"/>
+<area shape="rect" id="Node000005" href="$_corporate_network_tests_8cpp.html" title="Тесты для класса CorporateNetwork проекта NetSphere." alt="" coords="660,80,848,123"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="825,44,780,82,777,77,822,40"/>
+<area shape="rect" id="Node000006" href="$_device_tests_8cpp.html" title="Тесты для базового класса Device и его наследников." alt="" coords="872,80,1020,123"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="878,40,923,77,919,82,874,44"/>
+<area shape="rect" id="Node000007" href="$_domain_error_tests_8cpp.html" title="Тесты для обработки ошибок в классе Domain." alt="" coords="1044,80,1199,123"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="907,34,1052,77,1051,82,906,39"/>
+<area shape="rect" id="Node000008" href="$_domain_tests_8cpp.html" title="Тесты для класса Domain проекта NetSphere." alt="" coords="1224,80,1372,123"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="951,32,1211,77,1224,80,1223,85,1211,83,950,38"/>
+<area shape="rect" id="Node000009" href="$_workstation_printer_tests_8cpp.html" title="Тесты для классов Workstation и Printer." alt="" coords="1396,80,1586,123"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="960,27,1158,48,1385,77,1396,79,1395,84,1384,83,1157,53,959,33"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="src/NetSphere/Domain.h" name="src/NetSphere/Domain.h">
+<area shape="rect" id="Node000001" title="Заголовочный файл класса Domain &#45; домена корпоративной сети." alt="" coords="129,5,294,32"/>
+<area shape="rect" id="Node000002" href="$_network_entity_8h.html" title="Заголовочный файл базового класса NetworkEntity для всех сущностей сети." alt="" coords="77,80,191,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,34,160,71,157,67,196,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,155,74,181"/>
+<area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="149,35,105,53,85,66,67,82,51,110,44,140,39,139,46,108,63,78,81,62,103,48,147,30"/>
+<area shape="rect" id="Node000006" href="$_network_exceptions_8h.html" title="Заголовочный файл с классами исключений для корпоративной сети." alt="" coords="216,80,362,107"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="227,31,266,67,263,71,223,34"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="386,80,496,107"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="252,30,387,72,385,77,251,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="97,155,168,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="137,107,136,139,131,139,131,107"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="193,155,246,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="151,105,195,143,192,147,147,109"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="119,109,70,147,66,143,116,105"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="279,109,244,145,240,141,275,105"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="270,155,348,181"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="295,106,304,139,299,141,290,108"/>
+</map>

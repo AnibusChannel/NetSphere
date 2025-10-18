@@ -5,12 +5,9 @@
 
 #pragma once
 
-#include <iostream>
-#include <string>
+#include "Device.h"
 #include <vector>
 #include <compare>
-#include <stdexcept>
-
 
  /**
   * @defgroup storage_module Модуль хранилищ данных
@@ -18,16 +15,28 @@
   * @{
   */
 
- /**
-  * @brief Класс, представляющий хранилище данных в корпоративной сети компании NetSphere.
-  */
-class DataStorage {
+  /**
+   * @brief Класс, представляющий хранилище данных в корпоративной сети компании NetSphere.
+   */
+class DataStorage : public Device {
 private:
-    std::string id;                         ///< Уникальный строковый идентификатор хранилища внутри домена
-    std::string macAddress;                 ///< MAC-адрес устройства хранения данных
     double totalSizeMB;                     ///< Общий объём хранилища в мегабайтах
     double usedSizeMB;                      ///< Объём используемого пространства в мегабайтах
     std::vector<std::string> trustedUsers;  ///< Список доверенных пользователей с доступом к хранилищу
+
+    /**
+     * @brief Проверяет валидность размера хранилища.
+     * @param[in] size Размер для проверки.
+     * @throw ValidationException Если размер невалиден.
+     */
+    static void validateSize(double size) {
+        if (size <= 0) {
+            throw ValidationException("Размер хранилища должен быть положительным числом");
+        }
+        if (size > 1e6) { // 1 Петабайт
+            throw ValidationException("Слишком большой размер хранилища (максимум 1 ПБ)");
+        }
+    }
 
 public:
     DataStorage(const std::string& id, const std::string& mac, double totalSize);
@@ -42,14 +51,15 @@ public:
 
     void addTrustedUser(const std::string& user);
     void removeTrustedUser(const std::string& user);
+    bool isUserTrusted(const std::string& user) const;
 
-    std::string getId() const;
-    std::string getMacAddress() const;
     double getTotalSize() const;
     double getUsedSize() const;
-    std::vector<std::string> getTrustedUsers() const;
+    double getFreeSize() const;
+    const std::vector<std::string>& getTrustedUsers() const;
 
-    void printInfo() const;
+    void printInfo() const override;
+    std::string getType() const override;
 };
 
 /** @} */ // Конец группы storage_module

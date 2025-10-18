@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['printinfo_0',['printInfo',['../class_data_storage.html#a4214c4c14f987a6c8866d437a59d3b1e',1,'DataStorage']]]
+  ['lastpowerontime_0',['lastPowerOnTime',['../class_workstation.html#a0b74d3c4818e39211e7fba3a96d62733',1,'Workstation']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['macaddress_0',['macAddress',['../class_data_storage.html#a3d372a2305fff0533572e6bbf256d98c',1,'DataStorage']]]
+  ['entities_0',['entities',['../class_domain.html#ad580e9f69419cfdeed88b451747643d0',1,'Domain']]]
 ];

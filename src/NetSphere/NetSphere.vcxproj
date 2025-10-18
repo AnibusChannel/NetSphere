@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -124,11 +124,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CorporateNetwork.cpp" />
     <ClCompile Include="DataStorage.cpp" />
+    <ClCompile Include="Domain.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Printer.cpp" />
+    <ClCompile Include="Workstation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CorporateNetwork.h" />
     <ClInclude Include="DataStorage.h" />
+    <ClInclude Include="Device.h" />
+    <ClInclude Include="Domain.h" />
+    <ClInclude Include="NetworkExceptions.h" />
+    <ClInclude Include="NetworkEntity.h" />
+    <ClInclude Include="Printer.h" />
+    <ClInclude Include="Workstation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

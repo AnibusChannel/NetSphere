@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['test_0',['TEST',['../group__tests__module.html#ga8bc11a54c007696cc837214153600aa6',1,'TEST(DataStorageTest, ConstructorAndGetters):&#160;DataStorageTests.cpp'],['../group__tests__module.html#ga931068fb57cb3bdc2583670c0f0bedb8',1,'TEST(DataStorageTest, AdditionOperator):&#160;DataStorageTests.cpp'],['../group__tests__module.html#ga80a92fac73434462db0e133a98c2a37a',1,'TEST(DataStorageTest, SubtractionOperator):&#160;DataStorageTests.cpp'],['../group__tests__module.html#ga8ae0274bbee926f618960d1a954d1cca',1,'TEST(DataStorageTest, AssignmentOperator):&#160;DataStorageTests.cpp'],['../group__tests__module.html#gad31d3e03ee127be3e7905d6e3d242117',1,'TEST(DataStorageTest, ComparisonOperators):&#160;DataStorageTests.cpp'],['../group__tests__module.html#gac8e18d84c408397a1f0a29566129c091',1,'TEST(DataStorageTest, TrustedUsers):&#160;DataStorageTests.cpp'],['../group__tests__module.html#gaf86bae78b5ee658997a35b6019c43be8',1,'TEST(DataStorageTest, PrintInfoNoCrash):&#160;DataStorageTests.cpp']]]
+  ['networkentity_0',['NetworkEntity',['../class_network_entity.html#a79cc1ce37d7a9dfbca79f4112785c17e',1,'NetworkEntity']]],
+  ['networkexception_1',['NetworkException',['../class_network_exception.html#aef0219d5da0b7dc29ef06daba7d942d9',1,'NetworkException']]]
 ];

@@ -133,8 +133,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\NetSphere\CorporateNetwork.cpp" />
     <ClCompile Include="..\..\src\NetSphere\DataStorage.cpp" />
+    <ClCompile Include="..\..\src\NetSphere\Domain.cpp" />
+    <ClCompile Include="..\..\src\NetSphere\Printer.cpp" />
+    <ClCompile Include="..\..\src\NetSphere\Workstation.cpp" />
+    <ClCompile Include="CorporateNetworkErrorTests.cpp" />
+    <ClCompile Include="CorporateNetworkTests.cpp" />
+    <ClCompile Include="DataStorageErrorTests.cpp" />
     <ClCompile Include="DataStorageTests.cpp" />
+    <ClCompile Include="DeviceTests.cpp" />
+    <ClCompile Include="DomainErrorTests.cpp" />
+    <ClCompile Include="DomainTests.cpp" />
+    <ClCompile Include="NetworkExceptionsTests.cpp" />
+    <ClCompile Include="WorkstationPrinterTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,0 +1,5 @@
+<map id="Domain" name="Domain">
+<area shape="rect" id="Node000001" title="Класс, представляющий домен в корпоративной сети." alt="" coords="5,208,147,533"/>
+<area shape="rect" id="Node000002" href="$class_network_entity.html" title="Абстрактный базовый класс для всех сущностей корпоративной сети." alt="" coords="15,5,138,160"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,175,79,208,74,208,74,175"/>
+</map>

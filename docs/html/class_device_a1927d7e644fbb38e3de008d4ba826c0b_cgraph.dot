@@ -1,0 +1,15 @@
+digraph "Device::Device"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="Device::Device",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Конструктор базового класса Device."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Device::isValidMacAddress",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_device.html#a0916b594b81f03040fdfcb02631a2fb9",tooltip="Проверяет валидность MAC-адреса."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="NetworkEntity::NetworkEntity",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_network_entity.html#a79cc1ce37d7a9dfbca79f4112785c17e",tooltip="Конструктор базового класса NetworkEntity."];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Device::validateId",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_device.html#a42390883982aef1600a3b271704c7c2c",tooltip="Проверяет валидность идентификатора устройства."];
+}

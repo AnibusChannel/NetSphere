@@ -1,0 +1,5 @@
+<map id="NetworkException" name="NetworkException">
+<area shape="rect" id="Node000001" title="Базовый класс исключений для сетевых операций." alt="" coords="5,123,144,192"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="18,5,131,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,90,78,123,72,123,72,90"/>
+</map>

@@ -1,0 +1,28 @@
+<map id="src/NetSphere/CorporateNetwork.cpp" name="src/NetSphere/CorporateNetwork.cpp">
+<area shape="rect" id="Node000001" title="Реализация класса CorporateNetwork &#45; корпоративной сети." alt="" coords="5,5,246,32"/>
+<area shape="rect" id="Node000002" href="$_corporate_network_8h.html" title="Заголовочный файл класса CorporateNetwork &#45; корпоративной сети." alt="" coords="214,80,352,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,30,243,71,240,75,152,35"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="151,304,222,331"/>
+<area shape="poly" id="edge16_Node000001_Node000005" title=" " alt="" coords="116,34,83,73,48,130,35,162,28,194,30,225,42,254,56,266,79,278,137,299,135,304,77,283,53,271,38,258,25,227,23,194,30,161,43,128,79,70,112,31"/>
+<area shape="rect" id="Node000003" href="$_domain_8h.html" title="Заголовочный файл класса Domain &#45; домена корпоративной сети." alt="" coords="292,155,370,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="293,106,316,140,312,143,289,109"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="247,304,300,331"/>
+<area shape="poly" id="edge15_Node000002_Node000006" title=" " alt="" coords="282,108,268,171,264,213,264,256,270,288,264,289,259,256,258,213,263,170,277,107"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="391,304,460,331"/>
+<area shape="poly" id="edge14_Node000002_Node000007" title=" " alt="" coords="353,101,413,116,477,140,509,156,538,176,565,200,586,228,593,245,590,261,579,274,563,285,521,301,475,311,474,306,519,296,560,280,576,270,585,258,588,246,582,231,561,204,535,180,506,161,475,145,411,121,352,106"/>
+<area shape="rect" id="Node000008" href="$_network_exceptions_8h.html" title="Заголовочный файл с классами исключений для корпоративной сети." alt="" coords="52,229,199,256"/>
+<area shape="poly" id="edge12_Node000002_Node000008" title=" " alt="" coords="271,109,219,157,151,221,148,217,216,153,267,105"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="462,229,573,256"/>
+<area shape="poly" id="edge13_Node000002_Node000010" title=" " alt="" coords="305,105,383,152,487,218,484,223,380,157,302,109"/>
+<area shape="rect" id="Node000004" href="$_network_entity_8h.html" title="Заголовочный файл базового класса NetworkEntity для всех сущностей сети." alt="" coords="274,229,388,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="334,182,334,214,328,214,328,182"/>
+<area shape="poly" id="edge11_Node000003_Node000007" title=" " alt="" coords="352,180,378,200,402,228,417,258,424,289,419,290,412,260,398,231,375,204,349,184"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="296,184,176,226,175,221,294,179"/>
+<area shape="poly" id="edge10_Node000003_Node000010" title=" " alt="" coords="364,179,472,221,470,226,362,184"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="307,259,227,299,225,294,305,254"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="323,258,295,293,291,290,319,255"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="349,254,399,292,395,297,346,259"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="152,254,235,294,233,299,150,259"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="49,304,127,331"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="121,258,104,292,99,289,117,255"/>
+</map>

@@ -9,5 +9,9 @@ digraph "demonstrateDataStorage"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="DataStorage::addTrustedUser",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_data_storage.html#af2b1093344e0c7ea21319a915d6db755",tooltip="Добавляет пользователя в список доверенных."];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="DataStorage::printInfo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_data_storage.html#a4214c4c14f987a6c8866d437a59d3b1e",tooltip="Выводит информацию о хранилище в человекочитаемом формате."];
+  Node3 [id="Node000003",label="DataStorage::printInfo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_data_storage.html#a22d48113da88133b5a8a30300a5a97db",tooltip="Выводит информацию о хранилище в человекочитаемом формате."];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="NetworkEntity::getId",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_network_entity.html#aebf4ef347e0f3355bc969520eecb100a",tooltip="Возвращает идентификатор сущности."];
+  Node3 -> Node5 [id="edge4_Node000003_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Device::getMacAddress",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_device.html#af72cbe72b48a19c95899eb5a538a99d9",tooltip="Возвращает MAC-адрес устройства."];
 }

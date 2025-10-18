@@ -1,0 +1,25 @@
+<map id="src/NetSphere/CorporateNetwork.h" name="src/NetSphere/CorporateNetwork.h">
+<area shape="rect" id="Node000001" title="Заголовочный файл класса CorporateNetwork &#45; корпоративной сети." alt="" coords="199,5,425,32"/>
+<area shape="rect" id="Node000002" href="$_domain_8h.html" title="Заголовочный файл класса Domain &#45; домена корпоративной сети." alt="" coords="273,80,350,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="314,33,314,64,309,64,309,33"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="162,229,216,256"/>
+<area shape="poly" id="edge14_Node000001_Node000005" title=" " alt="" coords="302,34,260,85,237,119,217,156,198,215,192,214,212,154,232,116,256,82,298,31"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="344,229,413,256"/>
+<area shape="poly" id="edge13_Node000001_Node000006" title=" " alt="" coords="359,30,405,47,455,73,502,108,523,129,540,153,545,171,542,187,531,200,515,211,473,227,429,237,428,232,472,222,512,206,527,196,537,184,540,171,535,156,519,132,499,112,452,77,402,52,357,35"/>
+<area shape="rect" id="Node000007" href="$_network_exceptions_8h.html" title="Заголовочный файл с классами исключений для корпоративной сети." alt="" coords="5,155,152,181"/>
+<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="273,35,223,55,172,82,133,113,101,145,97,141,129,109,169,78,221,50,271,30"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="415,155,526,181"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="327,31,448,142,444,146,324,34"/>
+<area shape="rect" id="Node000003" href="$_network_entity_8h.html" title="Заголовочный файл базового класса NetworkEntity для всех сущностей сети." alt="" coords="227,155,341,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="309,108,297,141,292,139,304,106"/>
+<area shape="poly" id="edge10_Node000002_Node000006" title=" " alt="" coords="325,106,356,154,375,213,370,215,351,156,320,109"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="274,109,134,152,133,147,272,104"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="341,105,430,145,428,150,338,110"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="248,229,320,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="286,182,286,214,281,214,281,182"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="269,184,219,222,216,218,266,180"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="302,180,352,218,348,222,299,184"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="99,180,159,218,156,223,96,184"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="39,229,118,256"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="81,182,81,214,76,214,76,182"/>
+</map>

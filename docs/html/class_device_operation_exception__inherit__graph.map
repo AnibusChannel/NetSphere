@@ -1,0 +1,7 @@
+<map id="DeviceOperationException" name="DeviceOperationException">
+<area shape="rect" id="Node000001" title="Исключение для ошибок при операциях с устройствами." alt="" coords="5,240,192,309"/>
+<area shape="rect" id="Node000002" href="$class_network_exception.html" title="Базовый класс исключений для сетевых операций." alt="" coords="29,123,168,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,207,102,240,96,240,96,207"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="42,5,155,75"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="102,90,102,123,96,123,96,90"/>
+</map>

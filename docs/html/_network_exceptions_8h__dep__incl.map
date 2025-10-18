@@ -1,0 +1,69 @@
+<map id="src/NetSphere/NetworkExceptions.h" name="src/NetSphere/NetworkExceptions.h">
+<area shape="rect" id="Node000001" title="Заголовочный файл с классами исключений для корпоративной сети." alt="" coords="1538,5,1773,32"/>
+<area shape="rect" id="Node000002" href="$_corporate_network_8h.html" title="Заголовочный файл класса CorporateNetwork &#45; корпоративной сети." alt="" coords="1818,171,2045,197"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1691,38,1912,168,1909,172,1688,42"/>
+<area shape="rect" id="Node000005" href="$_corporate_network_error_tests_8cpp.html" title="Тесты для обработки ошибок в классе CorporateNetwork." alt="" coords="2183,245,2400,288"/>
+<area shape="poly" id="edge40_Node000001_Node000005" title=" " alt="" coords="1789,31,1886,49,1984,78,2069,116,2149,162,2217,207,2267,243,2264,247,2214,211,2146,166,2067,121,1983,82,1885,54,1788,36"/>
+<area shape="rect" id="Node000007" href="$_device_8h.html" title="Заголовочный файл базового класса Device для всех устройств сети." alt="" coords="1179,88,1340,115"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1579,38,1323,90,1322,85,1578,33"/>
+<area shape="rect" id="Node000010" href="$_data_storage_error_tests_8cpp.html" title="Тесты для обработки ошибок в классе DataStorage." alt="" coords="416,245,599,288"/>
+<area shape="poly" id="edge41_Node000001_Node000010" title=" " alt="" coords="1523,28,1193,48,1032,63,916,83,806,119,700,164,609,210,543,247,540,243,607,205,698,159,804,114,915,77,1031,58,1193,42,1523,23"/>
+<area shape="rect" id="Node000012" href="$_device_tests_8cpp.html" title="Тесты для базового класса Device и его наследников." alt="" coords="623,245,771,288"/>
+<area shape="poly" id="edge42_Node000001_Node000012" title=" " alt="" coords="1523,34,1334,53,1117,83,1012,101,917,123,838,147,780,173,758,189,739,208,711,247,707,243,735,205,755,185,777,168,836,142,916,118,1011,96,1116,77,1333,48,1522,28"/>
+<area shape="rect" id="Node000013" href="$_domain_error_tests_8cpp.html" title="Тесты для обработки ошибок в классе Domain." alt="" coords="2004,245,2160,288"/>
+<area shape="poly" id="edge43_Node000001_Node000013" title=" " alt="" coords="1777,33,1848,50,1924,77,1996,116,2029,141,2059,169,2071,187,2078,207,2085,244,2079,245,2073,208,2066,189,2055,172,2026,145,1994,121,1922,82,1847,55,1775,38"/>
+<area shape="rect" id="Node000017" href="$_workstation_printer_tests_8cpp.html" title="Тесты для классов Workstation и Printer." alt="" coords="202,245,392,288"/>
+<area shape="poly" id="edge45_Node000001_Node000017" title=" " alt="" coords="1523,27,1127,46,929,62,785,83,655,119,529,164,419,210,339,247,337,243,417,205,527,159,653,114,784,77,928,57,1127,41,1522,22"/>
+<area shape="rect" id="Node000020" href="$_domain_8h.html" title="Заголовочный файл класса Domain &#45; домена корпоративной сети." alt="" coords="1573,88,1738,115"/>
+<area shape="poly" id="edge33_Node000001_Node000020" title=" " alt="" coords="1658,48,1658,88,1653,88,1653,48"/>
+<area shape="rect" id="Node000022" href="$_network_exceptions_tests_8cpp.html" title="Тесты для классов исключений проекта NetSphere." alt="" coords="2171,80,2367,123"/>
+<area shape="poly" id="edge44_Node000001_Node000022" title=" " alt="" coords="1788,32,2152,77,2171,80,2170,85,2151,83,1788,37"/>
+<area shape="rect" id="Node000003" href="$_corporate_network_8cpp.html" title="Реализация класса CorporateNetwork &#45; корпоративной сети." alt="" coords="2423,253,2664,280"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="2055,197,2412,243,2463,250,2462,255,2411,248,2054,202"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html" title="Главная функция приложения NetSphere." alt="" coords="1194,253,1357,280"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="1803,198,1599,218,1369,248,1330,255,1329,250,1368,243,1598,212,1803,193"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="2004,199,2199,242,2198,247,2002,204"/>
+<area shape="rect" id="Node000006" href="$_corporate_network_tests_8cpp.html" title="Тесты для класса CorporateNetwork проекта NetSphere." alt="" coords="1792,245,1980,288"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="1919,212,1900,246,1895,244,1915,210"/>
+<area shape="rect" id="Node000008" href="$_data_storage_8h.html" title="Заголовочный файл класса DataStorage &#45; хранилища данных в корпоративной сети." alt="" coords="1296,171,1490,197"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1295,121,1374,168,1371,173,1292,125"/>
+<area shape="rect" id="Node000015" href="$_printer_8h.html" title="Заголовочный файл класса Printer &#45; сетевого принтера." alt="" coords="790,171,948,197"/>
+<area shape="poly" id="edge17_Node000007_Node000015" title=" " alt="" coords="1184,121,931,173,930,167,1183,116"/>
+<area shape="rect" id="Node000018" href="$_workstation_8h.html" title="Заголовочный файл класса Workstation &#45; рабочей станции пользователя." alt="" coords="1032,171,1221,197"/>
+<area shape="poly" id="edge24_Node000007_Node000018" title=" " alt="" coords="1227,125,1148,173,1145,168,1224,121"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="1363,209,1295,255,1292,251,1360,204"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="1505,195,1694,209,1840,216,1986,224,2172,243,2183,244,2183,249,2171,248,1986,230,1840,221,1693,214,1505,200"/>
+<area shape="poly" id="edge11_Node000008_Node000006" title=" " alt="" coords="1495,198,1780,243,1792,245,1791,250,1779,248,1494,203"/>
+<area shape="rect" id="Node000009" href="$_data_storage_8cpp.html" title="Реализация класса DataStorage &#45; хранилища данных в корпоративной сети." alt="" coords="1381,253,1588,280"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1420,206,1473,251,1469,255,1417,210"/>
+<area shape="poly" id="edge12_Node000008_Node000010" title=" " alt="" coords="1281,196,610,248,600,249,599,244,610,243,1281,191"/>
+<area shape="rect" id="Node000011" href="$_data_storage_tests_8cpp.html" title="Тесты для класса DataStorage проекта NetSphere." alt="" coords="1612,245,1768,288"/>
+<area shape="poly" id="edge13_Node000008_Node000011" title=" " alt="" coords="1454,199,1614,242,1613,247,1453,204"/>
+<area shape="poly" id="edge14_Node000008_Node000012" title=" " alt="" coords="1281,197,1011,222,783,248,772,250,771,245,782,243,1010,216,1280,192"/>
+<area shape="poly" id="edge15_Node000008_Node000013" title=" " alt="" coords="1505,195,1752,214,1858,224,1993,243,2004,245,2003,250,1992,248,1858,229,1751,220,1505,200"/>
+<area shape="rect" id="Node000014" href="$_domain_tests_8cpp.html" title="Тесты для класса Domain проекта NetSphere." alt="" coords="795,245,943,288"/>
+<area shape="poly" id="edge16_Node000008_Node000014" title=" " alt="" coords="1281,201,1126,221,956,248,944,250,943,245,955,243,1126,215,1280,195"/>
+<area shape="poly" id="edge19_Node000015_Node000004" title=" " alt="" coords="952,198,1183,243,1218,250,1217,255,1182,248,951,203"/>
+<area shape="poly" id="edge20_Node000015_Node000006" title=" " alt="" coords="964,190,1020,195,1234,206,1400,212,1567,221,1780,243,1792,244,1791,250,1779,248,1566,226,1400,217,1233,212,1019,200,964,196"/>
+<area shape="poly" id="edge21_Node000015_Node000012" title=" " alt="" coords="829,207,742,247,740,242,827,202"/>
+<area shape="poly" id="edge22_Node000015_Node000014" title=" " alt="" coords="872,213,872,245,866,245,866,213"/>
+<area shape="rect" id="Node000016" href="$_printer_8cpp.html" title="Реализация класса Printer &#45; сетевого принтера." alt="" coords="5,253,178,280"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="774,193,511,212,351,228,191,248,149,255,148,250,190,243,350,223,510,207,774,188"/>
+<area shape="poly" id="edge23_Node000015_Node000017" title=" " alt="" coords="774,199,602,220,404,248,393,250,392,245,403,243,601,215,774,193"/>
+<area shape="poly" id="edge26_Node000018_Node000004" title=" " alt="" coords="1164,203,1254,251,1251,255,1161,207"/>
+<area shape="poly" id="edge27_Node000018_Node000005" title=" " alt="" coords="1236,191,1285,195,1534,207,1729,212,1923,221,2172,243,2183,244,2183,249,2171,248,1923,226,1729,217,1534,212,1285,200,1236,197"/>
+<area shape="poly" id="edge28_Node000018_Node000006" title=" " alt="" coords="1236,192,1529,217,1780,243,1792,244,1791,250,1779,248,1529,222,1236,197"/>
+<area shape="poly" id="edge29_Node000018_Node000012" title=" " alt="" coords="1032,203,783,248,772,250,771,245,782,243,1031,198"/>
+<area shape="poly" id="edge30_Node000018_Node000013" title=" " alt="" coords="1236,191,1285,195,1484,205,1640,210,1795,219,1993,243,2004,244,2003,250,1992,248,1795,225,1640,215,1484,211,1285,200,1236,196"/>
+<area shape="poly" id="edge31_Node000018_Node000014" title=" " alt="" coords="1072,205,936,247,934,242,1071,200"/>
+<area shape="poly" id="edge32_Node000018_Node000017" title=" " alt="" coords="1016,197,662,225,404,248,393,250,392,244,403,243,661,219,1016,191"/>
+<area shape="rect" id="Node000019" href="$_workstation_8cpp.html" title="Реализация класса Workstation &#45; рабочей станции пользователя." alt="" coords="967,253,1170,280"/>
+<area shape="poly" id="edge25_Node000018_Node000019" title=" " alt="" coords="1111,211,1080,255,1075,252,1106,208"/>
+<area shape="poly" id="edge34_Node000020_Node000002" title=" " alt="" coords="1714,117,1889,168,1887,173,1713,122"/>
+<area shape="poly" id="edge36_Node000020_Node000004" title=" " alt="" coords="1558,110,1479,118,1399,130,1330,148,1304,159,1287,172,1276,191,1272,213,1275,253,1270,253,1267,213,1271,189,1283,169,1302,155,1328,143,1398,125,1479,112,1557,105"/>
+<area shape="poly" id="edge37_Node000020_Node000006" title=" " alt="" coords="1681,124,1718,159,1764,195,1845,243,1842,247,1761,200,1715,163,1677,128"/>
+<area shape="poly" id="edge38_Node000020_Node000013" title=" " alt="" coords="1689,121,1807,195,1884,216,2005,245,2003,250,1883,221,1805,200,1686,125"/>
+<area shape="poly" id="edge39_Node000020_Node000014" title=" " alt="" coords="1558,113,1245,142,1102,159,1020,173,985,189,950,208,895,247,892,243,948,203,982,184,1019,168,1101,153,1245,137,1557,108"/>
+<area shape="rect" id="Node000021" href="$_domain_8cpp.html" title="Реализация класса Domain &#45; домена корпоративной сети." alt="" coords="1514,171,1693,197"/>
+<area shape="poly" id="edge35_Node000020_Node000021" title=" " alt="" coords="1641,129,1614,172,1609,169,1637,126"/>
+</map>

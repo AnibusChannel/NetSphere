@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">NetSphere<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">NetSphere<span id="projectnumber">&#160;0.2</span>
    </div>
    <div id="projectbrief">Система управления корпоративной сетью компании</div>
   </td>
@@ -96,23 +96,54 @@ $(function(){initNavTree('main_8cpp.html','',''); });
 <p>Главная функция приложения NetSphere.  
 <a href="#details">Подробнее...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;locale&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 <code>#include &quot;<a class="el" href="_data_storage_8h_source.html">DataStorage.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_workstation_8h_source.html">Workstation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_printer_8h_source.html">Printer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_domain_8h_source.html">Domain.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_corporate_network_8h_source.html">CorporateNetwork.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Граф включаемых заголовочных файлов для main.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#asrc_2_net_sphere_2main_8cpp" loading="lazy" alt=""/></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8cpp__incl.svg" width="100%" height="552"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Функции</h2></td></tr>
 <tr class="memitem:ac53755449ad2e34ec4660a29554213c8" id="r_ac53755449ad2e34ec4660a29554213c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac53755449ad2e34ec4660a29554213c8">demonstrateDataStorage</a> ()</td></tr>
 <tr class="memdesc:ac53755449ad2e34ec4660a29554213c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Демонстрационная функция для тестирования класса <a class="el" href="class_data_storage.html" title="Класс, представляющий хранилище данных в корпоративной сети компании NetSphere.">DataStorage</a>.  <br /></td></tr>
+<tr class="memitem:aedd34c2ff97f7e041e6aa4b5e4c7d098" id="r_aedd34c2ff97f7e041e6aa4b5e4c7d098"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedd34c2ff97f7e041e6aa4b5e4c7d098">demonstrateDomainOperations</a> ()</td></tr>
+<tr class="memdesc:aedd34c2ff97f7e041e6aa4b5e4c7d098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Демонстрационная функция для тестирования работы доменов.  <br /></td></tr>
+<tr class="memitem:af48652e2877601ad5c287b37619416a6" id="r_af48652e2877601ad5c287b37619416a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af48652e2877601ad5c287b37619416a6">demonstratePolymorphism</a> ()</td></tr>
+<tr class="memdesc:af48652e2877601ad5c287b37619416a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Демонстрация полиморфизма и работы с разными типами устройств.  <br /></td></tr>
+<tr class="memitem:a3eb75616b09d5aeeb7830f68660f2031" id="r_a3eb75616b09d5aeeb7830f68660f2031"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3eb75616b09d5aeeb7830f68660f2031">demonstrateCorporateNetwork</a> ()</td></tr>
+<tr class="memdesc:a3eb75616b09d5aeeb7830f68660f2031"><td class="mdescLeft">&#160;</td><td class="mdescRight">Демонстрационная функция для тестирования класса <a class="el" href="class_corporate_network.html" title="Класс, представляющий корпоративную сеть компании.">CorporateNetwork</a>.  <br /></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Главная функция приложения NetSphere.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Главная функция приложения NetSphere. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
+<a id="a3eb75616b09d5aeeb7830f68660f2031" name="a3eb75616b09d5aeeb7830f68660f2031"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eb75616b09d5aeeb7830f68660f2031">&#9670;&#160;</a></span>demonstrateCorporateNetwork()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void demonstrateCorporateNetwork </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Демонстрационная функция для тестирования класса <a class="el" href="class_corporate_network.html" title="Класс, представляющий корпоративную сеть компании.">CorporateNetwork</a>. </p>
+
+</div>
+</div>
 <a id="ac53755449ad2e34ec4660a29554213c8" name="ac53755449ad2e34ec4660a29554213c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac53755449ad2e34ec4660a29554213c8">&#9670;&#160;</a></span>demonstrateDataStorage()</h2>
 
@@ -129,17 +160,44 @@ $(function(){initNavTree('main_8cpp.html','',''); });
 </div><div class="memdoc">
 
 <p>Демонстрационная функция для тестирования класса <a class="el" href="class_data_storage.html" title="Класс, представляющий хранилище данных в корпоративной сети компании NetSphere.">DataStorage</a>. </p>
-<p>Эта функция будет заменена на реальную логику приложения на следующих этапах разработки. </p>
-<div class="dynheader">
-Граф вызовов:</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_ac53755449ad2e34ec4660a29554213c8_cgraph.png" border="0" usemap="#amain_8cpp_ac53755449ad2e34ec4660a29554213c8_cgraph" loading="lazy" alt=""/></div>
+
 </div>
-<div class="dynheader">
-Граф вызова функции:</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_ac53755449ad2e34ec4660a29554213c8_icgraph.png" border="0" usemap="#amain_8cpp_ac53755449ad2e34ec4660a29554213c8_icgraph" loading="lazy" alt=""/></div>
 </div>
+<a id="aedd34c2ff97f7e041e6aa4b5e4c7d098" name="aedd34c2ff97f7e041e6aa4b5e4c7d098"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedd34c2ff97f7e041e6aa4b5e4c7d098">&#9670;&#160;</a></span>demonstrateDomainOperations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void demonstrateDomainOperations </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Демонстрационная функция для тестирования работы доменов. </p>
+
+</div>
+</div>
+<a id="af48652e2877601ad5c287b37619416a6" name="af48652e2877601ad5c287b37619416a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af48652e2877601ad5c287b37619416a6">&#9670;&#160;</a></span>demonstratePolymorphism()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void demonstratePolymorphism </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Демонстрация полиморфизма и работы с разными типами устройств. </p>
 
 </div>
 </div>
@@ -159,13 +217,7 @@ $(function(){initNavTree('main_8cpp.html','',''); });
 </div><div class="memdoc">
 
 <p>Главная функция приложения NetSphere. </p>
-<p>На текущем этапе служит для демонстрации работы класса <a class="el" href="class_data_storage.html" title="Класс, представляющий хранилище данных в корпоративной сети компании NetSphere.">DataStorage</a>. В дальнейшем будет заменена на полноценную логику приложения.</p>
 <dl class="section return"><dt>Возвращает</dt><dd>Код завершения программы. </dd></dl>
-<div class="dynheader">
-Граф вызовов:</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" loading="lazy" alt=""/></div>
-</div>
 
 </div>
 </div>

@@ -1,0 +1,13 @@
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,81,129,108"/>
+<area shape="rect" id="Node000001" href="$class_network_exception.html" title="Базовый класс исключений для сетевых операций." alt="" coords="177,81,305,108"/>
+<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="144,92,177,92,177,97,144,97"/>
+<area shape="rect" id="Node000002" href="$class_access_denied_exception.html" title="Исключение для ошибок аутентификации и прав доступа." alt="" coords="361,5,525,32"/>
+<area shape="poly" id="edge7_Node000001_Node000002" title=" " alt="" coords="282,72,352,42,387,30,389,35,354,46,284,77"/>
+<area shape="rect" id="Node000003" href="$class_device_operation_exception.html" title="Исключение для ошибок при операциях с устройствами." alt="" coords="355,56,531,83"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="320,82,354,78,355,83,321,87"/>
+<area shape="rect" id="Node000004" href="$class_domain_operation_exception.html" title="Исключение для ошибок при операциях с доменами." alt="" coords="353,107,533,133"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="321,102,353,106,352,111,320,107"/>
+<area shape="rect" id="Node000005" href="$class_validation_exception.html" title="Исключение для ошибок валидации данных." alt="" coords="376,157,511,184"/>
+<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="284,113,354,143,389,154,387,159,352,148,282,118"/>
+</map>

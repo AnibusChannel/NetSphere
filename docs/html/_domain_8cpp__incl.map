@@ -1,0 +1,22 @@
+<map id="src/NetSphere/Domain.cpp" name="src/NetSphere/Domain.cpp">
+<area shape="rect" id="Node000001" title="Реализация класса Domain &#45; домена корпоративной сети." alt="" coords="328,5,508,32"/>
+<area shape="rect" id="Node000002" href="$_domain_8h.html" title="Заголовочный файл класса Domain &#45; домена корпоративной сети." alt="" coords="284,80,362,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="403,35,353,73,350,68,400,30"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="472,229,543,256"/>
+<area shape="poly" id="edge11_Node000001_Node000004" title=" " alt="" coords="428,31,458,83,490,154,505,213,500,215,485,156,453,86,423,34"/>
+<area shape="rect" id="Node000003" href="$_network_entity_8h.html" title="Заголовочный файл базового класса NetworkEntity для всех сущностей сети." alt="" coords="361,155,475,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="341,105,391,143,388,147,338,109"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="376,229,444,256"/>
+<area shape="poly" id="edge10_Node000002_Node000006" title=" " alt="" coords="327,107,335,141,351,180,366,200,383,217,380,221,362,203,346,183,330,143,322,108"/>
+<area shape="rect" id="Node000007" href="$_network_exceptions_8h.html" title="Заголовочный файл с классами исключений для корпоративной сети." alt="" coords="139,155,286,181"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="305,109,246,148,243,144,302,105"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="5,155,116,181"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="285,108,121,153,120,148,283,103"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="435,180,482,217,478,221,432,184"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="290,229,343,256"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="402,184,348,222,345,218,399,180"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="419,182,416,214,410,213,414,182"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="232,180,288,218,285,222,229,184"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="173,229,252,256"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="215,182,215,214,210,214,210,182"/>
+</map>

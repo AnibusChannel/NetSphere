@@ -1,0 +1,25 @@
+<map id="src/NetSphere/DataStorage.h" name="src/NetSphere/DataStorage.h">
+<area shape="rect" id="Node000001" title="Заголовочный файл класса DataStorage &#45; хранилища данных в корпоративной сети." alt="" coords="271,5,464,32"/>
+<area shape="rect" id="Node000002" href="$_device_8h.html" title="Заголовочный файл базового класса Device для всех устройств сети." alt="" coords="242,80,315,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="354,35,307,72,304,68,350,30"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="339,80,396,107"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="370,33,370,64,365,64,365,33"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="420,80,491,107"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="385,30,431,68,427,72,381,35"/>
+<area shape="rect" id="Node000003" href="$_network_entity_8h.html" title="Заголовочный файл базового класса NetworkEntity для всех сущностей сети." alt="" coords="72,155,186,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="253,110,170,150,168,145,251,105"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="197,229,250,256"/>
+<area shape="poly" id="edge9_Node000002_Node000005" title=" " alt="" coords="274,108,251,156,233,215,228,213,247,154,269,106"/>
+<area shape="rect" id="Node000007" href="$_network_exceptions_8h.html" title="Заголовочный файл с классами исключений для корпоративной сети." alt="" coords="261,155,408,181"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="290,106,318,141,313,144,286,109"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="432,155,485,181"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="311,105,418,148,416,153,309,110"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,229,77,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="115,184,70,221,66,217,112,180"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="147,180,197,218,194,222,144,184"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="100,229,168,256"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="133,182,135,213,130,214,127,182"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="317,184,257,223,254,218,314,180"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="295,229,374,256"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="337,182,337,214,332,214,332,182"/>
+</map>

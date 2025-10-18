@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['netsphere_0',['Документация NetSphere',['../index.html',1,'']]]
+  ['api_0',['Основные API',['../index.html#api_sec',1,'']]]
 ];

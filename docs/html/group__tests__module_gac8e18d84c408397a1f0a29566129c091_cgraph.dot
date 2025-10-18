@@ -9,7 +9,7 @@ digraph "TEST"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="DataStorage::addTrustedUser",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_data_storage.html#af2b1093344e0c7ea21319a915d6db755",tooltip="Добавляет пользователя в список доверенных."];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="DataStorage::getTrustedUsers",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_data_storage.html#a3bb1f4ecf9a389d4f77dfe5bc325e7dd",tooltip="Возвращает список доверенных пользователей."];
+  Node3 [id="Node000003",label="DataStorage::getTrustedUsers",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_data_storage.html#aaf309d4ec20f1425fa27bb74e8c10b04",tooltip="Возвращает список доверенных пользователей."];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="DataStorage::removeTrustedUser",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_data_storage.html#ae72cfd5ddbb8d83cc2ada5e45511fd6f",tooltip="Удаляет пользователя из списка доверенных."];
 }

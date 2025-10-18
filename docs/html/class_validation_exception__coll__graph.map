@@ -1,0 +1,7 @@
+<map id="ValidationException" name="ValidationException">
+<area shape="rect" id="Node000001" title="Исключение для ошибок валидации данных." alt="" coords="5,240,151,309"/>
+<area shape="rect" id="Node000002" href="$class_network_exception.html" title="Базовый класс исключений для сетевых операций." alt="" coords="9,123,148,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,207,81,240,76,240,76,207"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="22,5,135,75"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,90,81,123,76,123,76,90"/>
+</map>

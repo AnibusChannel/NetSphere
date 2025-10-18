@@ -5,15 +5,18 @@
 
 #include "DataStorage.h"
 #include <algorithm>
+#include <iostream>
 
  /**
   * @brief Конструктор класса DataStorage.
   * @param[in] id Уникальный строковый идентификатор хранилища.
   * @param[in] mac MAC-адрес устройства хранения данных.
   * @param[in] totalSize Общий объём хранилища в мегабайтах.
+  * @throw ValidationException Если параметры невалидны.
   */
 DataStorage::DataStorage(const std::string& id, const std::string& mac, double totalSize)
-    : id(id), macAddress(mac), totalSizeMB(totalSize), usedSizeMB(0) {
+    : Device(id, mac), totalSizeMB(totalSize), usedSizeMB(0) {
+    validateSize(totalSize);
 }
 
 /**
@@ -23,8 +26,13 @@ DataStorage::DataStorage(const std::string& id, const std::string& mac, double t
  * @throw std::overflow_error Если добавление данных превысит общий объём хранилища.
  */
 DataStorage& DataStorage::operator+=(double additionalSize) {
+    if (additionalSize <= 0) {
+        throw DeviceOperationException("Размер добавляемых данных должен быть положительным");
+    }
     if (usedSizeMB + additionalSize > totalSizeMB) {
-        throw std::overflow_error("Превышение общего объема хранилища");
+        throw DeviceOperationException("Превышение общего объема хранилища: невозможно добавить " +
+            std::to_string(additionalSize) + " MB (свободно " +
+            std::to_string(totalSizeMB - usedSizeMB) + " MB)");
     }
     usedSizeMB += additionalSize;
     return *this;
@@ -37,8 +45,13 @@ DataStorage& DataStorage::operator+=(double additionalSize) {
  * @throw std::underflow_error Если пытаемся освободить больше, чем используется.
  */
 DataStorage& DataStorage::operator-=(double sizeToFree) {
+    if (sizeToFree <= 0) {
+        throw DeviceOperationException("Размер освобождаемых данных должен быть положительным");
+    }
     if (usedSizeMB - sizeToFree < 0) {
-        throw std::underflow_error("Нельзя освободить больше чем используется");
+        throw DeviceOperationException("Нельзя освободить больше чем используется: запрошено " +
+            std::to_string(sizeToFree) + " MB, используется " +
+            std::to_string(usedSizeMB) + " MB");
     }
     usedSizeMB -= sizeToFree;
     return *this;
@@ -51,8 +64,13 @@ DataStorage& DataStorage::operator-=(double sizeToFree) {
  * @throw std::overflow_error Если новое значение превышает общий объём хранилища.
  */
 DataStorage& DataStorage::operator=(double newSize) {
+    if (newSize < 0) {
+        throw DeviceOperationException("Размер используемого пространства не может быть отрицательным");
+    }
     if (newSize > totalSizeMB) {
-        throw std::overflow_error("Превышение общего объема хранилища");
+        throw DeviceOperationException("Новый размер превышает общий объем хранилища: " +
+            std::to_string(newSize) + " MB > " +
+            std::to_string(totalSizeMB) + " MB");
     }
     usedSizeMB = newSize;
     return *this;
@@ -64,7 +82,7 @@ DataStorage& DataStorage::operator=(double newSize) {
  * @return true если идентификатор текущего хранилища меньше идентификатора другого хранилища, иначе false.
  */
 bool DataStorage::operator<(const DataStorage& other) const {
-    return id < other.id;
+    return getId() < other.getId();
 }
 
 /**
@@ -73,7 +91,7 @@ bool DataStorage::operator<(const DataStorage& other) const {
  * @return true если идентификаторы хранилищ равны, иначе false.
  */
 bool DataStorage::operator==(const DataStorage& other) const {
-    return id == other.id;
+    return getId() == other.getId();
 }
 
 /**
@@ -82,7 +100,7 @@ bool DataStorage::operator==(const DataStorage& other) const {
  * @return true если идентификаторы хранилищ не равны, иначе false.
  */
 bool DataStorage::operator!=(const DataStorage& other) const {
-    return id != other.id;
+    return getId() != other.getId();
 }
 
 /**
@@ -90,6 +108,12 @@ bool DataStorage::operator!=(const DataStorage& other) const {
  * @param[in] user Имя пользователя для добавления в список доверенных.
  */
 void DataStorage::addTrustedUser(const std::string& user) {
+    if (user.empty()) {
+        throw ValidationException("Имя пользователя не может быть пустым");
+    }
+    if (std::find(trustedUsers.begin(), trustedUsers.end(), user) != trustedUsers.end()) {
+        throw DeviceOperationException("Пользователь " + user + " уже есть в списке доверенных");
+    }
     trustedUsers.push_back(user);
 }
 
@@ -98,26 +122,22 @@ void DataStorage::addTrustedUser(const std::string& user) {
  * @param[in] user Имя пользователя для удаления из списка доверенных.
  */
 void DataStorage::removeTrustedUser(const std::string& user) {
-    trustedUsers.erase(
-        std::remove(trustedUsers.begin(), trustedUsers.end(), user),
-        trustedUsers.end()
-    );
+    if (user.empty()) {
+        throw ValidationException("Имя пользователя не может быть пустым");
+    }
+    auto it = std::find(trustedUsers.begin(), trustedUsers.end(), user);
+    if (it == trustedUsers.end()) {
+        throw DeviceOperationException("Пользователь " + user + " не найден в списке доверенных");
+    }
+    trustedUsers.erase(it);
 }
 
 /**
- * @brief Возвращает идентификатор хранилища.
- * @return Строковый идентификатор хранилища.
+ * @brief Ищет пользователя в списке доверенных.
+ * @return true если пользователь найден в списке доверенных, иначе false.
  */
-std::string DataStorage::getId() const {
-    return id;
-}
-
-/**
- * @brief Возвращает MAC-адрес хранилища.
- * @return MAC-адрес устройства в строковом формате.
- */
-std::string DataStorage::getMacAddress() const {
-    return macAddress;
+bool DataStorage::isUserTrusted(const std::string& user) const {
+    return std::find(trustedUsers.begin(), trustedUsers.end(), user) != trustedUsers.end();
 }
 
 /**
@@ -137,10 +157,18 @@ double DataStorage::getUsedSize() const {
 }
 
 /**
- * @brief Возвращает список доверенных пользователей.
- * @return Копия вектора с именами доверенных пользователей.
+ * @brief Возвращает свободный объём хранилища.
+ * @return Свободный объём хранилища в мегабайтах.
  */
-std::vector<std::string> DataStorage::getTrustedUsers() const {
+double DataStorage::getFreeSize() const {
+    return totalSizeMB - usedSizeMB;
+}
+
+/**
+ * @brief Возвращает список доверенных пользователей.
+ * @return Константная ссылка на вектор с именами доверенных пользователей.
+ */
+const std::vector<std::string>& DataStorage::getTrustedUsers() const {
     return trustedUsers;
 }
 
@@ -155,12 +183,20 @@ void DataStorage::printInfo() const {
     std::wcout.imbue(std::locale());
     std::wcin.imbue(std::locale());
 
-    std::cout << "Хранилище: " << id << "\n";
-    std::cout << "MAC: " << macAddress << "\n";
+    std::cout << "Хранилище: " << getId() << "\n";
+    std::cout << "MAC: " << getMacAddress() << "\n";
     std::cout << "Объем: " << usedSizeMB << "/" << totalSizeMB << " MB\n";
     std::cout << "Доверенные пользователи: ";
     for (const auto& user : trustedUsers) {
         std::cout << user << " ";
     }
     std::cout << "\n";
+}
+
+/**
+ * @brief Возвращает тип сущности.
+ * @return Строка "DataStorage".
+ */
+std::string DataStorage::getType() const {
+    return "DataStorage";
 }

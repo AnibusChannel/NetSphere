@@ -1,0 +1,7 @@
+<map id="Printer" name="Printer">
+<area shape="rect" id="Node000001" title="Класс, представляющий сетевой принтер в корпоративной сети." alt="" coords="37,411,116,523"/>
+<area shape="rect" id="Node000002" href="$class_device.html" title="Абстрактный базовый класс для всех устройств корпоративной сети." alt="" coords="5,208,148,363"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,377,80,411,74,411,74,377"/>
+<area shape="rect" id="Node000003" href="$class_network_entity.html" title="Абстрактный базовый класс для всех сущностей корпоративной сети." alt="" coords="15,5,138,160"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,175,80,208,74,208,74,175"/>
+</map>

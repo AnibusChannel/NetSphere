@@ -1,0 +1,22 @@
+digraph "TEST"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="TEST",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Domain::addEntity",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_domain.html#a4aeab31f80552d42f8c252132976e9c6",tooltip="Добавляет сущность в домен."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Domain::checkAdminRights",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_domain.html#a02e4047bc66eafc7e3c560a8e58d70f7",tooltip="Проверяет права доступа пользователя на выполнение операций в домене."];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="NetworkEntity::getId",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_network_entity.html#aebf4ef347e0f3355bc969520eecb100a",tooltip="Возвращает идентификатор сущности."];
+  Node2 -> Node4 [id="edge4_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node5 [id="edge5_Node000002_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Domain::validateEntity",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_domain.html#a8ed0e723504fd7378183636d90a3720a",tooltip="Проверяет валидность сущности перед добавлением."];
+  Node1 -> Node6 [id="edge6_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="Domain::findEntity",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_domain.html#a7be131e0de27d9e184adb1808e2dfe29",tooltip="Ищет сущность в домене по идентификатору."];
+  Node1 -> Node7 [id="edge7_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Domain::getEntityCount",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_domain.html#a214fd1fa5423c6c7f895d1aab34f9eb5",tooltip="Возвращает количество сущностей в домене."];
+}

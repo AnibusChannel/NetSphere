@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NetSphere: Тесты ошибок корпоративной сети</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">NetSphere<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Система управления корпоративной сетью компании</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('group__corporate__network__error__tests.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Тесты ошибок корпоративной сети </div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Тесты для проверки обработки ошибок в <a class="el" href="class_corporate_network.html" title="Класс, представляющий корпоративную сеть компании.">CorporateNetwork</a>.  
+<a href="#details">Подробнее...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:ga25cb969ae6b8a216a5a91b29e33eb399" id="r_ga25cb969ae6b8a216a5a91b29e33eb399"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga25cb969ae6b8a216a5a91b29e33eb399">TEST</a> (CorporateNetworkErrorTest, AddEntityToNonExistentDomain)</td></tr>
+<tr class="memitem:ga839c3141e2f41d441875b04ac236a370" id="r_ga839c3141e2f41d441875b04ac236a370"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga839c3141e2f41d441875b04ac236a370">TEST</a> (CorporateNetworkErrorTest, AddEntityWithoutAccessRights)</td></tr>
+<tr class="memitem:ga57531d4f18de7a9a7239109b30c94076" id="r_ga57531d4f18de7a9a7239109b30c94076"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga57531d4f18de7a9a7239109b30c94076">TEST</a> (CorporateNetworkErrorTest, RemoveNonExistentEntity)</td></tr>
+<tr class="memitem:ga1fd966c297ad2692a75ca5cbe456ed64" id="r_ga1fd966c297ad2692a75ca5cbe456ed64"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1fd966c297ad2692a75ca5cbe456ed64">TEST</a> (CorporateNetworkErrorTest, RemoveEntityWithoutAccessRights)</td></tr>
+<tr class="memitem:ga42f913be9194f35e6be59238c2b4832b" id="r_ga42f913be9194f35e6be59238c2b4832b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga42f913be9194f35e6be59238c2b4832b">TEST</a> (CorporateNetworkErrorTest, AddDuplicateEntity)</td></tr>
+<tr class="memitem:ga059de5eb213ec636902a5ef64eb0f516" id="r_ga059de5eb213ec636902a5ef64eb0f516"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga059de5eb213ec636902a5ef64eb0f516">TEST</a> (CorporateNetworkErrorTest, PrintNonExistentDomainInfo)</td></tr>
+<tr class="memitem:gab851f5adb16a85f80716ee08b7d663e1" id="r_gab851f5adb16a85f80716ee08b7d663e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab851f5adb16a85f80716ee08b7d663e1">TEST</a> (CorporateNetworkErrorTest, AddToSubdomainWithoutAccess)</td></tr>
+<tr class="memitem:gafad73ab173048cc211dd268a790e1b33" id="r_gafad73ab173048cc211dd268a790e1b33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafad73ab173048cc211dd268a790e1b33">TEST</a> (CorporateNetworkErrorTest, RemoveFromSubdomainWithoutAccess)</td></tr>
+<tr class="memitem:gafc00a415a368c94c71ad0301dd0da22b" id="r_gafc00a415a368c94c71ad0301dd0da22b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafc00a415a368c94c71ad0301dd0da22b">TEST</a> (CorporateNetworkErrorTest, AddNullEntity)</td></tr>
+<tr class="memitem:gac94349a773a81f51f080113ce7eb7706" id="r_gac94349a773a81f51f080113ce7eb7706"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac94349a773a81f51f080113ce7eb7706">TEST</a> (CorporateNetworkErrorTest, AddEntityWithEmptyId)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<p>Тесты для проверки обработки ошибок в <a class="el" href="class_corporate_network.html" title="Класс, представляющий корпоративную сеть компании.">CorporateNetwork</a>. </p>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
+<a id="ga42f913be9194f35e6be59238c2b4832b" name="ga42f913be9194f35e6be59238c2b4832b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga42f913be9194f35e6be59238c2b4832b">&#9670;&#160;</a></span>TEST() <span class="overload">[1/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">CorporateNetworkErrorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AddDuplicateEntity</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga25cb969ae6b8a216a5a91b29e33eb399" name="ga25cb969ae6b8a216a5a91b29e33eb399"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga25cb969ae6b8a216a5a91b29e33eb399">&#9670;&#160;</a></span>TEST() <span class="overload">[2/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">CorporateNetworkErrorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AddEntityToNonExistentDomain</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gac94349a773a81f51f080113ce7eb7706" name="gac94349a773a81f51f080113ce7eb7706"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac94349a773a81f51f080113ce7eb7706">&#9670;&#160;</a></span>TEST() <span class="overload">[3/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">CorporateNetworkErrorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AddEntityWithEmptyId</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga839c3141e2f41d441875b04ac236a370" name="ga839c3141e2f41d441875b04ac236a370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga839c3141e2f41d441875b04ac236a370">&#9670;&#160;</a></span>TEST() <span class="overload">[4/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">CorporateNetworkErrorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AddEntityWithoutAccessRights</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gafc00a415a368c94c71ad0301dd0da22b" name="gafc00a415a368c94c71ad0301dd0da22b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafc00a415a368c94c71ad0301dd0da22b">&#9670;&#160;</a></span>TEST() <span class="overload">[5/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">CorporateNetworkErrorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AddNullEntity</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab851f5adb16a85f80716ee08b7d663e1" name="gab851f5adb16a85f80716ee08b7d663e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab851f5adb16a85f80716ee08b7d663e1">&#9670;&#160;</a></span>TEST() <span class="overload">[6/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">CorporateNetworkErrorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AddToSubdomainWithoutAccess</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga059de5eb213ec636902a5ef64eb0f516" name="ga059de5eb213ec636902a5ef64eb0f516"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga059de5eb213ec636902a5ef64eb0f516">&#9670;&#160;</a></span>TEST() <span class="overload">[7/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">CorporateNetworkErrorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PrintNonExistentDomainInfo</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga1fd966c297ad2692a75ca5cbe456ed64" name="ga1fd966c297ad2692a75ca5cbe456ed64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1fd966c297ad2692a75ca5cbe456ed64">&#9670;&#160;</a></span>TEST() <span class="overload">[8/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">CorporateNetworkErrorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RemoveEntityWithoutAccessRights</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gafad73ab173048cc211dd268a790e1b33" name="gafad73ab173048cc211dd268a790e1b33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafad73ab173048cc211dd268a790e1b33">&#9670;&#160;</a></span>TEST() <span class="overload">[9/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">CorporateNetworkErrorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RemoveFromSubdomainWithoutAccess</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga57531d4f18de7a9a7239109b30c94076" name="ga57531d4f18de7a9a7239109b30c94076"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga57531d4f18de7a9a7239109b30c94076">&#9670;&#160;</a></span>TEST() <span class="overload">[10/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">CorporateNetworkErrorTest</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RemoveNonExistentEntity</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

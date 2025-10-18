@@ -1,0 +1,585 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NetSphere: Класс Domain</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">NetSphere<span id="projectnumber">&#160;0.2</span>
+   </div>
+   <div id="projectbrief">Система управления корпоративной сетью компании</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_domain.html','','class_domain-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс Domain<div class="ingroups"><a class="el" href="group__domain__module.html">Модуль доменов</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс, представляющий домен в корпоративной сети.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_domain_8h_source.html">Domain.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:Domain:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_domain__inherit__graph.svg" width="154" height="539"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a2649e16e833af5066dc4063bfa280bbc" id="r_a2649e16e833af5066dc4063bfa280bbc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2649e16e833af5066dc4063bfa280bbc">Domain</a> (const std::string &amp;<a class="el" href="class_network_entity.html#ac2a110f7334a8ad8dc3316c51337167f">id</a>, const std::string &amp;admin)</td></tr>
+<tr class="memdesc:a2649e16e833af5066dc4063bfa280bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор класса <a class="el" href="class_domain.html" title="Класс, представляющий домен в корпоративной сети.">Domain</a>.  <br /></td></tr>
+<tr class="memitem:a4aeab31f80552d42f8c252132976e9c6" id="r_a4aeab31f80552d42f8c252132976e9c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4aeab31f80552d42f8c252132976e9c6">addEntity</a> (std::shared_ptr&lt; <a class="el" href="class_network_entity.html">NetworkEntity</a> &gt; entity, const std::string &amp;user)</td></tr>
+<tr class="memdesc:a4aeab31f80552d42f8c252132976e9c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет сущность в домен.  <br /></td></tr>
+<tr class="memitem:a827a7305dd02f74aac5a88c38df7919b" id="r_a827a7305dd02f74aac5a88c38df7919b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a827a7305dd02f74aac5a88c38df7919b">removeEntity</a> (const std::string &amp;entityId, const std::string &amp;user)</td></tr>
+<tr class="memdesc:a827a7305dd02f74aac5a88c38df7919b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаляет сущность из домена по идентификатору.  <br /></td></tr>
+<tr class="memitem:a7be131e0de27d9e184adb1808e2dfe29" id="r_a7be131e0de27d9e184adb1808e2dfe29"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_network_entity.html">NetworkEntity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7be131e0de27d9e184adb1808e2dfe29">findEntity</a> (const std::string &amp;entityId) const</td></tr>
+<tr class="memdesc:a7be131e0de27d9e184adb1808e2dfe29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ищет сущность в домене по идентификатору.  <br /></td></tr>
+<tr class="memitem:a79530b177edfc6ee9cdca3df246f4195" id="r_a79530b177edfc6ee9cdca3df246f4195"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79530b177edfc6ee9cdca3df246f4195">getAdminId</a> () const</td></tr>
+<tr class="memdesc:a79530b177edfc6ee9cdca3df246f4195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает идентификатор администратора домена.  <br /></td></tr>
+<tr class="memitem:a214fd1fa5423c6c7f895d1aab34f9eb5" id="r_a214fd1fa5423c6c7f895d1aab34f9eb5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a214fd1fa5423c6c7f895d1aab34f9eb5">getEntityCount</a> () const</td></tr>
+<tr class="memdesc:a214fd1fa5423c6c7f895d1aab34f9eb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает количество сущностей в домене.  <br /></td></tr>
+<tr class="memitem:af4d169f24657e2ac8e1d83bf4ebb09ee" id="r_af4d169f24657e2ac8e1d83bf4ebb09ee"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; std::string, std::shared_ptr&lt; <a class="el" href="class_network_entity.html">NetworkEntity</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4d169f24657e2ac8e1d83bf4ebb09ee">getAllEntities</a> () const</td></tr>
+<tr class="memdesc:af4d169f24657e2ac8e1d83bf4ebb09ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает все сущности домена.  <br /></td></tr>
+<tr class="memitem:afb0b275588b789941c9c6cb59e032ea9" id="r_afb0b275588b789941c9c6cb59e032ea9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb0b275588b789941c9c6cb59e032ea9">printInfo</a> () const override</td></tr>
+<tr class="memdesc:afb0b275588b789941c9c6cb59e032ea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чисто виртуальная функция для вывода информации о сущности.  <br /></td></tr>
+<tr class="memitem:aedea38e732a8f248d1ea8aa0b1fc60e8" id="r_aedea38e732a8f248d1ea8aa0b1fc60e8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedea38e732a8f248d1ea8aa0b1fc60e8">getType</a> () const override</td></tr>
+<tr class="memdesc:aedea38e732a8f248d1ea8aa0b1fc60e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чисто виртуальная функция для получения типа сущности.  <br /></td></tr>
+<tr class="memitem:a2993e4b123e5c7d9de0370bed20718a8" id="r_a2993e4b123e5c7d9de0370bed20718a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2993e4b123e5c7d9de0370bed20718a8">printDetailedInfo</a> () const</td></tr>
+<tr class="memdesc:a2993e4b123e5c7d9de0370bed20718a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит детальную информацию о домене и всех его сущностях.  <br /></td></tr>
+<tr class="inherit_header pub_methods_class_network_entity"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_network_entity')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Открытые члены унаследованные от <a class="el" href="class_network_entity.html">NetworkEntity</a></td></tr>
+<tr class="memitem:a79cc1ce37d7a9dfbca79f4112785c17e inherit pub_methods_class_network_entity" id="r_a79cc1ce37d7a9dfbca79f4112785c17e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_entity.html#a79cc1ce37d7a9dfbca79f4112785c17e">NetworkEntity</a> (const std::string &amp;<a class="el" href="class_network_entity.html#ac2a110f7334a8ad8dc3316c51337167f">id</a>)</td></tr>
+<tr class="memdesc:a79cc1ce37d7a9dfbca79f4112785c17e inherit pub_methods_class_network_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор базового класса <a class="el" href="class_network_entity.html" title="Абстрактный базовый класс для всех сущностей корпоративной сети.">NetworkEntity</a>.  <br /></td></tr>
+<tr class="memitem:a6f4f97e18609a7af170188e85bae7652 inherit pub_methods_class_network_entity" id="r_a6f4f97e18609a7af170188e85bae7652"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_entity.html#a6f4f97e18609a7af170188e85bae7652">~NetworkEntity</a> ()=default</td></tr>
+<tr class="memdesc:a6f4f97e18609a7af170188e85bae7652 inherit pub_methods_class_network_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальный деструктор для обеспечения корректного удаления производных классов.  <br /></td></tr>
+<tr class="memitem:aebf4ef347e0f3355bc969520eecb100a inherit pub_methods_class_network_entity" id="r_aebf4ef347e0f3355bc969520eecb100a"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_entity.html#aebf4ef347e0f3355bc969520eecb100a">getId</a> () const</td></tr>
+<tr class="memdesc:aebf4ef347e0f3355bc969520eecb100a inherit pub_methods_class_network_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает идентификатор сущности.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a02e4047bc66eafc7e3c560a8e58d70f7" id="r_a02e4047bc66eafc7e3c560a8e58d70f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02e4047bc66eafc7e3c560a8e58d70f7">checkAdminRights</a> (const std::string &amp;user) const</td></tr>
+<tr class="memdesc:a02e4047bc66eafc7e3c560a8e58d70f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет права доступа пользователя на выполнение операций в домене.  <br /></td></tr>
+<tr class="memitem:a8ed0e723504fd7378183636d90a3720a" id="r_a8ed0e723504fd7378183636d90a3720a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ed0e723504fd7378183636d90a3720a">validateEntity</a> (const std::shared_ptr&lt; <a class="el" href="class_network_entity.html">NetworkEntity</a> &gt; &amp;entity) const</td></tr>
+<tr class="memdesc:a8ed0e723504fd7378183636d90a3720a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет валидность сущности перед добавлением.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:afc3525601f47a7f9c68b0a3d41c829ac" id="r_afc3525601f47a7f9c68b0a3d41c829ac"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc3525601f47a7f9c68b0a3d41c829ac">adminId</a></td></tr>
+<tr class="memdesc:afc3525601f47a7f9c68b0a3d41c829ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Идентификатор администратора домена  <br /></td></tr>
+<tr class="memitem:ad580e9f69419cfdeed88b451747643d0" id="r_ad580e9f69419cfdeed88b451747643d0"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::shared_ptr&lt; <a class="el" href="class_network_entity.html">NetworkEntity</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad580e9f69419cfdeed88b451747643d0">entities</a></td></tr>
+<tr class="memdesc:ad580e9f69419cfdeed88b451747643d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Хэш-таблица для хранения и быстрого поиска сущностей  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pro_attribs_class_network_entity"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_network_entity')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Защищенные данные унаследованные от <a class="el" href="class_network_entity.html">NetworkEntity</a></td></tr>
+<tr class="memitem:ac2a110f7334a8ad8dc3316c51337167f inherit pro_attribs_class_network_entity" id="r_ac2a110f7334a8ad8dc3316c51337167f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_entity.html#ac2a110f7334a8ad8dc3316c51337167f">id</a></td></tr>
+<tr class="memdesc:ac2a110f7334a8ad8dc3316c51337167f inherit pro_attribs_class_network_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Уникальный строковый идентификатор сущности внутри домена  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс, представляющий домен в корпоративной сети. </p>
+<p>Домен может содержать устройства (хранилища, рабочие станции, принтеры) и другие домены (поддомены). Имеет администратора, который управляет доменом. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a2649e16e833af5066dc4063bfa280bbc" name="a2649e16e833af5066dc4063bfa280bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2649e16e833af5066dc4063bfa280bbc">&#9670;&#160;</a></span>Domain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Domain::Domain </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>admin</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор класса <a class="el" href="class_domain.html" title="Класс, представляющий домен в корпоративной сети.">Domain</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Уникальный строковый идентификатор домена. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">admin</td><td>Идентификатор администратора домена. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_validation_exception.html" title="Исключение для ошибок валидации данных.">ValidationException</a></td><td>Если параметры невалидны. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a4aeab31f80552d42f8c252132976e9c6" name="a4aeab31f80552d42f8c252132976e9c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aeab31f80552d42f8c252132976e9c6">&#9670;&#160;</a></span>addEntity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Domain::addEntity </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_network_entity.html">NetworkEntity</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>entity</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>user</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавляет сущность в домен. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">entity</td><td>Указатель на сущность для добавления. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user</td><td>Идентификатор пользователя, пытающегося добавить сущность. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_access_denied_exception.html" title="Исключение для ошибок аутентификации и прав доступа.">AccessDeniedException</a></td><td>Если пользователь не имеет прав администратора. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_validation_exception.html" title="Исключение для ошибок валидации данных.">ValidationException</a></td><td>Если сущность невалидна или уже существует. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a02e4047bc66eafc7e3c560a8e58d70f7" name="a02e4047bc66eafc7e3c560a8e58d70f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02e4047bc66eafc7e3c560a8e58d70f7">&#9670;&#160;</a></span>checkAdminRights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Domain::checkAdminRights </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>user</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет права доступа пользователя на выполнение операций в домене. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">user</td><td>Идентификатор пользователя. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_access_denied_exception.html" title="Исключение для ошибок аутентификации и прав доступа.">AccessDeniedException</a></td><td>Если пользователь не является администратором. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7be131e0de27d9e184adb1808e2dfe29" name="a7be131e0de27d9e184adb1808e2dfe29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7be131e0de27d9e184adb1808e2dfe29">&#9670;&#160;</a></span>findEntity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="class_network_entity.html">NetworkEntity</a> &gt; Domain::findEntity </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>entityId</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ищет сущность в домене по идентификатору. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">entityId</td><td>Идентификатор сущности. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Указатель на сущность или nullptr, если сущность не найдена. </dd></dl>
+
+</div>
+</div>
+<a id="a79530b177edfc6ee9cdca3df246f4195" name="a79530b177edfc6ee9cdca3df246f4195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79530b177edfc6ee9cdca3df246f4195">&#9670;&#160;</a></span>getAdminId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; Domain::getAdminId </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает идентификатор администратора домена. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Константная ссылка на идентификатор администратора. </dd></dl>
+
+</div>
+</div>
+<a id="af4d169f24657e2ac8e1d83bf4ebb09ee" name="af4d169f24657e2ac8e1d83bf4ebb09ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4d169f24657e2ac8e1d83bf4ebb09ee">&#9670;&#160;</a></span>getAllEntities()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::unordered_map&lt; std::string, std::shared_ptr&lt; <a class="el" href="class_network_entity.html">NetworkEntity</a> &gt; &gt; &amp; Domain::getAllEntities </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает все сущности домена. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Константная ссылка на хэш-таблицу сущностей. </dd></dl>
+
+</div>
+</div>
+<a id="a214fd1fa5423c6c7f895d1aab34f9eb5" name="a214fd1fa5423c6c7f895d1aab34f9eb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a214fd1fa5423c6c7f895d1aab34f9eb5">&#9670;&#160;</a></span>getEntityCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Domain::getEntityCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает количество сущностей в домене. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество сущностей. </dd></dl>
+
+</div>
+</div>
+<a id="aedea38e732a8f248d1ea8aa0b1fc60e8" name="aedea38e732a8f248d1ea8aa0b1fc60e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedea38e732a8f248d1ea8aa0b1fc60e8">&#9670;&#160;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Domain::getType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Чисто виртуальная функция для получения типа сущности. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка, идентифицирующая тип сущности. </dd></dl>
+
+<p>Замещает <a class="el" href="class_network_entity.html#a9e9e1f729b6d10e4b95e118127d69549">NetworkEntity</a>.</p>
+
+</div>
+</div>
+<a id="a2993e4b123e5c7d9de0370bed20718a8" name="a2993e4b123e5c7d9de0370bed20718a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2993e4b123e5c7d9de0370bed20718a8">&#9670;&#160;</a></span>printDetailedInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Domain::printDetailedInfo </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выводит детальную информацию о домене и всех его сущностях. </p>
+
+</div>
+</div>
+<a id="afb0b275588b789941c9c6cb59e032ea9" name="afb0b275588b789941c9c6cb59e032ea9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb0b275588b789941c9c6cb59e032ea9">&#9670;&#160;</a></span>printInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Domain::printInfo </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Чисто виртуальная функция для вывода информации о сущности. </p>
+<p>Должна быть реализована в каждом производном классе. </p>
+
+<p>Замещает <a class="el" href="class_network_entity.html#a6507e9ae5ef2ad1531a9379ab7bc2d9a">NetworkEntity</a>.</p>
+
+</div>
+</div>
+<a id="a827a7305dd02f74aac5a88c38df7919b" name="a827a7305dd02f74aac5a88c38df7919b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a827a7305dd02f74aac5a88c38df7919b">&#9670;&#160;</a></span>removeEntity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Domain::removeEntity </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>entityId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>user</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Удаляет сущность из домена по идентификатору. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">entityId</td><td>Идентификатор сущности для удаления. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user</td><td>Идентификатор пользователя, пытающегося удалить сущность. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_access_denied_exception.html" title="Исключение для ошибок аутентификации и прав доступа.">AccessDeniedException</a></td><td>Если пользователь не имеет прав администратора. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_domain_operation_exception.html" title="Исключение для ошибок при операциях с доменами.">DomainOperationException</a></td><td>Если сущность не найдена. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8ed0e723504fd7378183636d90a3720a" name="a8ed0e723504fd7378183636d90a3720a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ed0e723504fd7378183636d90a3720a">&#9670;&#160;</a></span>validateEntity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Domain::validateEntity </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="class_network_entity.html">NetworkEntity</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>entity</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет валидность сущности перед добавлением. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">entity</td><td>Сущность для проверки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_validation_exception.html" title="Исключение для ошибок валидации данных.">ValidationException</a></td><td>Если сущность невалидна. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="afc3525601f47a7f9c68b0a3d41c829ac" name="afc3525601f47a7f9c68b0a3d41c829ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc3525601f47a7f9c68b0a3d41c829ac">&#9670;&#160;</a></span>adminId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Domain::adminId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Идентификатор администратора домена </p>
+
+</div>
+</div>
+<a id="ad580e9f69419cfdeed88b451747643d0" name="ad580e9f69419cfdeed88b451747643d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad580e9f69419cfdeed88b451747643d0">&#9670;&#160;</a></span>entities</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string, std::shared_ptr&lt;<a class="el" href="class_network_entity.html">NetworkEntity</a>&gt; &gt; Domain::entities</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Хэш-таблица для хранения и быстрого поиска сущностей </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>src/NetSphere/<a class="el" href="_domain_8h_source.html">Domain.h</a></li>
+<li>src/NetSphere/<a class="el" href="_domain_8cpp.html">Domain.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_domain.html">Domain</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

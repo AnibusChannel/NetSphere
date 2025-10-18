@@ -1,0 +1,21 @@
+<map id="src/NetSphere/Domain.h" name="src/NetSphere/Domain.h">
+<area shape="rect" id="Node000001" title="Заголовочный файл класса Domain &#45; домена корпоративной сети." alt="" coords="568,5,733,32"/>
+<area shape="rect" id="Node000002" href="$_corporate_network_8h.html" title="Заголовочный файл класса CorporateNetwork &#45; корпоративной сети." alt="" coords="324,88,550,115"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="604,40,472,90,470,85,602,35"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html" title="Главная функция приложения NetSphere." alt="" coords="5,179,168,205"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="553,33,436,51,374,65,313,83,253,106,195,133,108,181,106,176,193,128,251,101,311,77,372,60,435,46,552,27"/>
+<area shape="rect" id="Node000006" href="$_corporate_network_tests_8cpp.html" title="Тесты для класса CorporateNetwork проекта NetSphere." alt="" coords="696,171,885,213"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="632,45,621,63,612,83,609,103,615,121,629,133,652,146,713,167,711,173,650,151,626,138,611,124,604,103,607,82,616,61,628,42"/>
+<area shape="rect" id="Node000007" href="$_domain_8cpp.html" title="Реализация класса Domain &#45; домена корпоративной сети." alt="" coords="625,88,804,115"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="672,42,707,86,703,90,668,46"/>
+<area shape="rect" id="Node000008" href="$_domain_error_tests_8cpp.html" title="Тесты для обработки ошибок в классе Domain." alt="" coords="829,80,984,123"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="706,34,841,77,840,82,704,40"/>
+<area shape="rect" id="Node000009" href="$_domain_tests_8cpp.html" title="Тесты для класса Domain проекта NetSphere." alt="" coords="1008,80,1157,123"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="746,32,996,77,1008,80,1007,85,995,83,745,38"/>
+<area shape="rect" id="Node000003" href="$_corporate_network_8cpp.html" title="Реализация класса CorporateNetwork &#45; корпоративной сети." alt="" coords="192,179,432,205"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="408,126,331,180,328,176,405,122"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="373,122,137,181,136,175,372,116"/>
+<area shape="rect" id="Node000005" href="$_corporate_network_error_tests_8cpp.html" title="Тесты для обработки ошибок в классе CorporateNetwork." alt="" coords="456,171,672,213"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="469,122,536,168,533,172,466,126"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="503,116,708,167,707,173,502,122"/>
+</map>

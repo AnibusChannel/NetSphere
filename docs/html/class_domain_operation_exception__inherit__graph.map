@@ -1,0 +1,7 @@
+<map id="DomainOperationException" name="DomainOperationException">
+<area shape="rect" id="Node000001" title="Исключение для ошибок при операциях с доменами." alt="" coords="5,240,196,309"/>
+<area shape="rect" id="Node000002" href="$class_network_exception.html" title="Базовый класс исключений для сетевых операций." alt="" coords="31,123,170,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,207,104,240,98,240,98,207"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="44,5,157,75"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="104,90,104,123,98,123,98,90"/>
+</map>

@@ -1,8 +1,22 @@
 var searchData=
 [
-  ['getid_0',['getId',['../class_data_storage.html#a59e7b31d2d419980ab756f3884c5352b',1,'DataStorage']]],
-  ['getmacaddress_1',['getMacAddress',['../class_data_storage.html#a7bf6f55480766cb1564df4c75788b8d4',1,'DataStorage']]],
-  ['gettotalsize_2',['getTotalSize',['../class_data_storage.html#a8643e5c1e71d717f249df3daae4b5e8f',1,'DataStorage']]],
-  ['gettrustedusers_3',['getTrustedUsers',['../class_data_storage.html#a3bb1f4ecf9a389d4f77dfe5bc325e7dd',1,'DataStorage']]],
-  ['getusedsize_4',['getUsedSize',['../class_data_storage.html#a9ac4695d108faaa5172b0fcc3d94eaf0',1,'DataStorage']]]
+  ['datastorage_0',['DataStorage',['../class_data_storage.html',1,'DataStorage'],['../class_data_storage.html#a4297941d93bfe90bb6be1fea50e55680',1,'DataStorage::DataStorage()']]],
+  ['datastorage_2ecpp_1',['DataStorage.cpp',['../_data_storage_8cpp.html',1,'']]],
+  ['datastorage_2eh_2',['DataStorage.h',['../_data_storage_8h.html',1,'']]],
+  ['datastorageerrortests_2ecpp_3',['DataStorageErrorTests.cpp',['../_data_storage_error_tests_8cpp.html',1,'']]],
+  ['datastoragetests_2ecpp_4',['DataStorageTests.cpp',['../_data_storage_tests_8cpp.html',1,'']]],
+  ['demonstratecorporatenetwork_5',['demonstrateCorporateNetwork',['../main_8cpp.html#a3eb75616b09d5aeeb7830f68660f2031',1,'main.cpp']]],
+  ['demonstratedatastorage_6',['demonstrateDataStorage',['../main_8cpp.html#ac53755449ad2e34ec4660a29554213c8',1,'main.cpp']]],
+  ['demonstratedomainoperations_7',['demonstrateDomainOperations',['../main_8cpp.html#aedd34c2ff97f7e041e6aa4b5e4c7d098',1,'main.cpp']]],
+  ['demonstratepolymorphism_8',['demonstratePolymorphism',['../main_8cpp.html#af48652e2877601ad5c287b37619416a6',1,'main.cpp']]],
+  ['device_9',['Device',['../class_device.html',1,'Device'],['../class_device.html#a1927d7e644fbb38e3de008d4ba826c0b',1,'Device::Device()']]],
+  ['device_2eh_10',['Device.h',['../_device_8h.html',1,'']]],
+  ['deviceoperationexception_11',['DeviceOperationException',['../class_device_operation_exception.html',1,'DeviceOperationException'],['../class_device_operation_exception.html#a4bddc21a062b862276f680e90a37b37a',1,'DeviceOperationException::DeviceOperationException()']]],
+  ['devicetests_2ecpp_12',['DeviceTests.cpp',['../_device_tests_8cpp.html',1,'']]],
+  ['domain_13',['Domain',['../class_domain.html',1,'Domain'],['../class_domain.html#a2649e16e833af5066dc4063bfa280bbc',1,'Domain::Domain()']]],
+  ['domain_2ecpp_14',['Domain.cpp',['../_domain_8cpp.html',1,'']]],
+  ['domain_2eh_15',['Domain.h',['../_domain_8h.html',1,'']]],
+  ['domainerrortests_2ecpp_16',['DomainErrorTests.cpp',['../_domain_error_tests_8cpp.html',1,'']]],
+  ['domainoperationexception_17',['DomainOperationException',['../class_domain_operation_exception.html',1,'DomainOperationException'],['../class_domain_operation_exception.html#a8a8fd309b2e4e1e75f7ca812b80ea452',1,'DomainOperationException::DomainOperationException()']]],
+  ['domaintests_2ecpp_18',['DomainTests.cpp',['../_domain_tests_8cpp.html',1,'']]]
 ];

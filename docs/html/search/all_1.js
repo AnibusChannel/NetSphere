@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['datastorage_0',['DataStorage',['../class_data_storage.html',1,'DataStorage'],['../class_data_storage.html#a4297941d93bfe90bb6be1fea50e55680',1,'DataStorage::DataStorage()']]],
-  ['datastorage_2ecpp_1',['DataStorage.cpp',['../_data_storage_8cpp.html',1,'']]],
-  ['datastorage_2eh_2',['DataStorage.h',['../_data_storage_8h.html',1,'']]],
-  ['datastoragetests_2ecpp_3',['DataStorageTests.cpp',['../_data_storage_tests_8cpp.html',1,'']]],
-  ['demonstratedatastorage_4',['demonstrateDataStorage',['../main_8cpp.html#ac53755449ad2e34ec4660a29554213c8',1,'main.cpp']]]
+  ['checkadminrights_0',['checkAdminRights',['../class_domain.html#a02e4047bc66eafc7e3c560a8e58d70f7',1,'Domain']]],
+  ['collectallentities_1',['collectAllEntities',['../class_corporate_network.html#a42129ec752b14fb92769548d38af390a',1,'CorporateNetwork']]],
+  ['corporatenetwork_2',['CorporateNetwork',['../class_corporate_network.html',1,'CorporateNetwork'],['../class_corporate_network.html#a2c52084e8cebdccfde23852cb09646ec',1,'CorporateNetwork::CorporateNetwork()']]],
+  ['corporatenetwork_2ecpp_3',['CorporateNetwork.cpp',['../_corporate_network_8cpp.html',1,'']]],
+  ['corporatenetwork_2eh_4',['CorporateNetwork.h',['../_corporate_network_8h.html',1,'']]],
+  ['corporatenetworkerrortests_2ecpp_5',['CorporateNetworkErrorTests.cpp',['../_corporate_network_error_tests_8cpp.html',1,'']]],
+  ['corporatenetworktests_2ecpp_6',['CorporateNetworkTests.cpp',['../_corporate_network_tests_8cpp.html',1,'']]]
 ];

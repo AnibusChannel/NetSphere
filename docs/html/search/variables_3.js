@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['usedsizemb_0',['usedSizeMB',['../class_data_storage.html#a4455291c2f752c3d2f19e472c22cdaba',1,'DataStorage']]]
+  ['lastpowerontime_0',['lastPowerOnTime',['../class_workstation.html#a0b74d3c4818e39211e7fba3a96d62733',1,'Workstation']]]
 ];

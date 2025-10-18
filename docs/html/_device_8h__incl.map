@@ -1,0 +1,19 @@
+<map id="src/NetSphere/Device.h" name="src/NetSphere/Device.h">
+<area shape="rect" id="Node000001" title="Заголовочный файл базового класса Device для всех устройств сети." alt="" coords="198,5,359,32"/>
+<area shape="rect" id="Node000002" href="$_network_entity_8h.html" title="Заголовочный файл базового класса NetworkEntity для всех сущностей сети." alt="" coords="72,80,186,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,35,170,75,168,70,251,30"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="197,155,250,181"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="274,34,251,81,233,140,228,139,247,79,269,31"/>
+<area shape="rect" id="Node000006" href="$_network_exceptions_8h.html" title="Заголовочный файл с классами исключений для корпоративной сети." alt="" coords="261,80,408,107"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="290,31,318,66,313,69,286,34"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="432,80,485,107"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="311,30,418,73,416,78,309,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,155,77,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="115,109,70,147,66,143,112,105"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="147,105,197,143,194,147,144,109"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="100,155,168,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="133,107,135,139,130,139,127,107"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="317,109,257,148,254,144,314,105"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="295,155,374,181"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="337,107,337,139,332,139,332,107"/>
+</map>

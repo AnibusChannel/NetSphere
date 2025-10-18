@@ -25,11 +25,12 @@
 var NAVTREE =
 [
   [ "NetSphere", "index.html", [
-    [ "Документация NetSphere", "index.html", "index" ],
+    [ "Документация NetSphere - Система управления корпоративной сетью", "index.html", "index" ],
     [ "Разделы", "topics.html", "topics" ],
     [ "Классы", "annotated.html", [
       [ "Классы", "annotated.html", "annotated_dup" ],
       [ "Алфавитный указатель классов", "classes.html", null ],
+      [ "Иерархия классов", "hierarchy.html", "hierarchy" ],
       [ "Члены классов", "functions.html", [
         [ "Указатель", "functions.html", null ],
         [ "Функции", "functions_func.html", null ],
@@ -48,7 +49,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_data_storage_8cpp.html"
+"_corporate_network_8cpp.html"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">NetSphere<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">NetSphere<span id="projectnumber">&#160;0.2</span>
    </div>
    <div id="projectbrief">Система управления корпоративной сетью компании</div>
   </td>
@@ -97,10 +97,15 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_data_storage_8h_source.html">DataStorage.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:DataStorage:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_data_storage__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
-<tr class="memitem:a4297941d93bfe90bb6be1fea50e55680" id="r_a4297941d93bfe90bb6be1fea50e55680"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4297941d93bfe90bb6be1fea50e55680">DataStorage</a> (const std::string &amp;<a class="el" href="#a6a0ff9729c541aa9234c8a68bbc23f0c">id</a>, const std::string &amp;mac, double totalSize)</td></tr>
+<tr class="memitem:a4297941d93bfe90bb6be1fea50e55680" id="r_a4297941d93bfe90bb6be1fea50e55680"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4297941d93bfe90bb6be1fea50e55680">DataStorage</a> (const std::string &amp;<a class="el" href="class_network_entity.html#ac2a110f7334a8ad8dc3316c51337167f">id</a>, const std::string &amp;mac, double totalSize)</td></tr>
 <tr class="memdesc:a4297941d93bfe90bb6be1fea50e55680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор класса <a class="el" href="class_data_storage.html" title="Класс, представляющий хранилище данных в корпоративной сети компании NetSphere.">DataStorage</a>.  <br /></td></tr>
 <tr class="memitem:a9773a3b578154d338150d017134e84a7" id="r_a9773a3b578154d338150d017134e84a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data_storage.html">DataStorage</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9773a3b578154d338150d017134e84a7">operator+=</a> (double additionalSize)</td></tr>
 <tr class="memdesc:a9773a3b578154d338150d017134e84a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор добавления данных к используемому объёму хранилища.  <br /></td></tr>
@@ -118,31 +123,60 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
 <tr class="memdesc:af2b1093344e0c7ea21319a915d6db755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет пользователя в список доверенных.  <br /></td></tr>
 <tr class="memitem:ae72cfd5ddbb8d83cc2ada5e45511fd6f" id="r_ae72cfd5ddbb8d83cc2ada5e45511fd6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae72cfd5ddbb8d83cc2ada5e45511fd6f">removeTrustedUser</a> (const std::string &amp;user)</td></tr>
 <tr class="memdesc:ae72cfd5ddbb8d83cc2ada5e45511fd6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаляет пользователя из списка доверенных.  <br /></td></tr>
-<tr class="memitem:a59e7b31d2d419980ab756f3884c5352b" id="r_a59e7b31d2d419980ab756f3884c5352b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59e7b31d2d419980ab756f3884c5352b">getId</a> () const</td></tr>
-<tr class="memdesc:a59e7b31d2d419980ab756f3884c5352b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает идентификатор хранилища.  <br /></td></tr>
-<tr class="memitem:a7bf6f55480766cb1564df4c75788b8d4" id="r_a7bf6f55480766cb1564df4c75788b8d4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bf6f55480766cb1564df4c75788b8d4">getMacAddress</a> () const</td></tr>
-<tr class="memdesc:a7bf6f55480766cb1564df4c75788b8d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает MAC-адрес хранилища.  <br /></td></tr>
+<tr class="memitem:a14e95b90fb08a013220e5fef1d91b0ea" id="r_a14e95b90fb08a013220e5fef1d91b0ea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14e95b90fb08a013220e5fef1d91b0ea">isUserTrusted</a> (const std::string &amp;user) const</td></tr>
+<tr class="memdesc:a14e95b90fb08a013220e5fef1d91b0ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ищет пользователя в списке доверенных.  <br /></td></tr>
 <tr class="memitem:a8643e5c1e71d717f249df3daae4b5e8f" id="r_a8643e5c1e71d717f249df3daae4b5e8f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8643e5c1e71d717f249df3daae4b5e8f">getTotalSize</a> () const</td></tr>
 <tr class="memdesc:a8643e5c1e71d717f249df3daae4b5e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает общий объём хранилища.  <br /></td></tr>
 <tr class="memitem:a9ac4695d108faaa5172b0fcc3d94eaf0" id="r_a9ac4695d108faaa5172b0fcc3d94eaf0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ac4695d108faaa5172b0fcc3d94eaf0">getUsedSize</a> () const</td></tr>
 <tr class="memdesc:a9ac4695d108faaa5172b0fcc3d94eaf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает используемый объём хранилища.  <br /></td></tr>
-<tr class="memitem:a3bb1f4ecf9a389d4f77dfe5bc325e7dd" id="r_a3bb1f4ecf9a389d4f77dfe5bc325e7dd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bb1f4ecf9a389d4f77dfe5bc325e7dd">getTrustedUsers</a> () const</td></tr>
-<tr class="memdesc:a3bb1f4ecf9a389d4f77dfe5bc325e7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает список доверенных пользователей.  <br /></td></tr>
-<tr class="memitem:a4214c4c14f987a6c8866d437a59d3b1e" id="r_a4214c4c14f987a6c8866d437a59d3b1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4214c4c14f987a6c8866d437a59d3b1e">printInfo</a> () const</td></tr>
-<tr class="memdesc:a4214c4c14f987a6c8866d437a59d3b1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит информацию о хранилище в человекочитаемом формате.  <br /></td></tr>
+<tr class="memitem:a64bacaf215870a760b31e37db1b88c07" id="r_a64bacaf215870a760b31e37db1b88c07"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64bacaf215870a760b31e37db1b88c07">getFreeSize</a> () const</td></tr>
+<tr class="memdesc:a64bacaf215870a760b31e37db1b88c07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает свободный объём хранилища.  <br /></td></tr>
+<tr class="memitem:aaf309d4ec20f1425fa27bb74e8c10b04" id="r_aaf309d4ec20f1425fa27bb74e8c10b04"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf309d4ec20f1425fa27bb74e8c10b04">getTrustedUsers</a> () const</td></tr>
+<tr class="memdesc:aaf309d4ec20f1425fa27bb74e8c10b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает список доверенных пользователей.  <br /></td></tr>
+<tr class="memitem:a22d48113da88133b5a8a30300a5a97db" id="r_a22d48113da88133b5a8a30300a5a97db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22d48113da88133b5a8a30300a5a97db">printInfo</a> () const override</td></tr>
+<tr class="memdesc:a22d48113da88133b5a8a30300a5a97db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит информацию о хранилище в человекочитаемом формате.  <br /></td></tr>
+<tr class="memitem:a5aab50b86feb6f5456061975f7f85e09" id="r_a5aab50b86feb6f5456061975f7f85e09"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5aab50b86feb6f5456061975f7f85e09">getType</a> () const override</td></tr>
+<tr class="memdesc:a5aab50b86feb6f5456061975f7f85e09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает тип сущности.  <br /></td></tr>
+<tr class="inherit_header pub_methods_class_device"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_device')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Открытые члены унаследованные от <a class="el" href="class_device.html">Device</a></td></tr>
+<tr class="memitem:a1927d7e644fbb38e3de008d4ba826c0b inherit pub_methods_class_device" id="r_a1927d7e644fbb38e3de008d4ba826c0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a1927d7e644fbb38e3de008d4ba826c0b">Device</a> (const std::string &amp;<a class="el" href="class_network_entity.html#ac2a110f7334a8ad8dc3316c51337167f">id</a>, const std::string &amp;mac)</td></tr>
+<tr class="memdesc:a1927d7e644fbb38e3de008d4ba826c0b inherit pub_methods_class_device"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор базового класса <a class="el" href="class_device.html" title="Абстрактный базовый класс для всех устройств корпоративной сети.">Device</a>.  <br /></td></tr>
+<tr class="memitem:af72cbe72b48a19c95899eb5a538a99d9 inherit pub_methods_class_device" id="r_af72cbe72b48a19c95899eb5a538a99d9"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#af72cbe72b48a19c95899eb5a538a99d9">getMacAddress</a> () const</td></tr>
+<tr class="memdesc:af72cbe72b48a19c95899eb5a538a99d9 inherit pub_methods_class_device"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает MAC-адрес устройства.  <br /></td></tr>
+<tr class="inherit_header pub_methods_class_network_entity"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_network_entity')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Открытые члены унаследованные от <a class="el" href="class_network_entity.html">NetworkEntity</a></td></tr>
+<tr class="memitem:a79cc1ce37d7a9dfbca79f4112785c17e inherit pub_methods_class_network_entity" id="r_a79cc1ce37d7a9dfbca79f4112785c17e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_entity.html#a79cc1ce37d7a9dfbca79f4112785c17e">NetworkEntity</a> (const std::string &amp;<a class="el" href="class_network_entity.html#ac2a110f7334a8ad8dc3316c51337167f">id</a>)</td></tr>
+<tr class="memdesc:a79cc1ce37d7a9dfbca79f4112785c17e inherit pub_methods_class_network_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор базового класса <a class="el" href="class_network_entity.html" title="Абстрактный базовый класс для всех сущностей корпоративной сети.">NetworkEntity</a>.  <br /></td></tr>
+<tr class="memitem:a6f4f97e18609a7af170188e85bae7652 inherit pub_methods_class_network_entity" id="r_a6f4f97e18609a7af170188e85bae7652"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_entity.html#a6f4f97e18609a7af170188e85bae7652">~NetworkEntity</a> ()=default</td></tr>
+<tr class="memdesc:a6f4f97e18609a7af170188e85bae7652 inherit pub_methods_class_network_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальный деструктор для обеспечения корректного удаления производных классов.  <br /></td></tr>
+<tr class="memitem:aebf4ef347e0f3355bc969520eecb100a inherit pub_methods_class_network_entity" id="r_aebf4ef347e0f3355bc969520eecb100a"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_entity.html#aebf4ef347e0f3355bc969520eecb100a">getId</a> () const</td></tr>
+<tr class="memdesc:aebf4ef347e0f3355bc969520eecb100a inherit pub_methods_class_network_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает идентификатор сущности.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Закрытые статические члены</h2></td></tr>
+<tr class="memitem:a62ba1dca89ae6f0e606fd787279b50cc" id="r_a62ba1dca89ae6f0e606fd787279b50cc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62ba1dca89ae6f0e606fd787279b50cc">validateSize</a> (double size)</td></tr>
+<tr class="memdesc:a62ba1dca89ae6f0e606fd787279b50cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет валидность размера хранилища.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Закрытые данные</h2></td></tr>
-<tr class="memitem:a6a0ff9729c541aa9234c8a68bbc23f0c" id="r_a6a0ff9729c541aa9234c8a68bbc23f0c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a0ff9729c541aa9234c8a68bbc23f0c">id</a></td></tr>
-<tr class="memdesc:a6a0ff9729c541aa9234c8a68bbc23f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Уникальный строковый идентификатор хранилища внутри домена  <br /></td></tr>
-<tr class="memitem:a3d372a2305fff0533572e6bbf256d98c" id="r_a3d372a2305fff0533572e6bbf256d98c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d372a2305fff0533572e6bbf256d98c">macAddress</a></td></tr>
-<tr class="memdesc:a3d372a2305fff0533572e6bbf256d98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">MAC-адрес устройства хранения данных  <br /></td></tr>
 <tr class="memitem:af888feda3ab312d1c9ad82f6e9e74f4a" id="r_af888feda3ab312d1c9ad82f6e9e74f4a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af888feda3ab312d1c9ad82f6e9e74f4a">totalSizeMB</a></td></tr>
 <tr class="memdesc:af888feda3ab312d1c9ad82f6e9e74f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Общий объём хранилища в мегабайтах  <br /></td></tr>
 <tr class="memitem:a4455291c2f752c3d2f19e472c22cdaba" id="r_a4455291c2f752c3d2f19e472c22cdaba"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4455291c2f752c3d2f19e472c22cdaba">usedSizeMB</a></td></tr>
 <tr class="memdesc:a4455291c2f752c3d2f19e472c22cdaba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Объём используемого пространства в мегабайтах  <br /></td></tr>
 <tr class="memitem:a7ac35d824b3472955780945bd2a8c755" id="r_a7ac35d824b3472955780945bd2a8c755"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ac35d824b3472955780945bd2a8c755">trustedUsers</a></td></tr>
 <tr class="memdesc:a7ac35d824b3472955780945bd2a8c755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Список доверенных пользователей с доступом к хранилищу  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pro_static_methods_class_device"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_static_methods_class_device')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Защищенные статические члены унаследованные от <a class="el" href="class_device.html">Device</a></td></tr>
+<tr class="memitem:a0916b594b81f03040fdfcb02631a2fb9 inherit pro_static_methods_class_device" id="r_a0916b594b81f03040fdfcb02631a2fb9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a0916b594b81f03040fdfcb02631a2fb9">isValidMacAddress</a> (const std::string &amp;mac)</td></tr>
+<tr class="memdesc:a0916b594b81f03040fdfcb02631a2fb9 inherit pro_static_methods_class_device"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет валидность MAC-адреса.  <br /></td></tr>
+<tr class="memitem:a42390883982aef1600a3b271704c7c2c inherit pro_static_methods_class_device" id="r_a42390883982aef1600a3b271704c7c2c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a42390883982aef1600a3b271704c7c2c">validateId</a> (const std::string &amp;<a class="el" href="class_network_entity.html#ac2a110f7334a8ad8dc3316c51337167f">id</a>)</td></tr>
+<tr class="memdesc:a42390883982aef1600a3b271704c7c2c inherit pro_static_methods_class_device"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет валидность идентификатора устройства.  <br /></td></tr>
+<tr class="inherit_header pro_attribs_class_device"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_device')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Защищенные данные унаследованные от <a class="el" href="class_device.html">Device</a></td></tr>
+<tr class="memitem:ae94094b9bbbc108f5d8b2013d1fd6a6f inherit pro_attribs_class_device" id="r_ae94094b9bbbc108f5d8b2013d1fd6a6f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#ae94094b9bbbc108f5d8b2013d1fd6a6f">macAddress</a></td></tr>
+<tr class="memdesc:ae94094b9bbbc108f5d8b2013d1fd6a6f inherit pro_attribs_class_device"><td class="mdescLeft">&#160;</td><td class="mdescRight">MAC-адрес устройства  <br /></td></tr>
+<tr class="inherit_header pro_attribs_class_network_entity"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_network_entity')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Защищенные данные унаследованные от <a class="el" href="class_network_entity.html">NetworkEntity</a></td></tr>
+<tr class="memitem:ac2a110f7334a8ad8dc3316c51337167f inherit pro_attribs_class_network_entity" id="r_ac2a110f7334a8ad8dc3316c51337167f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_entity.html#ac2a110f7334a8ad8dc3316c51337167f">id</a></td></tr>
+<tr class="memdesc:ac2a110f7334a8ad8dc3316c51337167f inherit pro_attribs_class_network_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Уникальный строковый идентификатор сущности внутри домена  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Класс, представляющий хранилище данных в корпоративной сети компании NetSphere. </p>
@@ -180,11 +214,12 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Граф вызова функции:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_data_storage_a4297941d93bfe90bb6be1fea50e55680_icgraph.png" border="0" usemap="#aclass_data_storage_a4297941d93bfe90bb6be1fea50e55680_icgraph" loading="lazy" alt=""/></div>
-</div>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_validation_exception.html" title="Исключение для ошибок валидации данных.">ValidationException</a></td><td>Если параметры невалидны. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -211,22 +246,17 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Граф вызова функции:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_data_storage_af2b1093344e0c7ea21319a915d6db755_icgraph.png" border="0" usemap="#aclass_data_storage_af2b1093344e0c7ea21319a915d6db755_icgraph" loading="lazy" alt=""/></div>
-</div>
 
 </div>
 </div>
-<a id="a59e7b31d2d419980ab756f3884c5352b" name="a59e7b31d2d419980ab756f3884c5352b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59e7b31d2d419980ab756f3884c5352b">&#9670;&#160;</a></span>getId()</h2>
+<a id="a64bacaf215870a760b31e37db1b88c07" name="a64bacaf215870a760b31e37db1b88c07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64bacaf215870a760b31e37db1b88c07">&#9670;&#160;</a></span>getFreeSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string DataStorage::getId </td>
+          <td class="memname">double DataStorage::getFreeSize </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -234,38 +264,8 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
       </table>
 </div><div class="memdoc">
 
-<p>Возвращает идентификатор хранилища. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>Строковый идентификатор хранилища. </dd></dl>
-<div class="dynheader">
-Граф вызова функции:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_data_storage_a59e7b31d2d419980ab756f3884c5352b_icgraph.png" border="0" usemap="#aclass_data_storage_a59e7b31d2d419980ab756f3884c5352b_icgraph" loading="lazy" alt=""/></div>
-</div>
-
-</div>
-</div>
-<a id="a7bf6f55480766cb1564df4c75788b8d4" name="a7bf6f55480766cb1564df4c75788b8d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bf6f55480766cb1564df4c75788b8d4">&#9670;&#160;</a></span>getMacAddress()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string DataStorage::getMacAddress </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Возвращает MAC-адрес хранилища. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>MAC-адрес устройства в строковом формате. </dd></dl>
-<div class="dynheader">
-Граф вызова функции:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_data_storage_a7bf6f55480766cb1564df4c75788b8d4_icgraph.png" border="0" usemap="#aclass_data_storage_a7bf6f55480766cb1564df4c75788b8d4_icgraph" loading="lazy" alt=""/></div>
-</div>
+<p>Возвращает свободный объём хранилища. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Свободный объём хранилища в мегабайтах. </dd></dl>
 
 </div>
 </div>
@@ -286,22 +286,17 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
 
 <p>Возвращает общий объём хранилища. </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Общий объём хранилища в мегабайтах. </dd></dl>
-<div class="dynheader">
-Граф вызова функции:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_data_storage_a8643e5c1e71d717f249df3daae4b5e8f_icgraph.png" border="0" usemap="#aclass_data_storage_a8643e5c1e71d717f249df3daae4b5e8f_icgraph" loading="lazy" alt=""/></div>
-</div>
 
 </div>
 </div>
-<a id="a3bb1f4ecf9a389d4f77dfe5bc325e7dd" name="a3bb1f4ecf9a389d4f77dfe5bc325e7dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3bb1f4ecf9a389d4f77dfe5bc325e7dd">&#9670;&#160;</a></span>getTrustedUsers()</h2>
+<a id="aaf309d4ec20f1425fa27bb74e8c10b04" name="aaf309d4ec20f1425fa27bb74e8c10b04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf309d4ec20f1425fa27bb74e8c10b04">&#9670;&#160;</a></span>getTrustedUsers()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::string &gt; DataStorage::getTrustedUsers </td>
+          <td class="memname">const std::vector&lt; std::string &gt; &amp; DataStorage::getTrustedUsers </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -310,12 +305,37 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
 </div><div class="memdoc">
 
 <p>Возвращает список доверенных пользователей. </p>
-<dl class="section return"><dt>Возвращает</dt><dd>Копия вектора с именами доверенных пользователей. </dd></dl>
-<div class="dynheader">
-Граф вызова функции:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_data_storage_a3bb1f4ecf9a389d4f77dfe5bc325e7dd_icgraph.png" border="0" usemap="#aclass_data_storage_a3bb1f4ecf9a389d4f77dfe5bc325e7dd_icgraph" loading="lazy" alt=""/></div>
+<dl class="section return"><dt>Возвращает</dt><dd>Константная ссылка на вектор с именами доверенных пользователей. </dd></dl>
+
 </div>
+</div>
+<a id="a5aab50b86feb6f5456061975f7f85e09" name="a5aab50b86feb6f5456061975f7f85e09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aab50b86feb6f5456061975f7f85e09">&#9670;&#160;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string DataStorage::getType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает тип сущности. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка "DataStorage". </dd></dl>
+
+<p>Замещает <a class="el" href="class_device.html#aa787b80cdc5658c098d9fb8c829a1c0a">Device</a>.</p>
 
 </div>
 </div>
@@ -336,11 +356,26 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
 
 <p>Возвращает используемый объём хранилища. </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Используемый объём хранилища в мегабайтах. </dd></dl>
-<div class="dynheader">
-Граф вызова функции:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_data_storage_a9ac4695d108faaa5172b0fcc3d94eaf0_icgraph.png" border="0" usemap="#aclass_data_storage_a9ac4695d108faaa5172b0fcc3d94eaf0_icgraph" loading="lazy" alt=""/></div>
+
 </div>
+</div>
+<a id="a14e95b90fb08a013220e5fef1d91b0ea" name="a14e95b90fb08a013220e5fef1d91b0ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14e95b90fb08a013220e5fef1d91b0ea">&#9670;&#160;</a></span>isUserTrusted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DataStorage::isUserTrusted </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>user</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ищет пользователя в списке доверенных. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>true если пользователь найден в списке доверенных, иначе false. </dd></dl>
 
 </div>
 </div>
@@ -367,11 +402,6 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>true если идентификаторы хранилищ не равны, иначе false. </dd></dl>
-<div class="dynheader">
-Граф вызовов:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_data_storage_a37b6a65ffdc9ca26c8991d28a0da39b4_cgraph.png" border="0" usemap="#aclass_data_storage_a37b6a65ffdc9ca26c8991d28a0da39b4_cgraph" loading="lazy" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -404,11 +434,6 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Граф вызовов:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_data_storage_a9773a3b578154d338150d017134e84a7_cgraph.png" border="0" usemap="#aclass_data_storage_a9773a3b578154d338150d017134e84a7_cgraph" loading="lazy" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -441,11 +466,6 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Граф вызовов:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_data_storage_af56c38b31ba5528cbd94f73df6db57b3_cgraph.png" border="0" usemap="#aclass_data_storage_af56c38b31ba5528cbd94f73df6db57b3_cgraph" loading="lazy" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -472,11 +492,6 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>true если идентификатор текущего хранилища меньше идентификатора другого хранилища, иначе false. </dd></dl>
-<div class="dynheader">
-Граф вызовов:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_data_storage_abc374945e99452db1fe68265cf0de3f6_cgraph.png" border="0" usemap="#aclass_data_storage_abc374945e99452db1fe68265cf0de3f6_cgraph" loading="lazy" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -509,11 +524,6 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Граф вызовов:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_data_storage_a43ed7eb00599c77d3bff3baa7ad53bf7_cgraph.png" border="0" usemap="#aclass_data_storage_a43ed7eb00599c77d3bff3baa7ad53bf7_cgraph" loading="lazy" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -540,19 +550,17 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>true если идентификаторы хранилищ равны, иначе false. </dd></dl>
-<div class="dynheader">
-Граф вызовов:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_data_storage_a7183d2e50888e1871c9e18df6de7257a_cgraph.png" border="0" usemap="#aclass_data_storage_a7183d2e50888e1871c9e18df6de7257a_cgraph" loading="lazy" alt=""/></div>
-</div>
 
 </div>
 </div>
-<a id="a4214c4c14f987a6c8866d437a59d3b1e" name="a4214c4c14f987a6c8866d437a59d3b1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4214c4c14f987a6c8866d437a59d3b1e">&#9670;&#160;</a></span>printInfo()</h2>
+<a id="a22d48113da88133b5a8a30300a5a97db" name="a22d48113da88133b5a8a30300a5a97db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22d48113da88133b5a8a30300a5a97db">&#9670;&#160;</a></span>printInfo()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void DataStorage::printInfo </td>
@@ -561,15 +569,17 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Выводит информацию о хранилище в человекочитаемом формате. </p>
 <p>Выводит идентификатор, MAC-адрес, информацию об объёмах и список доверенных пользователей. </p>
-<div class="dynheader">
-Граф вызова функции:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_data_storage_a4214c4c14f987a6c8866d437a59d3b1e_icgraph.png" border="0" usemap="#aclass_data_storage_a4214c4c14f987a6c8866d437a59d3b1e_icgraph" loading="lazy" alt=""/></div>
-</div>
+
+<p>Замещает <a class="el" href="class_network_entity.html#a6507e9ae5ef2ad1531a9379ab7bc2d9a">NetworkEntity</a>.</p>
 
 </div>
 </div>
@@ -595,63 +605,49 @@ $(function(){initNavTree('class_data_storage.html','','class_data_storage-member
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Граф вызова функции:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_data_storage_ae72cfd5ddbb8d83cc2ada5e45511fd6f_icgraph.png" border="0" usemap="#aclass_data_storage_ae72cfd5ddbb8d83cc2ada5e45511fd6f_icgraph" loading="lazy" alt=""/></div>
+
 </div>
+</div>
+<a id="a62ba1dca89ae6f0e606fd787279b50cc" name="a62ba1dca89ae6f0e606fd787279b50cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62ba1dca89ae6f0e606fd787279b50cc">&#9670;&#160;</a></span>validateSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataStorage::validateSize </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет валидность размера хранилища. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Размер для проверки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_validation_exception.html" title="Исключение для ошибок валидации данных.">ValidationException</a></td><td>Если размер невалиден. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
-<a id="a6a0ff9729c541aa9234c8a68bbc23f0c" name="a6a0ff9729c541aa9234c8a68bbc23f0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a0ff9729c541aa9234c8a68bbc23f0c">&#9670;&#160;</a></span>id</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string DataStorage::id</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Уникальный строковый идентификатор хранилища внутри домена </p>
-
-</div>
-</div>
-<a id="a3d372a2305fff0533572e6bbf256d98c" name="a3d372a2305fff0533572e6bbf256d98c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d372a2305fff0533572e6bbf256d98c">&#9670;&#160;</a></span>macAddress</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string DataStorage::macAddress</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>MAC-адрес устройства хранения данных </p>
-
-</div>
-</div>
 <a id="af888feda3ab312d1c9ad82f6e9e74f4a" name="af888feda3ab312d1c9ad82f6e9e74f4a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af888feda3ab312d1c9ad82f6e9e74f4a">&#9670;&#160;</a></span>totalSizeMB</h2>
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['введение_0',['Введение',['../index.html#intro_sec',1,'']]]
+  ['uml_20нотация_0',['UML-нотация',['../index.html#uml_notation',1,'']]]
 ];

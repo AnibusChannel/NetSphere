@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['macaddress_0',['macAddress',['../class_data_storage.html#a3d372a2305fff0533572e6bbf256d98c',1,'DataStorage']]],
-  ['main_1',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp'],['../group__tests__module.html#ga3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;DataStorageTests.cpp']]],
-  ['main_2ecpp_2',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['mainpage_2eh_3',['mainpage.h',['../mainpage_8h.html',1,'']]]
+  ['finddomaincontainingentity_0',['findDomainContainingEntity',['../class_corporate_network.html#a1815aebe795aa20cf99e1e5c899cc7c4',1,'CorporateNetwork']]],
+  ['finddomainrecursive_1',['findDomainRecursive',['../class_corporate_network.html#a1b4f4223bc8d5dbf97e44dacaaaa2aa8',1,'CorporateNetwork']]],
+  ['findentity_2',['findEntity',['../class_corporate_network.html#a94dae2d8b8069307ef038322ffc0804d',1,'CorporateNetwork::findEntity()'],['../class_domain.html#a7be131e0de27d9e184adb1808e2dfe29',1,'Domain::findEntity()']]]
 ];
