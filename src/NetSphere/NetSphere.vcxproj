@@ -40,7 +40,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -100,9 +100,10 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;NETSPHEREDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,6 +131,7 @@
     <ClCompile Include="DataStorage.cpp" />
     <ClCompile Include="Domain.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NetSphereWrapper.cpp" />
     <ClCompile Include="Printer.cpp" />
     <ClCompile Include="Workstation.cpp" />
   </ItemGroup>
@@ -138,6 +140,7 @@
     <ClInclude Include="DataStorage.h" />
     <ClInclude Include="Device.h" />
     <ClInclude Include="Domain.h" />
+    <ClInclude Include="NetSphereWrapper.h" />
     <ClInclude Include="NetworkExceptions.h" />
     <ClInclude Include="NetworkEntity.h" />
     <ClInclude Include="Printer.h" />

@@ -179,10 +179,6 @@ const std::vector<std::string>& DataStorage::getTrustedUsers() const {
  */
 void DataStorage::printInfo() const {
 
-    std::locale::global(std::locale(""));
-    std::wcout.imbue(std::locale());
-    std::wcin.imbue(std::locale());
-
     std::cout << "Хранилище: " << getId() << "\n";
     std::cout << "MAC: " << getMacAddress() << "\n";
     std::cout << "Объем: " << usedSizeMB << "/" << totalSizeMB << " MB\n";

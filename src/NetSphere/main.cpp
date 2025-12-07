@@ -4,6 +4,7 @@
  */
 
 #include <iostream>
+#include <windows.h>
 #include <locale>
 #include <memory>
 #include "DataStorage.h"
@@ -162,10 +163,8 @@ void demonstrateCorporateNetwork() {
  */
 int main() {
     // Установка локали для корректного отображения кириллицы
-    std::locale::global(std::locale(""));
-    std::wcout.imbue(std::locale());
-    std::wcin.imbue(std::locale());
-
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
     std::cout << "Запуск приложения NetSphere..." << std::endl;
 
     try {
