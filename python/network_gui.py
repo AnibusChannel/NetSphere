@@ -1,3 +1,15 @@
+"""
+Графический интерфейс приложения NetSphere на базе PyQt5.
+
+Модуль реализует главное окно управления корпоративной сетью:
+1) просмотр структуры сети (дерево доменов и устройств);
+2) создание сети и добавление/удаление устройств;
+3) операции с хранилищами данных (добавление/освобождение данных, управление доверенными пользователями).
+
+Пользовательский слой вызывает Python-обертку `corporate_network` и использует ее методы
+для выполнения операций через ctypes в нативное C++ ядро.
+"""
+
 import sys
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
                              QHBoxLayout, QTreeWidget, QTreeWidgetItem, QPushButton,
@@ -10,15 +22,22 @@ from datetime import datetime
 
 
 class DeviceTreeWidget(QTreeWidget):
+    """Виджет дерева для отображения доменов/устройств и выбора конкретной сущности."""
     device_selected = pyqtSignal(dict)
 
     def __init__(self, parent=None):
+        """Инициализирует дерево и настраивает обработчик выбора элемента."""
         super().__init__(parent)
         self.setHeaderLabels(['ID', 'Тип', 'MAC', 'Информация'])
         self.itemClicked.connect(self.on_item_clicked)
         self.network = None
 
     def set_network(self, network):
+        """Перестраивает дерево, отображая список устройств из `network`.
+
+        Args:
+            network: Экземпляр `CorporateNetwork` (или совместимый объект), из которого будут извлечены `devices`.
+        """
         self.network = network
         self.clear()
 
@@ -62,6 +81,7 @@ class DeviceTreeWidget(QTreeWidget):
         self.expandAll()
 
     def on_item_clicked(self, item, column):
+        """Сигнализирует о выборе пользователя по клику на строке дерева."""
         device_info = {
             'id': item.text(0),
             'type': item.text(1),
@@ -72,13 +92,16 @@ class DeviceTreeWidget(QTreeWidget):
 
 
 class AddDeviceDialog(QDialog):
+    """Диалог создания нового устройства (хранилище/станция/принтер/домен)."""
     def __init__(self, parent=None):
+        """Инициализирует диалог и строит UI."""
         super().__init__(parent)
         self.setWindowTitle("Добавить устройство")
         self.setModal(True)
         self.setup_ui()
 
     def setup_ui(self):
+        """Создает виджеты формы и кнопку подтверждения."""
         layout = QVBoxLayout()
 
         self.type_combo = QComboBox()
@@ -116,6 +139,7 @@ class AddDeviceDialog(QDialog):
         self.on_type_changed(0)
 
     def on_type_changed(self, index):
+        """Переключает набор полей формы в зависимости от типа устройства."""
         for i in reversed(range(self.specific_layout.count())):
             widget = self.specific_layout.itemAt(i).widget()
             if widget:
@@ -132,6 +156,12 @@ class AddDeviceDialog(QDialog):
             self.specific_layout.addRow("Администратор:", self.admin_edit)
 
     def get_device_data(self):
+        """Собирает параметры устройства из формы.
+
+        Returns:
+            Словарь с общими полями (`id`, `mac`, `type`) и дополнительными полями
+            в зависимости от `type` (например, `total_size`, `user`, `admin`).
+        """
         data = {
             'id': self.id_edit.text(),
             'mac': self.mac_edit.text(),
@@ -149,7 +179,9 @@ class AddDeviceDialog(QDialog):
 
 
 class MainWindow(QMainWindow):
+    """Главное окно приложения: управление сетью и операции над выбранными сущностями."""
     def __init__(self):
+        """Создает окно и инициализирует пользовательский интерфейс."""
         super().__init__()
         self.network = None
         self._root_admin_id = None
@@ -158,6 +190,7 @@ class MainWindow(QMainWindow):
         self.init_ui()
 
     def init_ui(self):
+        """Строит основную компоновку окна (дерево, вкладки и журнал)."""
         self.setWindowTitle("Корпоративная сеть - Управление")
         self.setGeometry(100, 100, 1200, 800)
 
@@ -217,6 +250,7 @@ class MainWindow(QMainWindow):
         self.statusBar().showMessage("Готово")
 
     def setup_info_tab(self):
+        """Настраивает вкладку “Информация” для вывода выбранной сущности."""
         layout = QFormLayout()
 
         self.device_id_label = QLabel("")
@@ -236,6 +270,7 @@ class MainWindow(QMainWindow):
         self.info_tab.setLayout(layout)
 
     def setup_operations_tab(self):
+        """Настраивает вкладку “Операции”, включая блок операций с хранилищем."""
         layout = QVBoxLayout()
 
         self.storage_group = QGroupBox("Операции с хранилищем")
@@ -262,6 +297,7 @@ class MainWindow(QMainWindow):
         self.operations_tab.setLayout(layout)
 
     def setup_log_tab(self):
+        """Настраивает вкладку “Журнал” для отображения логов пользователя."""
         layout = QVBoxLayout()
 
         self.log_text = QTextEdit()
@@ -272,6 +308,7 @@ class MainWindow(QMainWindow):
         self.log_tab.setLayout(layout)
 
     def create_network(self):
+        """Создает новую корпоративную сеть, запрашивая ID администратора корневого домена."""
         admin_id, ok = QInputDialog.getText(self, "Создание сети",
                                             "Введите ID администратора корневого домена:")
         if ok and admin_id:
@@ -291,6 +328,7 @@ class MainWindow(QMainWindow):
                 self.log_message(f"ОШИБКА: {error_msg}")
 
     def add_device(self):
+        """Создает устройство/домен через `AddDeviceDialog` и добавляет его в выбранный домен."""
         if not self.network:
             QMessageBox.warning(self, "Внимание", "Сначала создайте сеть")
             return
@@ -368,6 +406,7 @@ class MainWindow(QMainWindow):
                 self.log_message(f"ОШИБКА: {error_msg}")
 
     def remove_device(self):
+        """Удаляет выбранную сущность по ее ID (кроме корневого домена)."""
         if not self.network:
             QMessageBox.warning(self, "Внимание", "Сначала создайте сеть")
             return
@@ -419,6 +458,7 @@ class MainWindow(QMainWindow):
                 self.log_message(f"ОШИБКА: {error_msg}")
 
     def on_device_selected(self, device_info):
+        """Обрабатывает выбор сущности в дереве: заполняет поля и включает/выключает операции."""
         self._selected_device_info = device_info
         self.device_id_label.setText(device_info['id'])
         self.device_type_label.setText(device_info['type'])
@@ -442,6 +482,7 @@ class MainWindow(QMainWindow):
             self.storage_group.setVisible(False)
 
     def on_add_data(self):
+        """Обработчик кнопки “Добавить данные” для выбранного хранилища."""
         if not self._selected_device:
             QMessageBox.warning(self, "Внимание", "Выберите хранилище для добавления данных")
             return
@@ -477,6 +518,7 @@ class MainWindow(QMainWindow):
                 self.log_message(f"ОШИБКА: {error_msg}")
 
     def on_free_data(self):
+        """Обработчик кнопки “Освободить данные” для выбранного хранилища."""
         if not self._selected_device:
             QMessageBox.warning(self, "Внимание", "Выберите хранилище для освобождения данных")
             return
@@ -512,6 +554,7 @@ class MainWindow(QMainWindow):
                 self.log_message(f"ОШИБКА: {error_msg}")
 
     def on_add_user(self):
+        """Обработчик кнопки “Добавить пользователя” для выбранного хранилища."""
         if not self._selected_device:
             QMessageBox.warning(self, "Внимание", "Выберите хранилище для добавления пользователя")
             return
@@ -545,11 +588,13 @@ class MainWindow(QMainWindow):
                 self.log_message(f"ОШИБКА: {error_msg}")
 
     def log_message(self, message):
+        """Добавляет строку в журнал (с отметкой времени)."""
         timestamp = datetime.now().strftime("%H:%M:%S")
         self.log_text.append(f"[{timestamp}] {message}")
 
 
 def main():
+    """Точка входа: создает `QApplication`, главное окно и запускает цикл событий."""
     app = QApplication(sys.argv)
     font = QFont()
     font.setPointSize(9)
