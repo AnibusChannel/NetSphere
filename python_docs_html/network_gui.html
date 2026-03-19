@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang='ru'>
+<head>
+<meta charset='utf-8'/>
+<title>network_gui</title>
+
+        <style>
+          body { font-family: Arial, Helvetica, sans-serif; margin: 24px; line-height: 1.35; }
+          code, pre { background: #f5f5f5; padding: 2px 4px; border-radius: 4px; }
+          pre { white-space: pre-wrap; }
+          h1 { margin-top: 0; }
+          .doc { margin: 8px 0 18px 0; }
+          .section { margin: 18px 0; padding: 12px; border: 1px solid #eee; border-radius: 8px; }
+          .sig { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; }
+        </style>
+        
+</head>
+<body>
+<h1>Модуль: network_gui</h1>
+<div class='doc'>Графический интерфейс приложения NetSphere на базе PyQt5.
+
+Модуль реализует главное окно управления корпоративной сетью:
+1) просмотр структуры сети (дерево доменов и устройств);
+2) создание сети и добавление/удаление устройств;
+3) операции с хранилищами данных (добавление/освобождение данных, управление доверенными пользователями).
+
+Пользовательский слой вызывает Python-обертку `corporate_network` и использует ее методы
+для выполнения операций через ctypes в нативное C++ ядро.</div>
+<div class='section'><h2>Функции</h2>
+<div class='section'>
+<div class='sig'><strong>main()</strong></div>
+<div class='doc'>Точка входа: создает `QApplication`, главное окно и запускает цикл событий.</div>
+</div>
+</div>
+<div class='section'><h2>Классы</h2>
+<div class='section'>
+<h3>DeviceTreeWidget</h3>
+<div class='doc'>Виджет дерева для отображения доменов/устройств и выбора конкретной сущности.</div>
+<h4>Методы</h4>
+<div class='section'>
+<div class='sig'><strong>__init__(parent)</strong></div>
+<div class='doc'>Инициализирует дерево и настраивает обработчик выбора элемента.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>set_network(network)</strong></div>
+<div class='doc'>Перестраивает дерево, отображая список устройств из `network`.<br/><br/>Args:<br/>    network: Экземпляр `CorporateNetwork` (или совместимый объект), из которого будут извлечены `devices`.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>on_item_clicked(item, column)</strong></div>
+<div class='doc'>Сигнализирует о выборе пользователя по клику на строке дерева.</div>
+</div>
+</div>
+<div class='section'>
+<h3>AddDeviceDialog</h3>
+<div class='doc'>Диалог создания нового устройства (хранилище/станция/принтер/домен).</div>
+<h4>Методы</h4>
+<div class='section'>
+<div class='sig'><strong>__init__(parent)</strong></div>
+<div class='doc'>Инициализирует диалог и строит UI.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>setup_ui()</strong></div>
+<div class='doc'>Создает виджеты формы и кнопку подтверждения.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>on_type_changed(index)</strong></div>
+<div class='doc'>Переключает набор полей формы в зависимости от типа устройства.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>get_device_data()</strong></div>
+<div class='doc'>Собирает параметры устройства из формы.<br/><br/>Returns:<br/>    Словарь с общими полями (`id`, `mac`, `type`) и дополнительными полями<br/>    в зависимости от `type` (например, `total_size`, `user`, `admin`).</div>
+</div>
+</div>
+<div class='section'>
+<h3>MainWindow</h3>
+<div class='doc'>Главное окно приложения: управление сетью и операции над выбранными сущностями.</div>
+<h4>Методы</h4>
+<div class='section'>
+<div class='sig'><strong>__init__()</strong></div>
+<div class='doc'>Создает окно и инициализирует пользовательский интерфейс.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>init_ui()</strong></div>
+<div class='doc'>Строит основную компоновку окна (дерево, вкладки и журнал).</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>setup_info_tab()</strong></div>
+<div class='doc'>Настраивает вкладку “Информация” для вывода выбранной сущности.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>setup_operations_tab()</strong></div>
+<div class='doc'>Настраивает вкладку “Операции”, включая блок операций с хранилищем.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>setup_log_tab()</strong></div>
+<div class='doc'>Настраивает вкладку “Журнал” для отображения логов пользователя.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>create_network()</strong></div>
+<div class='doc'>Создает новую корпоративную сеть, запрашивая ID администратора корневого домена.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>add_device()</strong></div>
+<div class='doc'>Создает устройство/домен через `AddDeviceDialog` и добавляет его в выбранный домен.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>remove_device()</strong></div>
+<div class='doc'>Удаляет выбранную сущность по ее ID (кроме корневого домена).</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>on_device_selected(device_info)</strong></div>
+<div class='doc'>Обрабатывает выбор сущности в дереве: заполняет поля и включает/выключает операции.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>on_add_data()</strong></div>
+<div class='doc'>Обработчик кнопки “Добавить данные” для выбранного хранилища.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>on_free_data()</strong></div>
+<div class='doc'>Обработчик кнопки “Освободить данные” для выбранного хранилища.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>on_add_user()</strong></div>
+<div class='doc'>Обработчик кнопки “Добавить пользователя” для выбранного хранилища.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>log_message(message)</strong></div>
+<div class='doc'>Добавляет строку в журнал (с отметкой времени).</div>
+</div>
+</div>
+</div>
+<p><hr/><a href='index.html'>К оглавлению</a></p>
+</body></html>
