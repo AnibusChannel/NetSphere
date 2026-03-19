@@ -1,3 +1,18 @@
+"""
+ctypes-обертка для взаимодействия с DLL, реализующей ядро корпоративной сети.
+
+Модуль предоставляет:
+1) загрузку DLL через `ctypes` (`load_dll`);
+2) модель типа устройства (`DeviceType`) и структуры данных (`DeviceInfo`);
+3) обертки над handle-объектами: `NetworkEntity` и `CorporateNetwork`;
+4) обработку сообщений об ошибках, пришедших из нативной части (`decode_error_string`).
+
+Примечание по совместимости:
+имена экспортируемых C-функций в ожидаемой DLL должны соответствовать тем, которые
+заданы в `load_dll` (например, `network_create`, `device_create_storage` и т.д.).
+При несовпадении имен слой ctypes не сможет вызвать нужные операции.
+"""
+
 import ctypes
 import os
 from ctypes import c_void_p, c_char_p, c_int, c_double, c_longlong, POINTER, Structure, byref, c_char, cast, addressof
@@ -7,6 +22,7 @@ from typing import Optional, List, Dict, Any
 
 
 class DeviceType(IntEnum):
+    """Перечисление типов устройств, используемое в ctypes-API."""
     UNKNOWN = 0
     DATA_STORAGE = 1
     WORKSTATION = 2
@@ -15,6 +31,7 @@ class DeviceType(IntEnum):
 
 
 class DeviceInfo(Structure):
+    """Структура DeviceInfo, передаваемая в/из DLL для получения информации о сущности."""
     _fields_ = [
         ("id", ctypes.c_char * 256),
         ("mac", ctypes.c_char * 256),
@@ -24,6 +41,19 @@ class DeviceInfo(Structure):
 
 
 def load_dll(dll_path: str = None):
+    """Загружает нативную DLL и настраивает `argtypes/restype` для C API.
+
+    Args:
+        dll_path: Полный путь к DLL. Если `None`, будет выполнен поиск в типичных местах.
+
+    Returns:
+        Загруженный объект DLL (экземпляр `ctypes.CDLL`) с настроенными сигнатурами функций.
+
+    Raises:
+        FileNotFoundError: если DLL не найдена.
+        OSError: если DLL не удалось загрузить.
+        CorporateNetworkError: если загрузка DLL завершилась ошибкой.
+    """
     if dll_path is None:
         script_dir = os.path.dirname(os.path.abspath(__file__))
         possible_paths = [
@@ -100,10 +130,23 @@ def load_dll(dll_path: str = None):
 
 
 class CorporateNetworkError(Exception):
+    """Ошибка уровня обертки (ctypes/Python-слой) для корпоративной сети."""
     pass
 
 
 def decode_error_string(error_ptr):
+    """Пытается декодировать строку ошибки, пришедшую из DLL.
+
+    DLL может возвращать указатель на нуль-терминированный буфер байтов.
+    Код выполняет попытки декодирования в несколько кодировок (с приоритетом cp1251),
+    выбирая вариант, в котором присутствуют кириллические символы или адекватная читаемость.
+
+    Args:
+        error_ptr: Указатель/значение ошибки из `ctypes` (например, `POINTER(c_char)`).
+
+    Returns:
+        Строка ошибки (возможно, пустая строка, если ошибка не распознана).
+    """
     if not error_ptr:
         return ""
     
@@ -197,15 +240,38 @@ def decode_error_string(error_ptr):
 
 
 class NetworkEntity:
+    """Обертка над нативным handle конкретной сущности сети (устройство или домен).
+
+    Внутри хранится `handle` (opaque pointer) и ссылка на загруженную DLL.
+    Для операций используется передача handle обратно в функции DLL.
+    """
     def __init__(self, handle: c_void_p, dll):
+        """Создает Python-обертку над нативной сущностью.
+
+        Args:
+            handle: opaque handle (указатель), возвращенный DLL.
+            dll: объект `ctypes.CDLL`, из которого выполняются вызовы.
+        """
         self.handle = handle
         self.dll = dll
 
     def __del__(self):
+        """Освобождает нативный объект через `device_destroy`, если handle не пуст."""
         if self.handle:
             self.dll.device_destroy(self.handle)
 
     def storage_add_data(self, size: float) -> bool:
+        """Добавляет объем данных в хранилище.
+
+        Args:
+            size: Количество данных (MB), которое требуется добавить.
+
+        Returns:
+            True при успехе, False при отказе (если при этом не было детальной ошибки).
+
+        Raises:
+            CorporateNetworkError: если DLL вернула ошибку и выдала текст ошибки.
+        """
         result = self.dll.storage_add_data(self.handle, c_double(size))
         if not result:
             error = self.dll.get_last_error()
@@ -216,6 +282,17 @@ class NetworkEntity:
         return True
 
     def storage_free_data(self, size: float) -> bool:
+        """Освобождает (уменьшает) объем данных в хранилище.
+
+        Args:
+            size: Количество данных (MB), которое нужно освободить.
+
+        Returns:
+            True при успехе, False при отказе.
+
+        Raises:
+            CorporateNetworkError: если DLL вернула ошибку и выдала текст ошибки.
+        """
         result = self.dll.storage_free_data(self.handle, c_double(size))
         if not result:
             error = self.dll.get_last_error()
@@ -226,6 +303,17 @@ class NetworkEntity:
         return True
 
     def storage_add_trusted_user(self, user: str) -> bool:
+        """Добавляет доверенного пользователя к хранилищу.
+
+        Args:
+            user: Идентификатор пользователя, добавляемого в список доверенных.
+
+        Returns:
+            True при успехе, False при отказе.
+
+        Raises:
+            CorporateNetworkError: если DLL вернула ошибку и выдала текст ошибки.
+        """
         result = self.dll.storage_add_trusted_user(self.handle, user.encode('utf-8'))
         if not result:
             error = self.dll.get_last_error()
@@ -236,6 +324,21 @@ class NetworkEntity:
         return True
 
     def get_info(self) -> Dict[str, Any]:
+        """Запрашивает информацию о сущности.
+
+        Ожидает, что DLL заполнит структуру `DeviceInfo`.
+
+        Returns:
+            Словарь вида:
+              - `id`: str
+              - `mac`: str (может быть пустой)
+              - `type`: DeviceType
+
+            Если DLL не вернула информацию, возвращает пустой словарь `{}`.
+
+        Raises:
+            CorporateNetworkError: если DLL вернула ошибку и выдала текст ошибки.
+        """
         info = DeviceInfo()
 
         if self.dll.device_get_info(self.handle, byref(info)):
@@ -265,7 +368,21 @@ class NetworkEntity:
 
 
 class CorporateNetwork:
+    """Основная Python-обертка над сетью корпоративных доменов.
+
+    Сеть создается через handle, возвращаемый DLL. Далее операции выполняются через вызовы DLL.
+    В качестве объектов сущностей возвращаются `NetworkEntity` (opaque handle).
+    """
     def __init__(self, root_admin_id: str, dll_path: str = None):
+        """Создает сеть с корневым администратором.
+
+        Args:
+            root_admin_id: Идентификатор администратора корневого домена.
+            dll_path: Необязательный путь к DLL.
+
+        Raises:
+            CorporateNetworkError: если DLL не удалось загрузить или сеть не удалось создать.
+        """
         try:
             self.dll = load_dll(dll_path)
         except Exception as e:
@@ -286,10 +403,23 @@ class CorporateNetwork:
         self.devices = []
 
     def __del__(self):
+        """Освобождает нативную сеть через `network_destroy`, если handle не пуст."""
         if self.handle:
             self.dll.network_destroy(self.handle)
 
     def create_domain(self, domain_id: str, admin_id: str) -> NetworkEntity:
+        """Создает домен в нативной части и оборачивает его в `NetworkEntity`.
+
+        Args:
+            domain_id: Идентификатор домена.
+            admin_id: Идентификатор администратора домена.
+
+        Returns:
+            NetworkEntity с созданным доменом.
+
+        Raises:
+            CorporateNetworkError: если DLL не вернула валидный handle.
+        """
         handle = self.dll.device_create_domain(
             domain_id.encode('utf-8'),
             admin_id.encode('utf-8')
@@ -304,6 +434,19 @@ class CorporateNetwork:
         return device
 
     def create_storage(self, device_id: str, mac: str, total_size: float) -> NetworkEntity:
+        """Создает хранилище данных в нативной части.
+
+        Args:
+            device_id: Идентификатор устройства.
+            mac: MAC-адрес устройства.
+            total_size: Общий объем хранилища (MB).
+
+        Returns:
+            NetworkEntity с созданным хранилищем.
+
+        Raises:
+            CorporateNetworkError: если DLL не вернула валидный handle.
+        """
         handle = self.dll.device_create_storage(
             device_id.encode('utf-8'),
             mac.encode('utf-8'),
@@ -319,6 +462,20 @@ class CorporateNetwork:
         return device
 
     def create_workstation(self, device_id: str, mac: str, user_id: str, power_on_time: int) -> NetworkEntity:
+        """Создает рабочую станцию в нативной части.
+
+        Args:
+            device_id: Идентификатор устройства.
+            mac: MAC-адрес устройства.
+            user_id: Идентификатор пользователя, закрепленного за станцией.
+            power_on_time: Время последнего включения (обычно seconds since epoch).
+
+        Returns:
+            NetworkEntity с созданной рабочей станцией.
+
+        Raises:
+            CorporateNetworkError: если DLL не вернула валидный handle.
+        """
         handle = self.dll.device_create_workstation(
             device_id.encode('utf-8'),
             mac.encode('utf-8'),
@@ -335,6 +492,18 @@ class CorporateNetwork:
         return device
 
     def create_printer(self, device_id: str, mac: str) -> NetworkEntity:
+        """Создает принтер в нативной части.
+
+        Args:
+            device_id: Идентификатор принтера.
+            mac: MAC-адрес принтера.
+
+        Returns:
+            NetworkEntity с созданным принтером.
+
+        Raises:
+            CorporateNetworkError: если DLL не вернула валидный handle.
+        """
         handle = self.dll.device_create_printer(
             device_id.encode('utf-8'),
             mac.encode('utf-8')
@@ -349,6 +518,23 @@ class CorporateNetwork:
         return device
 
     def add_device_to_domain(self, domain_id: str, device: NetworkEntity, user: str) -> bool:
+        """Добавляет созданную сущность в домен.
+
+        Типичный сценарий:
+        1) `create_*` создает устройство/домен и возвращает `NetworkEntity`;
+        2) `add_device_to_domain` связывает сущность с нужным доменом в нативной части.
+
+        Args:
+            domain_id: Идентификатор домена (пустая строка может означать корневой домен, в зависимости от DLL).
+            device: Сущность, которая добавляется.
+            user: Идентификатор пользователя, выполняющего операцию (для проверки прав).
+
+        Returns:
+            True при успехе, False при отказе.
+
+        Raises:
+            CorporateNetworkError: если DLL вернула ошибку и выдала текст ошибки.
+        """
         result = self.dll.network_add_device(
             self.handle,
             domain_id.encode('utf-8'),
@@ -366,13 +552,31 @@ class CorporateNetwork:
         return True
 
     def get_last_error(self) -> str:
+        """Возвращает последнюю ошибку, полученную из DLL (в виде строки)."""
         error = self.dll.get_last_error()
         return decode_error_string(error) if error else ""
 
     def clear_error(self):
+        """Очищает состояние последней ошибки в DLL."""
         self.dll.clear_last_error()
 
     def remove_device_from_network(self, device_id: str, user: str) -> bool:
+        """Удаляет сущность из сети по идентификатору.
+
+        Args:
+            device_id: Идентификатор сущности для удаления.
+            user: Идентификатор пользователя, выполняющего операцию.
+
+        Returns:
+            True при успехе, False при отказе.
+
+        Notes:
+            После успешного удаления Python-список `self.devices` пересобирается,
+            чтобы удалить удаленную сущность (на основе `get_info()`).
+
+        Raises:
+            CorporateNetworkError: если DLL вернула ошибку и выдала текст ошибки.
+        """
         result = self.dll.network_remove_device(
             self.handle,
             device_id.encode('utf-8'),
