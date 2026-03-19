@@ -1,0 +1,492 @@
+% NetSphere_Code_Inventory.tex
+% Полный перечень объектов кода (C++ ядро + Python слой) с привязкой к файлам.
+
+\documentclass[14pt,a4paper]{extarticle}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{titlesec}
+
+\geometry{left=25mm,right=15mm,top=20mm,bottom=20mm}
+\onehalfspacing
+\setlength{\parindent}{1.1cm}
+
+\titleformat{\section}[block]{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}[block]{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[block]{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black}
+
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        \large
+        NetSphere\\[10pt]
+        \textbf{Реестр объектов кода (C++ + Python)}\\[12pt]
+        {\normalsize Техническая документация для сопровождения и рефакторинга}
+    \end{center}
+    \vfill
+    \begin{flushright}
+        \normalsize
+        Версия документации: текущее состояние репозитория
+    \end{flushright}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Назначение документа}
+Документ предназначен для разработчиков, которым требуется быстро понять интерфейсы и ``точки входа'' для выполнения операций в системе NetSphere:
+как создать сеть, как добавлять/удалять домены и устройства, какие параметры нужны и в какой последовательности их вызывать.
+
+\subsection{Ограничения по ``изменению интерфейса от версии к версии''}
+В репозитории не выделены явные версии API (нет тегов/версий в коде). Поэтому в документе фиксируется интерфейс \emph{текущего} состояния.
+При необходимости можно дополнить раздел, если будут предоставлены предыдущие версии DLL/API (или репозиторий с историей).
+
+\section{Карта модулей (по директориям)}
+\begin{itemize}[leftmargin=*]
+  \item C++ ядро: \texttt{src/NetSphere/}
+  \item Тесты: \texttt{tests/NetSphereTests/}
+  \item Python слой:
+  \begin{itemize}
+    \item GUI: \texttt{python/network\_gui.py}
+    \item ctypes-обертка: \texttt{python/corporate\_network.py}
+    \item генератор HTML по docstring'ам: \texttt{python/generate\_html\_docs.py}
+  \end{itemize}
+\end{itemize}
+
+\section{C++ ядро: реестр объектов}
+\subsection{Базовые сущности}
+
+\subsubsection{Класс \texttt{NetworkEntity}}
+\paragraph{Файл(ы):} \texttt{src/NetSphere/NetworkEntity.h}
+\paragraph{Назначение:} абстрактная базовая сущность для доменов и устройств.
+\paragraph{Состав:}
+protected поле \texttt{std::string id}.
+\paragraph{Интерфейс:}
+\begin{itemize}
+  \item \texttt{NetworkEntity(const std::string\& id)} --- конструктор.
+  \item \texttt{virtual \~{}NetworkEntity() = default} --- виртуальный деструктор.
+  \item \texttt{const std::string\& getId() const}.
+  \item \texttt{virtual void printInfo() const = 0}.
+  \item \texttt{virtual std::string getType() const = 0}.
+\end{itemize}
+
+\subsubsection{Класс \texttt{Device} (абстрактный)}
+\paragraph{Файл(ы):} \texttt{src/NetSphere/Device.h}
+\paragraph{Назначение:} базовый класс для устройств сети (хранилища, рабочие станции, принтеры).
+\paragraph{Состав:}
+protected поле \texttt{std::string macAddress}.
+\paragraph{Служебные методы (часть интерфейса для наследников):}
+\begin{itemize}
+  \item \texttt{static bool isValidMacAddress(const std::string\& mac)}.
+  \item \texttt{static void validateId(const std::string\& id)}.
+\end{itemize}
+\paragraph{Интерфейс:}
+\begin{itemize}
+  \item \texttt{Device(const std::string\& id, const std::string\& mac)} --- валидирует id и MAC.
+  \item \texttt{const std::string\& getMacAddress() const}.
+  \item \texttt{virtual std::string getType() const override = 0}.
+  \item Переопределение \texttt{printInfo()} реализуется в производных классах.
+\end{itemize}
+
+\subsection{Домены}
+\subsubsection{Класс \texttt{Domain}}
+\paragraph{Файл(ы):} \texttt{src/NetSphere/Domain.h}, \texttt{src/NetSphere/Domain.cpp}
+\paragraph{Назначение:} контейнер для устройств и поддоменов; управление доступом через администратор домена.
+\paragraph{Состав:}
+\begin{itemize}
+  \item private поле \texttt{std::string adminId}.
+  \item private поле \texttt{std::unordered\_map<std::string, std::shared\_ptr<NetworkEntity>> entities}.
+  \item private вспомогательные методы:
+  \begin{itemize}
+    \item \texttt{checkAdminRights(const std::string\& user) const}.
+    \item \texttt{validateEntity(const std::shared\_ptr<NetworkEntity>\& entity) const}.
+  \end{itemize}
+\end{itemize}
+\paragraph{Интерфейс:}
+\begin{itemize}
+  \item \texttt{Domain(const std::string\& id, const std::string\& admin)} --- валидирует id и admin.
+  \item \texttt{void addEntity(std::shared\_ptr<NetworkEntity> entity, const std::string\& user)}.
+  \item \texttt{void removeEntity(const std::string\& entityId, const std::string\& user)}.
+  \item \texttt{std::shared\_ptr<NetworkEntity> findEntity(const std::string\& entityId) const}.
+  \item \texttt{const std::string\& getAdminId() const}.
+  \item \texttt{size\_t getEntityCount() const}.
+  \item \texttt{const std::unordered\_map<std::string, std::shared\_ptr<NetworkEntity>>\& getAllEntities() const}.
+  \item \texttt{void printInfo() const override}.
+  \item \texttt{std::string getType() const override} (возвращает \texttt{"Domain"}).
+  \item \texttt{void printDetailedInfo() const}.
+ \end{itemize}
+
+\subsection{Устройства}
+\subsubsection{Класс \texttt{DataStorage}}
+\paragraph{Файл(ы):} \texttt{src/NetSphere/DataStorage.h}, \texttt{src/NetSphere/DataStorage.cpp}
+\paragraph{Назначение:} модель хранилища данных и доверенных пользователей.
+\paragraph{Состав:}
+\begin{itemize}
+  \item private \texttt{double totalSizeMB}.
+  \item private \texttt{double usedSizeMB}.
+  \item private \texttt{std::vector<std::string> trustedUsers}.
+  \item static \texttt{validateSize(double size)} --- ограничения на размер (0 $<$ size $<=$ 1e6 MB).
+\end{itemize}
+\paragraph{Интерфейс:}
+\begin{itemize}
+  \item \texttt{DataStorage(const std::string\& id, const std::string\& mac, double totalSize)}.
+  \item \texttt{DataStorage\& operator+=(double additionalSize)}.
+  \item \texttt{DataStorage\& operator-=(double sizeToFree)}.
+  \item \texttt{DataStorage\& operator=(double newSize)} --- задает \texttt{usedSizeMB}.
+  \item Сравнения по \texttt{id}: \texttt{operator<}, \texttt{operator==}, \texttt{operator!=}.
+  \item \texttt{void addTrustedUser(const std::string\& user)}.
+  \item \texttt{void removeTrustedUser(const std::string\& user)}.
+  \item \texttt{bool isUserTrusted(const std::string\& user) const}.
+  \item Геттеры: \texttt{getTotalSize()}, \texttt{getUsedSize()}, \texttt{getFreeSize()}, \texttt{getTrustedUsers()}.
+  \item \texttt{void printInfo() const override}.
+  \item \texttt{std::string getType() const override} (возвращает \texttt{"DataStorage"}).
+\end{itemize}
+
+\subsubsection{Класс \texttt{Workstation}}
+\paragraph{Файл(ы):} \texttt{src/NetSphere/Workstation.h}, \texttt{src/NetSphere/Workstation.cpp}
+\paragraph{Назначение:} модель рабочей станции пользователя.
+\paragraph{Состав:}
+\begin{itemize}
+  \item private \texttt{std::string userId}.
+  \item private \texttt{time\_t lastPowerOnTime}.
+  \item static \texttt{validateUserId(const std::string\& user)} --- проверка непустоты.
+\end{itemize}
+\paragraph{Интерфейс:}
+\begin{itemize}
+  \item \texttt{Workstation(const std::string\& id, const std::string\& mac, const std::string\& user, time\_t powerOnTime)}.
+  \item \texttt{const std::string\& getUserId() const}.
+  \item \texttt{time\_t getLastPowerOnTime() const}.
+  \item \texttt{void updatePowerOnTime(time\_t newTime)}.
+  \item \texttt{void printInfo() const override}.
+  \item \texttt{std::string getType() const override} (возвращает \texttt{"Workstation"}).
+\end{itemize}
+
+\subsubsection{Класс \texttt{Printer}}
+\paragraph{Файл(ы):} \texttt{src/NetSphere/Printer.h}, \texttt{src/NetSphere/Printer.cpp}
+\paragraph{Назначение:} модель сетевого принтера.
+\paragraph{Состав:}
+унаследовано от \texttt{Device} (поле \texttt{macAddress} и \texttt{id} в базовом \texttt{NetworkEntity}).
+\paragraph{Интерфейс:}
+\begin{itemize}
+  \item \texttt{Printer(const std::string\& id, const std::string\& mac)}.
+  \item \texttt{void printInfo() const override}.
+  \item \texttt{std::string getType() const override} (возвращает \texttt{"Printer"}).
+\end{itemize}
+
+\subsection{Корпоративная сеть}
+\subsubsection{Класс \texttt{CorporateNetwork}}
+\paragraph{Файл(ы):} \texttt{src/NetSphere/CorporateNetwork.h}, \texttt{src/NetSphere/CorporateNetwork.cpp}
+\paragraph{Назначение:} фасад над всей сетью: корневой домен + глобальный поиск и маршрутизация операций в нужный домен.
+\paragraph{Состав:}
+\begin{itemize}
+  \item private \texttt{std::shared\_ptr<Domain> rootDomain}.
+  \item private \texttt{std::unordered\_map<std::string, std::shared\_ptr<NetworkEntity>> allEntities}.
+  \item private вспомогательные методы:
+  \begin{itemize}
+    \item \texttt{collectAllEntities(std::shared\_ptr<Domain> domain)}.
+    \item \texttt{findDomainRecursive(std::shared\_ptr<Domain> domain, const std::string\& domainId) const}.
+    \item \texttt{findDomainContainingEntity(std::shared\_ptr<Domain> domain, const std::string\& entityId) const}.
+  \end{itemize}
+\end{itemize}
+\paragraph{Интерфейс:}
+\begin{itemize}
+  \item \texttt{CorporateNetwork(const std::string\& rootAdminId)} --- создаёт \texttt{rootDomain} с \texttt{id = "root\_domain"}.
+  \item \texttt{std::shared\_ptr<Domain> getRootDomain() const}.
+  \item \texttt{void addEntityToDomain(const std::string\& domainId, std::shared\_ptr<NetworkEntity> entity, const std::string\& user)}.
+  \item \texttt{void removeEntity(const std::string\& entityId, const std::string\& user)}.
+  \item \texttt{std::shared\_ptr<NetworkEntity> findEntity(const std::string\& entityId) const}.
+  \item \texttt{void printDomainInfo(const std::string\& domainId = "") const}.
+  \item \texttt{void printNetworkInfo() const}.
+\end{itemize}
+
+\subsection{Исключения}
+\subsubsection{Система исключений \texttt{NetworkException} и производные}
+\paragraph{Файл(ы):} \texttt{src/NetSphere/NetworkExceptions.h}
+\paragraph{Назначение:} типизация ошибок доступа и валидации для операций над доменами и устройствами.
+\paragraph{Объекты:}
+\begin{itemize}
+  \item \texttt{NetworkException(std::string message)} : базовый класс, наследник \texttt{std::runtime\_error}.
+  \item \texttt{AccessDeniedException(std::string message)} : ``Ошибка доступа: \dots''.
+  \item \texttt{ValidationException(std::string message)} : ``Ошибка валидации: \dots''.
+  \item \texttt{DeviceOperationException(std::string message)} : ``Ошибка операции с устройством: \dots''.
+  \item \texttt{DomainOperationException(std::string message)} : ``Ошибка операции с доменом: \dots''.
+\end{itemize}
+
+\section{C++: C API (интеграция с Python)}
+\subsection{Экспортируемые объекты}
+\paragraph{Файл(ы):} \texttt{src/NetSphere/NetSphereWrapper.h}, \texttt{src/NetSphere/NetSphereWrapper.cpp}
+\paragraph{Тип \texttt{enum DeviceType}}
+\begin{itemize}
+  \item \texttt{DEVICE\_DATASTORAGE = 0}
+  \item \texttt{DEVICE\_WORKSTATION = 1}
+  \item \texttt{DEVICE\_PRINTER = 2}
+\end{itemize}
+\paragraph{Функции (extern "C"):}
+\begin{itemize}
+  \item \texttt{void* create\_network(const char* admin\_id)}
+  \item \texttt{void delete\_network(void* network)}
+  \item \texttt{const char* get\_network\_info(void* network)}
+  \item \texttt{int add\_domain(void* network, const char* domain\_id, const char* admin\_id, const char* user)}
+  \item \texttt{int remove\_domain(void* network, const char* domain\_id, const char* user)} --- \emph{присутствует в объявлении, но в текущем \texttt{.cpp} нет реализации}.
+  \item \texttt{const char* get\_domain\_info(void* network, const char* domain\_id)} --- \emph{присутствует в объявлении, но в текущем \texttt{.cpp} нет реализации}.
+  \item \texttt{int add\_device(void* network, const char* domain\_id, int device\_type, const char* id, const char* mac, const char* user, ...)}
+  \item \texttt{int remove\_device(void* network, const char* device\_id, const char* user)}
+  \item \texttt{const char* get\_device\_info(void* network, const char* device\_id)} --- в реализации возвращается заглушка.
+  \item \texttt{const char* find\_entity(void* network, const char* entity\_id)}
+  \item \texttt{void free\_string(const char* str)}
+  \item \texttt{const char* get\_last\_error()}
+\end{itemize}
+
+\subsection{Семантика varargs у \texttt{add\_device}}
+В \texttt{NetSphereWrapper.cpp} реализован выбор дополнительных параметров в зависимости от \texttt{device\_type}.
+Последовательность параметров после \texttt{user} задаётся так:
+\begin{itemize}
+  \item \texttt{DEVICE\_DATASTORAGE (0)}: далее \texttt{double total\_size} (объем MB) .
+  \item \texttt{DEVICE\_WORKSTATION (1)}: далее \texttt{const char* user\_id}, затем \texttt{time\_t power\_time}.
+  \item \texttt{DEVICE\_PRINTER (2)}: дополнительных параметров не требуется.
+\end{itemize}
+
+\subsection{Обработка ошибок}
+Внутри \texttt{NetSphereWrapper.cpp} используется шаблонная обертка \texttt{handle\_exception}, которая:
+сбрасывает \texttt{last\_error}, перехватывает исключения \texttt{std::exception} и устанавливает текст ошибки.
+
+\section{Python слой: реестр объектов}
+\subsection{Модуль \texttt{python/corporate\_network.py}}
+\paragraph{Файл(ы):} \texttt{python/corporate\_network.py}
+\paragraph{Назначение:} ctypes-обертка, возвращающая Python-объекты \texttt{NetworkEntity} с opaque handle и класс фасада \texttt{CorporateNetwork}.
+
+\subsubsection{Типы данных}
+\begin{itemize}
+  \item \texttt{class DeviceType(IntEnum)}:
+  \begin{itemize}
+    \item \texttt{UNKNOWN = 0}
+    \item \texttt{DATA\_STORAGE = 1}
+    \item \texttt{WORKSTATION = 2}
+    \item \texttt{PRINTER = 3}
+    \item \texttt{DOMAIN = 4}
+  \end{itemize}
+  \item \texttt{class DeviceInfo(ctypes.Structure)}:
+  поля \texttt{id}, \texttt{mac}, \texttt{type}, \texttt{data}.
+  \item \texttt{class CorporateNetworkError(Exception)}.
+  \item Функция \texttt{decode\_error\_string(error\_ptr) -> str}.
+  \item Функция \texttt{load\_dll(dll\_path: Optional[str])}:
+  загружает DLL и настраивает \texttt{argtypes/restype} для ожидаемых C-функций.
+ \end{itemize}
+
+\subsubsection{Класс \texttt{NetworkEntity}}
+\paragraph{Назначение:} handle-обертка над нативной сущностью (устройство/домен).
+\paragraph{Интерфейс:}
+\begin{itemize}
+  \item \texttt{\_\_init\_\_(handle, dll)}.
+  \item \texttt{\_\_del\_\_()} --- вызывает \texttt{dll.device\_destroy(handle)} (ожидаемое имя функции задается в \texttt{load\_dll}).
+  \item \texttt{storage\_add\_data(size: float) -> bool}.
+  \item \texttt{storage\_free\_data(size: float) -> bool}.
+  \item \texttt{storage\_add\_trusted\_user(user: str) -> bool}.
+  \item \texttt{get\_info() -> Dict[str, Any]}:
+  возвращает \texttt{\{ 'id', 'mac', 'type' \}}.
+  \item Все методы при ошибке опираются на \texttt{dll.get\_last\_error()} и переводят его через \texttt{decode\_error\_string}.
+\end{itemize}
+
+\subsubsection{Класс \texttt{CorporateNetwork}}
+\paragraph{Файл(ы):} \texttt{python/corporate\_network.py}
+\paragraph{Назначение:} фасад для создания сети и добавления/удаления сущностей.
+\paragraph{Интерфейс:}
+\begin{itemize}
+  \item \texttt{\_\_init\_\_(root\_admin\_id: str, dll\_path: Optional[str]=None)}:
+  грузит DLL (\texttt{load\_dll}) и создает handle через \texttt{dll.network\_create(...)}.
+  \item \texttt{\_\_del\_\_()} --- вызывает \texttt{dll.network\_destroy(handle)}.
+  \item \texttt{create\_domain(domain\_id: str, admin\_id: str) -> NetworkEntity}.
+  \item \texttt{create\_storage(device\_id: str, mac: str, total\_size: float) -> NetworkEntity}.
+  \item \texttt{create\_workstation(device\_id: str, mac: str, user\_id: str, power\_on\_time: int) -> NetworkEntity}.
+  \item \texttt{create\_printer(device\_id: str, mac: str) -> NetworkEntity}.
+  \item \texttt{add\_device\_to\_domain(domain\_id: str, device: NetworkEntity, user: str) -> bool}.
+  \item \texttt{get\_last\_error() -> str}.
+  \item \texttt{clear\_error()}.
+  \item \texttt{remove\_device\_from\_network(device\_id: str, user: str) -> bool}.
+\end{itemize}
+
+\subsection{Несовпадение ожидаемого DLL C API}
+В \texttt{python/corporate\_network.py} в \texttt{load\_dll} ожидаются экспортируемые функции:
+\texttt{network\_create}, \texttt{device\_create\_domain}, \texttt{storage\_add\_data}, \texttt{network\_add\_device} и т.д.
+
+При этом C++ слой \texttt{src/NetSphere/NetSphereWrapper.cpp} экспортирует функции:
+\texttt{create\_network}, \texttt{add\_domain}, \texttt{add\_device}, \texttt{remove\_device}, \texttt{get\_device\_info}, \texttt{get\_last\_error} и т.д.
+
+С точки зрения разработчика это означает необходимость:
+либо привести Python-ctypes-обертку к именам C API из \texttt{NetSphereWrapper.h},
+либо обеспечить в DLL алиасы/обертки с ожидаемыми именами.
+
+\subsection{Модуль \texttt{python/network\_gui.py}}
+\paragraph{Файл(ы):} \texttt{python/network\_gui.py}
+\paragraph{Назначение:} PyQt5 GUI поверх \texttt{corporate\_network}.
+\paragraph{Ключевые объекты:}
+\begin{itemize}
+  \item \texttt{class DeviceTreeWidget(QTreeWidget)}:
+  \begin{itemize}
+    \item сигнал \texttt{device\_selected = pyqtSignal(dict)}.
+    \item методы: \texttt{\_\_init\_\_}, \texttt{set\_network(network)}, \texttt{on\_item\_clicked(item, column)}.
+  \end{itemize}
+  \item \texttt{class AddDeviceDialog(QDialog)}:
+  \begin{itemize}
+    \item методы: \texttt{\_\_init\_\_}, \texttt{setup\_ui()}, \texttt{on\_type\_changed(index)}, \texttt{get\_device\_data()}.
+  \end{itemize}
+  \item \texttt{class MainWindow(QMainWindow)}:
+  \begin{itemize}
+    \item методы: \texttt{\_\_init\_\_}, \texttt{init\_ui()}, \texttt{setup\_info\_tab()},
+    \texttt{setup\_operations\_tab()}, \texttt{setup\_log\_tab()},
+    \texttt{create\_network()}, \texttt{add\_device()}, \texttt{remove\_device()},
+    \texttt{on\_device\_selected(device\_info)}, \texttt{on\_add\_data()},
+    \texttt{on\_free\_data()}, \texttt{on\_add\_user()}, \texttt{log\_message(message)}.
+  \end{itemize}
+  \item \texttt{def main()} --- точка входа GUI.
+\end{itemize}
+
+\subsection{Модуль \texttt{python/generate\_html\_docs.py}}
+\paragraph{Файл(ы):} \texttt{python/generate\_html\_docs.py}
+\paragraph{Назначение:} генерация HTML-документации по docstring'ам без импорта модулей.
+\paragraph{Ключевые объекты:}
+\begin{itemize}
+  \item dataclasses: \texttt{FunctionDoc}, \texttt{ClassDoc}, \texttt{ModuleDoc}.
+  \item функции:
+  \begin{itemize}
+    \item \texttt{parse\_module(path) -> ModuleDoc}
+    \item \texttt{render\_module\_html(mod, output\_dir)}
+    \item \texttt{render\_index\_html(modules, output\_dir)}
+    \item \texttt{main()} (CLI).
+  \end{itemize}
+\end{itemize}
+
+\section{Тесты (NetSphereTests): реестр сценариев}
+\paragraph{Файл(ы):} \texttt{tests/NetSphereTests/}
+\paragraph{Примечание:} тесты используют GoogleTest и покрывают валидацию и основные сценарии интерфейса.
+
+\subsection{DeviceTests}
+\paragraph{Файл:} \texttt{tests/NetSphereTests/DeviceTests.cpp}
+\begin{itemize}
+  \item \texttt{TEST(DeviceTest, InvalidMacAddress)}
+  \item \texttt{TEST(DeviceTest, EmptyMacAddress)}
+  \item \texttt{TEST(DeviceTest, InvalidDeviceId)}
+  \item \texttt{TEST(DeviceTest, TooLongDeviceId)}
+  \item \texttt{TEST(DeviceTest, InvalidCharactersInDeviceId)}
+\end{itemize}
+
+\subsection{DataStorageTests}
+\paragraph{Файл:} \texttt{tests/NetSphereTests/DataStorageTests.cpp}
+\begin{itemize}
+  \item \texttt{TEST(DataStorageTest, ConstructorAndGetters)}
+  \item \texttt{TEST(DataStorageTest, AdditionOperator)}
+  \item \texttt{TEST(DataStorageTest, SubtractionOperator)}
+  \item \texttt{TEST(DataStorageTest, AssignmentOperator)}
+  \item \texttt{TEST(DataStorageTest, ComparisonOperators)}
+  \item \texttt{TEST(DataStorageTest, TrustedUsers)}
+  \item \texttt{TEST(DataStorageTest, FreeSizeCalculation)}
+  \item \texttt{TEST(DataStorageTest, PrintInfoNoCrash)}
+\end{itemize}
+
+\subsection{DataStorageErrorTests}
+\paragraph{Файл:} \texttt{tests/NetSphereTests/DataStorageErrorTests.cpp}
+\begin{itemize}
+  \item \texttt{TEST(DataStorageErrorTest, StorageOverflow)}
+  \item \texttt{TEST(DataStorageErrorTest, FreeMoreThanUsed)}
+  \item \texttt{TEST(DataStorageErrorTest, NegativeSizeAssignment)}
+  \item \texttt{TEST(DataStorageErrorTest, SizeExceedsTotal)}
+  \item \texttt{TEST(DataStorageErrorTest, AddEmptyUser)}
+  \item \texttt{TEST(DataStorageErrorTest, AddDuplicateUser)}
+  \item \texttt{TEST(DataStorageErrorTest, RemoveNonExistentUser)}
+  \item \texttt{TEST(DataStorageErrorTest, InvalidStorageSize)}
+  \item \texttt{TEST(DataStorageErrorTest, TooLargeStorageSize)}
+\end{itemize}
+
+\subsection{DomainTests}
+\paragraph{Файл:} \texttt{tests/NetSphereTests/DomainTests.cpp}
+\begin{itemize}
+  \item \texttt{TEST(DomainTest, ConstructorAndGetters)}
+  \item \texttt{TEST(DomainTest, AddAndFindEntities)}
+  \item \texttt{TEST(DomainTest, RemoveEntities)}
+  \item \texttt{TEST(DomainTest, AddSubdomains)}
+  \item \texttt{TEST(DomainTest, GetAllEntities)}
+  \item \texttt{TEST(DomainTest, PrintInfoMethods)}
+\end{itemize}
+
+\subsection{DomainErrorTests}
+\paragraph{Файл:} \texttt{tests/NetSphereTests/DomainErrorTests.cpp}
+\begin{itemize}
+  \item \texttt{TEST(DomainErrorTest, EmptyDomainId)}
+  \item \texttt{TEST(DomainErrorTest, EmptyAdminId)}
+  \item \texttt{TEST(DomainErrorTest, AddEntityWithoutAdminRights)}
+  \item \texttt{TEST(DomainErrorTest, RemoveEntityWithoutAdminRights)}
+  \item \texttt{TEST(DomainErrorTest, AddDuplicateEntity)}
+  \item \texttt{TEST(DomainErrorTest, RemoveNonExistentEntity)}
+  \item \texttt{TEST(DomainErrorTest, AddNullEntity)}
+  \item \texttt{TEST(DomainErrorTest, RemoveEntityWithEmptyId)}
+  \item \texttt{TEST(DomainErrorTest, FindEntityWithEmptyId)}
+\end{itemize}
+
+\subsection{WorkstationPrinterTests}
+\paragraph{Файл:} \texttt{tests/NetSphereTests/WorkstationPrinterTests.cpp}
+\begin{itemize}
+  \item \texttt{TEST(WorkstationTest, InvalidParameters)}
+  \item \texttt{TEST(PrinterTest, InvalidParameters)}
+  \item \texttt{TEST(WorkstationTest, WorkstationMethods)}
+  \item \texttt{TEST(PrinterTest, PrinterMethods)}
+  \item \texttt{TEST(WorkstationTest, UpdatePowerOnTime)}
+\end{itemize}
+
+\subsection{CorporateNetworkTests}
+\paragraph{Файл:} \texttt{tests/NetSphereTests/CorporateNetworkTests.cpp}
+\begin{itemize}
+  \item \texttt{TEST(CorporateNetworkTest, ConstructorAndGetters)}
+  \item \texttt{TEST(CorporateNetworkTest, AddEntityToRootDomain)}
+  \item \texttt{TEST(CorporateNetworkTest, AddEntityToSubdomain)}
+  \item \texttt{TEST(CorporateNetworkTest, RemoveEntity)}
+  \item \texttt{TEST(CorporateNetworkTest, FindEntity)}
+  \item \texttt{TEST(CorporateNetworkTest, PrintDomainInfo)}
+  \item \texttt{TEST(CorporateNetworkTest, PrintNetworkInfo)}
+  \item \texttt{TEST(CorporateNetworkTest, CollectAllEntities)}
+  \item \texttt{TEST(CorporateNetworkTest, ComplexDomainHierarchy)}
+\end{itemize}
+
+\subsection{CorporateNetworkErrorTests}
+\paragraph{Файл:} \texttt{tests/NetSphereTests/CorporateNetworkErrorTests.cpp}
+\begin{itemize}
+  \item \texttt{TEST(CorporateNetworkErrorTest, AddEntityToNonExistentDomain)}
+  \item \texttt{TEST(CorporateNetworkErrorTest, AddEntityWithoutAccessRights)}
+  \item \texttt{TEST(CorporateNetworkErrorTest, RemoveNonExistentEntity)}
+  \item \texttt{TEST(CorporateNetworkErrorTest, RemoveEntityWithoutAccessRights)}
+  \item \texttt{TEST(CorporateNetworkErrorTest, AddDuplicateEntity)}
+  \item \texttt{TEST(CorporateNetworkErrorTest, PrintNonExistentDomainInfo)}
+  \item \texttt{TEST(CorporateNetworkErrorTest, AddToSubdomainWithoutAccess)}
+  \item \texttt{TEST(CorporateNetworkErrorTest, RemoveFromSubdomainWithoutAccess)}
+  \item \texttt{TEST(CorporateNetworkErrorTest, AddNullEntity)}
+  \item \texttt{TEST(CorporateNetworkErrorTest, AddEntityWithEmptyId)}
+\end{itemize}
+
+\subsection{NetworkExceptionsTests}
+\paragraph{Файл:} \texttt{tests/NetSphereTests/NetworkExceptionsTests.cpp}
+\begin{itemize}
+  \item \texttt{TEST(NetworkExceptionsTest, BaseException)}
+  \item \texttt{TEST(NetworkExceptionsTest, AccessDeniedException)}
+  \item \texttt{TEST(NetworkExceptionsTest, ValidationException)}
+  \item \texttt{TEST(NetworkExceptionsTest, DeviceOperationException)}
+  \item \texttt{TEST(NetworkExceptionsTest, DomainOperationException)}
+\end{itemize}
+
+\section{Приложение: демонстрационный код (main.cpp)}
+\paragraph{Файл:} \texttt{src/NetSphere/main.cpp}
+\begin{itemize}
+  \item \texttt{void demonstrateDataStorage()}
+  \item \texttt{void demonstrateDomainOperations()}
+  \item \texttt{void demonstratePolymorphism()}
+  \item \texttt{void demonstrateCorporateNetwork()}
+  \item \texttt{int main()}
+\end{itemize}
+
+\end{document}
+
