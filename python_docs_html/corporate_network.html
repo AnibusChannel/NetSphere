@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang='ru'>
+<head>
+<meta charset='utf-8'/>
+<title>corporate_network</title>
+
+        <style>
+          body { font-family: Arial, Helvetica, sans-serif; margin: 24px; line-height: 1.35; }
+          code, pre { background: #f5f5f5; padding: 2px 4px; border-radius: 4px; }
+          pre { white-space: pre-wrap; }
+          h1 { margin-top: 0; }
+          .doc { margin: 8px 0 18px 0; }
+          .section { margin: 18px 0; padding: 12px; border: 1px solid #eee; border-radius: 8px; }
+          .sig { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; }
+        </style>
+        
+</head>
+<body>
+<h1>Модуль: corporate_network</h1>
+<div class='doc'>ctypes-обертка для взаимодействия с DLL, реализующей ядро корпоративной сети.
+
+Модуль предоставляет:
+1) загрузку DLL через `ctypes` (`load_dll`);
+2) модель типа устройства (`DeviceType`) и структуры данных (`DeviceInfo`);
+3) обертки над handle-объектами: `NetworkEntity` и `CorporateNetwork`;
+4) обработку сообщений об ошибках, пришедших из нативной части (`decode_error_string`).
+
+Примечание по совместимости:
+имена экспортируемых C-функций в ожидаемой DLL должны соответствовать тем, которые
+заданы в `load_dll` (например, `network_create`, `device_create_storage` и т.д.).
+При несовпадении имен слой ctypes не сможет вызвать нужные операции.</div>
+<div class='section'><h2>Функции</h2>
+<div class='section'>
+<div class='sig'><strong>load_dll(dll_path: str=None)</strong></div>
+<div class='doc'>Загружает нативную DLL и настраивает `argtypes/restype` для C API.<br/><br/>Args:<br/>    dll_path: Полный путь к DLL. Если `None`, будет выполнен поиск в типичных местах.<br/><br/>Returns:<br/>    Загруженный объект DLL (экземпляр `ctypes.CDLL`) с настроенными сигнатурами функций.<br/><br/>Raises:<br/>    FileNotFoundError: если DLL не найдена.<br/>    OSError: если DLL не удалось загрузить.<br/>    CorporateNetworkError: если загрузка DLL завершилась ошибкой.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>decode_error_string(error_ptr)</strong></div>
+<div class='doc'>Пытается декодировать строку ошибки, пришедшую из DLL.<br/><br/>DLL может возвращать указатель на нуль-терминированный буфер байтов.<br/>Код выполняет попытки декодирования в несколько кодировок (с приоритетом cp1251),<br/>выбирая вариант, в котором присутствуют кириллические символы или адекватная читаемость.<br/><br/>Args:<br/>    error_ptr: Указатель/значение ошибки из `ctypes` (например, `POINTER(c_char)`).<br/><br/>Returns:<br/>    Строка ошибки (возможно, пустая строка, если ошибка не распознана).</div>
+</div>
+</div>
+<div class='section'><h2>Классы</h2>
+<div class='section'>
+<h3>DeviceType</h3>
+<div class='doc'>Перечисление типов устройств, используемое в ctypes-API.</div>
+</div>
+<div class='section'>
+<h3>DeviceInfo</h3>
+<div class='doc'>Структура DeviceInfo, передаваемая в/из DLL для получения информации о сущности.</div>
+</div>
+<div class='section'>
+<h3>CorporateNetworkError</h3>
+<div class='doc'>Ошибка уровня обертки (ctypes/Python-слой) для корпоративной сети.</div>
+</div>
+<div class='section'>
+<h3>NetworkEntity</h3>
+<div class='doc'>Обертка над нативным handle конкретной сущности сети (устройство или домен).<br/><br/>Внутри хранится `handle` (opaque pointer) и ссылка на загруженную DLL.<br/>Для операций используется передача handle обратно в функции DLL.</div>
+<h4>Методы</h4>
+<div class='section'>
+<div class='sig'><strong>__init__(handle: c_void_p, dll)</strong></div>
+<div class='doc'>Создает Python-обертку над нативной сущностью.<br/><br/>Args:<br/>    handle: opaque handle (указатель), возвращенный DLL.<br/>    dll: объект `ctypes.CDLL`, из которого выполняются вызовы.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>__del__()</strong></div>
+<div class='doc'>Освобождает нативный объект через `device_destroy`, если handle не пуст.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>storage_add_data(size: float) -&gt; bool</strong></div>
+<div class='doc'>Добавляет объем данных в хранилище.<br/><br/>Args:<br/>    size: Количество данных (MB), которое требуется добавить.<br/><br/>Returns:<br/>    True при успехе, False при отказе (если при этом не было детальной ошибки).<br/><br/>Raises:<br/>    CorporateNetworkError: если DLL вернула ошибку и выдала текст ошибки.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>storage_free_data(size: float) -&gt; bool</strong></div>
+<div class='doc'>Освобождает (уменьшает) объем данных в хранилище.<br/><br/>Args:<br/>    size: Количество данных (MB), которое нужно освободить.<br/><br/>Returns:<br/>    True при успехе, False при отказе.<br/><br/>Raises:<br/>    CorporateNetworkError: если DLL вернула ошибку и выдала текст ошибки.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>storage_add_trusted_user(user: str) -&gt; bool</strong></div>
+<div class='doc'>Добавляет доверенного пользователя к хранилищу.<br/><br/>Args:<br/>    user: Идентификатор пользователя, добавляемого в список доверенных.<br/><br/>Returns:<br/>    True при успехе, False при отказе.<br/><br/>Raises:<br/>    CorporateNetworkError: если DLL вернула ошибку и выдала текст ошибки.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>get_info() -&gt; Dict[str, Any]</strong></div>
+<div class='doc'>Запрашивает информацию о сущности.<br/><br/>Ожидает, что DLL заполнит структуру `DeviceInfo`.<br/><br/>Returns:<br/>    Словарь вида:<br/>      - `id`: str<br/>      - `mac`: str (может быть пустой)<br/>      - `type`: DeviceType<br/><br/>    Если DLL не вернула информацию, возвращает пустой словарь `{}`.<br/><br/>Raises:<br/>    CorporateNetworkError: если DLL вернула ошибку и выдала текст ошибки.</div>
+</div>
+</div>
+<div class='section'>
+<h3>CorporateNetwork</h3>
+<div class='doc'>Основная Python-обертка над сетью корпоративных доменов.<br/><br/>Сеть создается через handle, возвращаемый DLL. Далее операции выполняются через вызовы DLL.<br/>В качестве объектов сущностей возвращаются `NetworkEntity` (opaque handle).</div>
+<h4>Методы</h4>
+<div class='section'>
+<div class='sig'><strong>__init__(root_admin_id: str, dll_path: str)</strong></div>
+<div class='doc'>Создает сеть с корневым администратором.<br/><br/>Args:<br/>    root_admin_id: Идентификатор администратора корневого домена.<br/>    dll_path: Необязательный путь к DLL.<br/><br/>Raises:<br/>    CorporateNetworkError: если DLL не удалось загрузить или сеть не удалось создать.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>__del__()</strong></div>
+<div class='doc'>Освобождает нативную сеть через `network_destroy`, если handle не пуст.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>create_domain(domain_id: str, admin_id: str) -&gt; NetworkEntity</strong></div>
+<div class='doc'>Создает домен в нативной части и оборачивает его в `NetworkEntity`.<br/><br/>Args:<br/>    domain_id: Идентификатор домена.<br/>    admin_id: Идентификатор администратора домена.<br/><br/>Returns:<br/>    NetworkEntity с созданным доменом.<br/><br/>Raises:<br/>    CorporateNetworkError: если DLL не вернула валидный handle.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>create_storage(device_id: str, mac: str, total_size: float) -&gt; NetworkEntity</strong></div>
+<div class='doc'>Создает хранилище данных в нативной части.<br/><br/>Args:<br/>    device_id: Идентификатор устройства.<br/>    mac: MAC-адрес устройства.<br/>    total_size: Общий объем хранилища (MB).<br/><br/>Returns:<br/>    NetworkEntity с созданным хранилищем.<br/><br/>Raises:<br/>    CorporateNetworkError: если DLL не вернула валидный handle.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>create_workstation(device_id: str, mac: str, user_id: str, power_on_time: int) -&gt; NetworkEntity</strong></div>
+<div class='doc'>Создает рабочую станцию в нативной части.<br/><br/>Args:<br/>    device_id: Идентификатор устройства.<br/>    mac: MAC-адрес устройства.<br/>    user_id: Идентификатор пользователя, закрепленного за станцией.<br/>    power_on_time: Время последнего включения (обычно seconds since epoch).<br/><br/>Returns:<br/>    NetworkEntity с созданной рабочей станцией.<br/><br/>Raises:<br/>    CorporateNetworkError: если DLL не вернула валидный handle.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>create_printer(device_id: str, mac: str) -&gt; NetworkEntity</strong></div>
+<div class='doc'>Создает принтер в нативной части.<br/><br/>Args:<br/>    device_id: Идентификатор принтера.<br/>    mac: MAC-адрес принтера.<br/><br/>Returns:<br/>    NetworkEntity с созданным принтером.<br/><br/>Raises:<br/>    CorporateNetworkError: если DLL не вернула валидный handle.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>add_device_to_domain(domain_id: str, device: NetworkEntity, user: str) -&gt; bool</strong></div>
+<div class='doc'>Добавляет созданную сущность в домен.<br/><br/>Типичный сценарий:<br/>1) `create_*` создает устройство/домен и возвращает `NetworkEntity`;<br/>2) `add_device_to_domain` связывает сущность с нужным доменом в нативной части.<br/><br/>Args:<br/>    domain_id: Идентификатор домена (пустая строка может означать корневой домен, в зависимости от DLL).<br/>    device: Сущность, которая добавляется.<br/>    user: Идентификатор пользователя, выполняющего операцию (для проверки прав).<br/><br/>Returns:<br/>    True при успехе, False при отказе.<br/><br/>Raises:<br/>    CorporateNetworkError: если DLL вернула ошибку и выдала текст ошибки.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>get_last_error() -&gt; str</strong></div>
+<div class='doc'>Возвращает последнюю ошибку, полученную из DLL (в виде строки).</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>clear_error()</strong></div>
+<div class='doc'>Очищает состояние последней ошибки в DLL.</div>
+</div>
+<div class='section'>
+<div class='sig'><strong>remove_device_from_network(device_id: str, user: str) -&gt; bool</strong></div>
+<div class='doc'>Удаляет сущность из сети по идентификатору.<br/><br/>Args:<br/>    device_id: Идентификатор сущности для удаления.<br/>    user: Идентификатор пользователя, выполняющего операцию.<br/><br/>Returns:<br/>    True при успехе, False при отказе.<br/><br/>Notes:<br/>    После успешного удаления Python-список `self.devices` пересобирается,<br/>    чтобы удалить удаленную сущность (на основе `get_info()`).<br/><br/>Raises:<br/>    CorporateNetworkError: если DLL вернула ошибку и выдала текст ошибки.</div>
+</div>
+</div>
+</div>
+<p><hr/><a href='index.html'>К оглавлению</a></p>
+</body></html>
